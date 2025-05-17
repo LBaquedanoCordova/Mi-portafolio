@@ -1,0 +1,67 @@
+@use "variables" as *;
+
+@mixin layout-navbar {
+  box-sizing: border-box;
+  @include padding-margin($spacing-sm $spacing-xs, $spacing-sm);
+  width: calc(100% - 16px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: $border-radius;
+  background: $color-background-transparent;
+  z-index: 10;
+}
+
+@mixin body {
+  @include padding-margin(0px);
+  box-sizing: content-box;
+  font-family: $font-main;
+  font-weight: $font-bold;
+  background: $linear-gradient;
+}
+
+@mixin padding-margin($padding, $margin: 0px) {
+  padding: $padding;
+  margin: $margin;
+}
+
+@mixin before-overlay() {
+  content: "";
+  top: 0;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@mixin gradient-opacity($opacity: 1) {
+  background: linear-gradient(
+    to right,
+    rgba($color-background-dark, $opacity),
+    rgba($color-primary, $opacity),
+    rgba($color-background-deep, $opacity)
+  );
+}
+
+//mixins para la seccion intro
+@mixin responsive-height($default: 100svh, $large-screen-height: 100vh) {
+  height: $default;
+
+  @media screen and (min-width: 768px) {
+    height: $large-screen-height;
+  }
+}
+
+@mixin font($font-size, $font-weight) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin box-style($padding: 10px, $radius: 10px) {
+  padding: $padding;
+  border-radius: $radius;
+}
+
+@mixin spacing($padding: 0, $gap: 0) {
+  padding: $padding;
+  gap: $gap;
+}
