@@ -1,0 +1,31 @@
+@use "./placeholders" as *;
+
+@mixin timeline-marker($size, $color) {
+    @extend %pseudo-abs;
+    width: $size;
+    height: $size;
+    top: 0%;
+    left: -23px;
+    border-radius: 50%;
+    background-color: $color;
+    transform: translate(-50%, -50%);
+}
+
+@mixin section-text($margin, $color) {
+    margin: $margin;
+    color: $color;
+}
+
+@mixin flex-wrap-gap($gap) {
+    @extend %flex-center;
+    align-items: normal;
+    column-gap: $gap;
+    flex-wrap: wrap;
+}
+
+@mixin content-box($padding, $marginBottom, $borderWidth, $borderColor, $borderRadius) {
+    padding: $padding;
+    margin-bottom: $marginBottom;
+    border: $borderWidth solid $borderColor;
+    border-radius: $borderRadius;
+}
