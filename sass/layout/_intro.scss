@@ -1,0 +1,160 @@
+@use "../utils/mixins" as *;
+@use "../utils/mixinTech" as *;
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+@use "../utils/animations" as *;
+
+.intro {
+  @extend %flex-center;
+  flex-direction: column;
+  @include responsive-height();
+  position: relative;
+  overflow: hidden;
+  gap: 5px;
+  
+  &__hero,
+  &__contact {
+    @extend %flex-center;
+    flex-direction: column;
+    @include spacing($spacing-sm $spacing-xl, 5px);
+  }
+
+  &__hero {
+    @include text-style(center, 0.2em, 0.2em, 1.2);
+    animation: fadeInUp 1s ease-out;
+
+    &-text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: $fs-small;
+      color: $color-white;
+      animation: fadeInLeft 1.2s ease-out;
+    }
+
+    &-cursor {
+      color: $color-white;
+      animation: blink 500ms step-end infinite;
+    }
+
+    &-cursor--hidden {
+      visibility: hidden;
+    }
+
+    &-title,
+    &-subtitle {
+      margin: 0px;
+      color: $color-text;
+    }
+
+    &-title {
+      @include font(clamp(40px, 12vw, 75px), 900);
+      font-family: '"Merriweather", serif';
+    }
+
+    &-subtitle {
+      @include font(clamp(20px, 6vw, 35px), 900);
+    }
+  }
+
+  &__contact {
+    gap: 15px;
+    animation: fadeInUp 1.8s ease-out;
+
+    &-list {
+      @extend %list-container-flex;
+      animation: fadeInRight 1.5s ease-out;
+    }
+
+    &-item {
+      @include padding-margin($spacing-xs, 0px $spacing-xs);
+      list-style: none;
+      position: relative;
+    }
+
+    &-link {
+      @extend %link-list-item;
+    }
+
+    .email-tooltip {
+      @extend %tooltip-style;
+    }
+
+    &-availability {
+      @include box-style();
+      border: 1px solid transparent;
+      text-align: center;
+      background-color: rgba($color-black, 0.5);
+      transition: transform 0.3s ease, background-color 0.3s ease,
+        border-color 0.3s ease;
+      cursor: pointer;
+      animation: bounceIn 1.5s ease-out;
+    }
+    
+    &-availability:hover {
+      transform: scale(1.05);
+      background-color: rgba($color-black, 0.2);
+      border-color: $color-white;
+      box-shadow: 0px 0px 12px rgba($color-white, 0.3);
+
+      .intro__availability-icon {
+        animation-play-state: paused;
+      }
+    }
+
+    .intro__availability-text {
+      @extend %flex-center;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: $fs-miniSmall;
+      color: $color-white;
+    }
+
+    .intro__availability-icon {
+      flex-shrink: 0;
+      animation: bounce 1.5s ease infinite;
+    }
+  }
+
+  &__scroll {
+    @extend %flex-center;
+    justify-content: normal;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    bottom: 90px;
+    transform: translateX(-50%);
+    animation: slideUp 2s ease-out;
+
+    &-arrow {
+      position: absolute;
+      transform: scale(0);
+      opacity: 0;
+      color: $color-white;
+      animation: scroll-animation 3s ease-in-out infinite;
+    }
+    &-arrow:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &-arrow:nth-child(2) {
+      animation-delay: 1s;
+    }
+    &-arrow:nth-child(3) {
+      animation-delay: 2s;
+    }
+  }
+}
+
+.scale-animation {
+  animation: scale-pop 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .intro {
+    gap: 10px;
+    &__hero {
+      @include text-style(center, 0.4em, 0.4em, 1.4);
+    }
+  }
+}

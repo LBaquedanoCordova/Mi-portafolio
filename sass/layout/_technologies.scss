@@ -1,0 +1,92 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/mixinTech" as *;
+@use "../utils/placeholders" as *;
+
+.technologies {
+  @extend %flex-center;
+  @extend %flex-column-base;
+
+  &__header,
+  &__content {
+    @extend %section-subblock;
+  }
+  &__header {
+    @extend %text-format-base;
+
+    .technologies__title,
+    .technologies__subtitle,
+    .technologies__description {
+      @extend %header-text-spacing;
+    }
+
+    .technologies__title {
+      @extend %section-subtitle;
+    }
+    .technologies__subtitle {
+      @extend %section-subtitle-light;
+    }
+    
+    .technologies__description {
+      @extend %section-paragraph-default;
+    }
+  }
+
+  &__list {
+    @extend %flex-center;
+    display: grid;
+    @include padding-margin($spacing-xxxl $spacing-xxl, 0px auto);
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 5px;
+    list-style: none;
+  }
+
+  &__item {
+    @include tech-hexagon-shape();
+    @include tech-hexagon-decoration();
+
+    &:hover {
+      @include tech-hexagon-hover();
+    }
+
+    .technologies__icon {
+      width: calc(100% - clamp(32px, 4vw, 40px));
+      max-width: calc(100% - 40%);
+      object-fit: cover;
+    }
+
+    .technologies__label {
+      @include tech-hexagon-label();
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .technologies {
+    flex-direction: row;
+
+    &__header,
+    &__content {
+      width: 50%;
+      padding: $spacing-md clamp(15px, 2.5vw, 25px);
+    }
+
+    &__list {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .technologies {
+    &__header,
+    &__content {
+      padding: $spacing-md clamp(25px, 2.5vw, 35px);
+    }
+    &__list {
+      grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+      padding: $spacing-xl $spacing-jumbo;
+      gap: 7px;
+    }
+  }
+}
