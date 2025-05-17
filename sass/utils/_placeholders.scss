@@ -1,0 +1,137 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%glass-panel {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  @include gradient-opacity(0.5);
+  backdrop-filter: $blur;
+}
+
+%link-reset {
+  text-decoration: none;
+  color: $color-text;
+}
+
+%img-responsive {
+  display: block;
+  min-width: 100%;
+  object-fit: contain;
+}
+
+%list-container-flex{
+  @extend %flex-center;
+  display: inline-flex;
+  @include padding-margin($spacing-sm, 0px);
+  flex-wrap: wrap;
+  border-radius: $border-radius;
+  background-color: darken($color-text, 25%);
+}
+
+%link-list-item {
+  display: inline-block;
+  @include box-style(6px, calc($border-radius - 5px));
+  font-size: $fs-miniSmall;
+  text-decoration: none;
+  color: $color-primary;
+  background-image: $links-bg-gradient;
+  cursor: pointer;
+  transition: background-image 4s ease-in-out;
+
+  &:hover {
+    background-image: $links-bg-gradient-hover;
+  }
+  i {
+    @include font($icon-size, $icon-weight);
+  }
+  .intro__contact-icon,
+  .contact__icon {
+    margin-right: 5px;
+  }
+  .intro__contact-icon--copy,
+  .contact__icon--copy {
+    margin-left: 5px;
+  }
+}
+
+%tooltip-style{
+  display: block;
+  position: absolute;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: calc($border-radius - 5px);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  background-color: $color-black;
+  color: $color-white;
+  z-index: 1;
+
+  &::before {
+    @extend %pseudo-abs;
+    display: inline-block;
+    top: 50%;
+    left: -9px;
+    width: 10px;
+    aspect-ratio: 1;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    transform: translateY(-50%);
+    background-color: $color-black;
+  }
+
+  &.email-tooltip--top::before {
+    top: -9px;
+    left: 50%;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    transform: translateX(-50%);
+  }
+}
+
+%flex-column-base{
+  flex-direction: column;
+  padding: $spacing-jumbo $spacing-lg;
+  gap: 10px;
+}
+
+%text-format-base{
+  text-align: start;
+  letter-spacing: 0.05em;
+  word-spacing: 0.01em;
+  hyphens: auto;
+  line-height: 1.6;
+}
+
+%section-subblock{
+  width: 100%;
+  padding: $spacing-sm $spacing-lg;
+}
+
+%pseudo-abs{
+  content: "";
+  position: absolute;
+}
+
+%header-text-spacing{
+  margin: $spacing-sm $spacing-md;
+}
+
+%section-subtitle{
+  font-size: $fs-xlarge;
+  color: $color-text;
+}
+
+%section-subtitle-light{
+  font-size: $fs-large;
+  color: $color-white;
+}
+
+%section-paragraph-default{
+  font-size: $fs-small;
+  text-align: justify;
+  color: $color-neutral;
+}
