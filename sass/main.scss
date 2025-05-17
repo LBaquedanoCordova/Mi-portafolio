@@ -1,0 +1,13 @@
+@use "./utils/mixins" as *;
+@use "./layout/navbar" as *;
+@use "./layout/intro" as *;
+@use "./layout/technologies" as *;
+@use "./layout/experience" as *;
+@use "./layout/project" as *;
+@use "./layout/about-me" as *;
+@use "./layout/contact" as *;
+@use "./layout/footer" as *;
+
+body {
+  @include body();
+}
