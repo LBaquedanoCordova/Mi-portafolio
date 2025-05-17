@@ -5,7 +5,420 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Portafolio</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@800;900&family=Roboto+Condensed:wght@500&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&text=menu,dark_mode,light_mode,close,download"
+      rel="stylesheet"
+    />
     <script type="module" src="./js/app.js"></script>
   </head>
-  <body></body>
+  <body>
+    <nav class="nav" role="navigation" aria-label="Main menu">
+      <div class="nav__logo">
+        <a href="#" class="nav__logo-link" aria-label="Home"><img src="./assets/images/personal-logo.png" class="nav__logo-image" alt="Luis Baquedano logo"></a>
+      </div>
+
+      <div class="nav__options">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#technologies" class="nav__link" data-target="technologies"
+              >Tecnologías</a
+            >
+          </li>
+          <li class="nav__item">
+            <a href="#experience" class="nav__link" data-target="experience"
+              >Trayectoria</a
+            >
+          </li>
+          <li class="nav__item">
+            <a href="#projects" class="nav__link" data-target="projects"
+              >Proyectos</a
+            >
+          </li>
+          <li class="nav__item">
+            <a href="#about-me" class="nav__link" data-target="about-me"
+              >Luis</a
+            >
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link" data-target="contact"
+              >Contacto</a
+            >
+          </li>
+          <li class="nav__item nav__item--theme">
+            <button
+              class="nav__theme-toggle"
+              aria-label="Toggle theme (light/dark)"
+            >
+              <i
+                class="fa-solid fa-sun nav__theme-icon--light-mode"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <button
+        type="button"
+        class="nav__toggle"
+        aria-label="Open navigation menu"
+      >
+        <i class="fa-solid fa-bars nav__toggle-icon" aria-hidden="true"></i>
+      </button>
+    </nav>
+
+    <main class="intro">
+      <section class="intro__hero">
+        <span class="intro__hero-text">Hola mi nombre es ...</span>
+        <h1 class="intro__hero-title">Luis Baquedano</h1>
+        <p class="intro__hero-subtitle">Desarrollador Front-end</p>
+      </section>
+      <section class="intro__contact">
+        <ul class="intro__contact-list" role="list">
+          <li class="intro__contact-item intro__contact-item--cv">
+            <a
+              href="./assets/cv/CV_LUISBC_EN.pdf"
+              download="CV-Luis Baquedano Cordova.pdf"
+              class="intro__contact-link"
+              aria-label="Download my curriculum vitae"
+              ><i
+                class="fa-solid fa-download intro__contact-icon"
+                aria-hidden="true"
+              ></i
+              >Descargar CV</a
+            >
+          </li>
+          <li class="intro__contact-item intro__contact-item--linkedin">
+            <a
+              href="https://www.linkedin.com/in/luisbaquedano-frontend/"
+              target="_blank"
+              class="intro__contact-link"
+              ><i
+                class="fa-brands fa-linkedin intro__contact-icon"
+                aria-hidden="true"
+              ></i
+              >LinkedIn</a
+            >
+          </li>
+          <li class="intro__contact-item intro__contact-item--github">
+            <a
+              href="https://github.com/LBaquedanoCordova/"
+              target="_blank"
+              class="intro__contact-link"
+              ><i
+                class="fa-brands fa-github intro__contact-icon"
+                aria-hidden="true"
+              ></i
+              >GitHub</a
+            >
+          </li>
+          <li class="intro__contact-item intro__contact-item--email">
+            <span
+              class="intro__contact-link copy-email-link"
+              aria-label="Copy email"
+            >
+              <i
+                class="fa-solid fa-envelope intro__contact-icon"
+                aria-hidden="true"
+              ></i
+              >lfbcordova@gmail.com<i
+                class="fa-solid fa-copy intro__contact-icon--copy"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </li>
+        </ul>
+        <div class="intro__contact-availability">
+          <span class="intro__availability-text"
+            ><i
+              class="fa-solid fa-handshake intro__availability-icon"
+              aria-hidden="true"
+            ></i
+            >Abierto a nuevas oportunidades</span
+          >
+        </div>
+      </section>
+      <div class="intro__scroll">
+        <span class="intro__scroll-arrow"
+          ><i class="fa-solid fa-angle-down" aria-hidden="true"></i
+        ></span>
+        <span class="intro__scroll-arrow"
+          ><i class="fa-solid fa-angle-down" aria-hidden="true"></i
+        ></span>
+        <span class="intro__scroll-arrow"
+          ><i class="fa-solid fa-angle-down" aria-hidden="true"></i
+        ></span>
+      </div>
+    </main>
+
+    <section
+      id="technologies"
+      class="technologies"
+      aria-labelledby="technologies-title"
+    >
+      <header class="technologies__header">
+        <h2 id="technologies-title" class="technologies__title">
+          Stack Tecnológico
+        </h2>
+        <h3 class="technologies__subtitle">Lo que me hace productivo</h3>
+        <p class="technologies__description">
+          Conozco estas tecnologías que me permiten crear experiencias web
+          dinámicas y responsivas. Estas herramientas me permiten trabajar de
+          manera más eficiente y mantener un flujo de trabajo organizado.
+        </p>
+      </header>
+
+      <div class="technologies__content">
+        <ul class="technologies__list" aria-label="List of technologies">
+          <!-- JS genera dinámicamente los elementos aquí -->
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="experience">
+      <div class="experience__header">
+        <h2 class="experience__title">Trayectoria en curso</h2>
+        <p class="experience__description">
+          Este es el resumen de mi trayectoria laboral y educacional.
+        </p>
+      </div>
+
+      <section class="experience__timeline">
+        <div class="timeline__row">
+          <!-- Columna laboral -->
+          <div class="timeline__column">
+            <h3 class="timeline__section-title">
+              Experiencia Laboral
+              <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+            </h3>
+
+            <div class="timeline__box">
+              <!-- Trabajo 1 -->
+              <article class="timeline__entry">
+                <div class="timeline__year">
+                  <i class="bx bxs-calendar" aria-hidden="true"></i> 2022 - 2024
+                </div>
+                <h4 class="timeline__role">Asistente de Informática</h4>
+                <p class="timeline__company">FRIGOSA SAC</p>
+                <p class="timeline__details">
+                  Soporte e instalación de redes, mantenía equipos y sistemas,
+                  gestionaba backups, validaba datos en Excel, elaboraba
+                  reportes y atendía consultas de superiores.
+                </p>
+              </article>
+
+              <!-- Trabajo 2 -->
+              <article class="timeline__entry">
+                <div class="timeline__year">
+                  <i class="bx bxs-calendar" aria-hidden="true"></i> 2020 - 2021
+                </div>
+                <h4 class="timeline__role">
+                  Practicante Profesional en el Área de Soporte Técnico
+                </h4>
+                <p class="timeline__company">I.E JUAN VELASCO ALVARADO</p>
+                <p class="timeline__details">
+                  Mantenimiento de equipos, asistencia técnica remota,
+                  diagnóstico y solución de fallos en hardware y software,
+                  además de desarrollar e implementar webs con SGA Moodle.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Columna educativa -->
+          <div class="timeline__column">
+            <h3 class="timeline__section-title">
+              Educación
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            </h3>
+
+            <div class="timeline__box">
+              <!-- Estudio 1 -->
+              <article class="timeline__entry timeline__entry--with-image">
+                <div class="timeline__content">
+                  <div class="timeline__year">
+                    <i class="bx bxs-calendar" aria-hidden="true"></i> 2024 -
+                    Act
+                  </div>
+                  <h4 class="timeline__role">Desarrollador Front-end</h4>
+                  <p class="timeline__company">Autodidacta con Roadmap.sh</p>
+                </div>
+                <figure class="timeline__image">
+                  <img
+                    src="./assets/icons/roadmap.sh-logo.svg"
+                    alt="Roadmap.sh logo"
+                  />
+                </figure>
+              </article>
+
+              <!-- Estudio 2 -->
+              <article class="timeline__entry timeline__entry--with-image">
+                <div class="timeline__content">
+                  <div class="timeline__year">
+                    <i class="bx bxs-calendar" aria-hidden="true"></i> 2020 -
+                    2021
+                  </div>
+                  <h4 class="timeline__role">
+                    Título Prof. en Ingeniería de Sistemas
+                  </h4>
+                  <p class="timeline__company">Universidad César Vallejo</p>
+                </div>
+                <figure class="timeline__image">
+                  <img
+                    src="./assets/icons/ucv-logo.svg"
+                    alt="Universidad César Vallejo logo"
+                  />
+                </figure>
+              </article>
+
+              <!-- Estudio 3 -->
+              <article class="timeline__entry timeline__entry--with-image">
+                <div class="timeline__content">
+                  <div class="timeline__year">
+                    <i class="bx bxs-calendar" aria-hidden="true"></i> 2015 -
+                    2020
+                  </div>
+                  <h4 class="timeline__role">
+                    Bachiller en Ingeniería de Sistemas
+                  </h4>
+                  <p class="timeline__company">Universidad César Vallejo</p>
+                </div>
+                <figure class="timeline__image">
+                  <img
+                    src="./assets/icons/ucv-logo.svg"
+                    alt="Universidad César Vallejo logo"
+                  />
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="projects__header"></div>
+      <div class="projects__content"></div>
+    </section>
+
+    <section id="about-me" class="about-me" aria-labelledby="about-me__title">
+      <div class="about-me__content">
+        <h2 id="about-me__title" class="about-me__title">Conóceme más</h2>
+        <h3 class="about-me__name">Luis Fernando</h3>
+        <p class="about-me__text">
+          Soy
+          <span class="about-me__highlight-title">Desarrollador Front-end</span>
+          e
+          <span class="about-me__highlight-title">Ingeniero de Sistemas</span>.
+          Me considero una persona
+          <span class="about-me__highlight-text"
+            >entusiasta, creativa y disciplinada</span
+          >.
+        </p>
+        <p class="about-me__text">
+          Aunque mi experiencia profesional en desarrollo web está en sus
+          inicios, he aprovechado mi sólida base en programación para
+          especializarme en
+          <span class="about-me__highlight-text">Full-Stack</span>, comenzando
+          por el Front-end.
+        </p>
+        <p class="about-me__text">
+          Además, mi pasión por el
+          <span class="about-me__highlight-text">gimnasio</span> ha fortalecido
+          mi disciplina, lo cual se refleja en todos los aspectos de mi vida.
+        </p>
+      </div>
+      <figure
+        class="about-me__image"
+        role="img"
+        aria-label="Photo by Luis Fernando"
+      >
+        <img
+          src="./assets/images/fernando.jpg"
+          alt="Luis Fernando"
+          class="about-me__photo"
+        />
+      </figure>
+    </section>
+
+    <section id="contact" class="contact">
+      <header class="contact__header">
+        <h2 class="contact__header-subtitle">¿Y si hablamos?</h2>
+        <h1 class="contact__header-title">Contáctame</h1>
+        <p class="contact__header-description">
+          ¡Gracias por visitar mi sitio web! Me alegra que estes aquí. Si te
+          interesa conocer más sobre mi trabajo o discutir posibles
+          colaboraciones, estaré encantado de escucharte. No dudes en
+          contactarme para conversar o hacer cualquier consulta. Será un gusto
+          conectar contigo.
+        </p>
+      </header>
+
+      <div class="contact__content">
+        <ul class="contact__list" role="list">
+          <li class="contact__list-item contact__list-item--cv">
+            <a
+              href="./assets/cv/CV_LUISBC_EN.pdf"
+              download="CV-Luis Baquedano Cordova.pdf"
+              class="contact__link"
+              aria-label="Download my curriculum vitae"
+            >
+              <i
+                class="fa-solid fa-download contact__icon"
+                aria-hidden="true"
+              ></i
+              >Descargar CV</a
+            >
+          </li>
+          <li class="contact__list-item contact__list-item--email">
+            <span class="contact__link copy-email-link" aria-label="Copy email">
+              <i
+                class="fa-solid fa-envelope contact__icon"
+                aria-hidden="true"
+              ></i
+              >lfbcordova@gmail.com<i
+                class="fa-solid fa-copy contact__icon--copy"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__info">
+        <p class="footer__text">
+          Hecho con pasión por Luis Baquedano | &copy; 2025
+        </p>
+      </div>
+
+      <div class="footer__social">
+        <a
+          href="https://www.linkedin.com/in/luisbaquedano-frontend/"
+          target="_blank"
+          class="footer__social-link footer__social-link--linkedin"
+          aria-label="LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
+
+        <a
+          href="https://github.com/LBaquedanoCordova/Mi-portafolio"
+          target="_blank"
+          class="footer__social-link footer__social-link--source"
+          aria-label="Source code of the portfolio"
+        >
+          <span class="footer__social-text">Código Fuente</span>
+        </a>
+      </div>
+    </footer>
+  </body>
 </html>
