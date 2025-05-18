@@ -1,0 +1,44 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/mixinTech" as *;
+
+.footer {
+  @extend %flex-center;
+  @extend %text-format-base;
+  text-align: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  font-size: $fs-small;
+  padding: $spacing-lg;
+
+  &__text,
+  &__social-link {
+    color: $color-text;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__info,
+  &__social {
+    padding: $spacing-md $spacing-xxl;
+  }
+  &__social {
+    @extend %flex-center;
+    gap: $spacing-md;
+
+    &-link {
+      text-decoration: none;
+      &:hover {
+        transform: translateY(-3px);
+      }
+
+      i {
+        @include font($icon-size, $icon-weight);
+      }
+    }
+  }
+}
