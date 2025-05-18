@@ -1,0 +1,100 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../utils/mixinTech" as *;
+@use "../utils/placeholders" as *;
+
+.about-me {
+  @extend %flex-center;
+  @extend %flex-column-base;
+
+  &__content, &__image{
+        @extend %section-subblock;
+  }
+
+  &__content {
+    @extend %text-format-base;
+
+    h2,
+    h3,
+    p {
+      @extend %header-text-spacing;
+    }
+
+    .about-me__title {
+      @extend %section-subtitle;
+    }
+    .about-me__name {
+      @extend %section-subtitle-light;
+    }
+    .about-me__text {
+      @extend %section-paragraph-default;
+    }
+
+    .about-me__highlight-title {
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: $color-text;
+    }
+
+    .about-me__highlight-text {
+      border-radius: calc($border-radius - 6px);
+      background: linear-gradient(
+        90deg,
+        rgba($color-text, 0.3),
+        rgba($color-white, 0.1)
+      );
+      color: $color-white;
+    }
+  }
+
+  &__image {
+    @extend %flex-center;
+    margin: 0px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+
+    .about-me__photo {
+      width: 100%;
+      max-width: clamp(210px, 65%, 280px);
+      height: auto;
+      margin: 10px 0px;
+      object-fit: cover;
+      border-radius: calc($border-radius + 5px);
+      transform: rotateY(-10deg) rotateX(10deg) scale(1.05);
+      box-shadow: 0px 10px 10px 4px rgba($color-black, 0.6);
+      transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: rotateY(0deg) rotateX(0deg) scale(1.1);
+        box-shadow: 0px 15px 15px 5px rgba($color-black, 0.8);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .about-me {
+    flex-direction: row;
+
+    &__content,
+    &__image {
+      width: 50%;
+      padding: $spacing-md clamp(15px, 2.5vw, 25px);
+    }
+    
+    &__image .about-me__photo{
+      max-width: clamp(280px, 75%, 300px);
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .about-me {
+    .about-me__content,
+    .about-me__image {
+      padding: $spacing-md clamp(25px, 2.5vw, 35px);
+    }
+  }
+}
