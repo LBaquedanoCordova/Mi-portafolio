@@ -1,15 +1,15 @@
 import { createElementWithClass } from "./intro.js";
 
 const technologies = [
-  { name: "HTML", img: "./assets/icons/html.svg" },
-  { name: "CSS", img: "./assets/icons/css.svg" },
-  { name: "JavaScript", img: "./assets/icons/js.svg" },
-  { name: "Bootstrap", img: "./assets/icons/bootstrap.svg" },
-  { name: "Sass", img: "./assets/icons/sass.svg" },
-  { name: "GIT", img: "./assets/icons/git.svg" },
-  { name: "GitHub", img: "./assets/icons/github.svg" },
-  { name: "VS Code", img: "./assets/icons/vscode.svg" },
-  { name: "Windows", img: "./assets/icons/windows.svg" },
+  { name: "HTML", img: "/assets/icons/html.svg" },
+  { name: "CSS", img: "/assets/icons/css.svg" },
+  { name: "JavaScript", img: "/assets/icons/js.svg" },
+  { name: "Bootstrap", img: "/assets/icons/bootstrap.svg" },
+  { name: "Sass", img: "/assets/icons/sass.svg" },
+  { name: "GIT", img: "/assets/icons/git.svg" },
+  { name: "GitHub", img: "/assets/icons/github.svg" },
+  { name: "VS Code", img: "/assets/icons/vscode.svg" },
+  { name: "Windows", img: "/assets/icons/windows.svg" },
 ];
 
 // Renderiza la lista de tecnologías dentro del contenedor correspondiente.
