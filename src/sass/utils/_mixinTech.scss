@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "./mixins" as *;
 @use "./variables" as *;
 @use "./placeholders" as *;
@@ -54,7 +55,7 @@
   background: linear-gradient(
     135deg,
     $color-text,
-    mix($color-accent-teal, $color-text, 60%)
+    color.mix($color-accent-teal, $color-text, 60%)
   );
   box-shadow: $box-shadow-inset;
   transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale(1);

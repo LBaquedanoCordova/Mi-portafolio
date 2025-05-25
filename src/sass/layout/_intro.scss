@@ -7,10 +7,10 @@
 .intro {
   @extend %flex-center;
   flex-direction: column;
-  @include responsive-height();
   position: relative;
   overflow: hidden;
   gap: 5px;
+  @include responsive-height();
   
   &__hero,
   &__contact {
@@ -67,9 +67,9 @@
     }
 
     &-item {
+      position: relative;
       @include padding-margin($spacing-xs, 0px $spacing-xs);
       list-style: none;
-      position: relative;
     }
 
     &-link {

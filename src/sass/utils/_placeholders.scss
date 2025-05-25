@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "./mixins" as *;
 @use "./variables" as *;
 
@@ -32,7 +33,7 @@
   @include padding-margin($spacing-sm, 0px);
   flex-wrap: wrap;
   border-radius: $border-radius;
-  background-color: darken($color-text, 25%);
+  background-color: color.adjust($color-text, $lightness: -25%);
 }
 
 %link-list-item {
