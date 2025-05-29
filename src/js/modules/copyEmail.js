@@ -3,8 +3,8 @@ import { createElementWithClass } from "./intro.js";
 const contactItems = document.querySelectorAll(
   ".intro__contact-item--email, .contact__list-item--email"
 );
-const allItems = document.querySelectorAll(
-  ".intro__contact-item, .contact__list-item"
+const allLinks = document.querySelectorAll(
+  ".intro__contact-link, .contact__link"
 );
 let tooltipExists = null;
 
@@ -72,11 +72,11 @@ function handleAnimation(item, callback) {
 }
 
 function addClickAnimations() {
-  allItems.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      const link = item.querySelector("a");
+  allLinks.forEach((link) => {
+    const item = link.closest('.contact__list-item, .intro__contact-item');
 
-      if (link && link.target === "_blank") {
+    link.addEventListener("click", (e) => {
+      if (link.target === "_blank") {
         e.preventDefault();
         handleAnimation(item, () => {
           window.open(link.href, "_blank");
