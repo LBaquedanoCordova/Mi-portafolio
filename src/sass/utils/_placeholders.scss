@@ -33,7 +33,7 @@
   @include padding-margin($spacing-sm, 0px);
   flex-wrap: wrap;
   border-radius: $border-radius;
-  background-color: color.adjust($color-text, $lightness: -25%);
+  background-color: color.adjust($color-text, $lightness: -30%);
 }
 
 %link-list-item {

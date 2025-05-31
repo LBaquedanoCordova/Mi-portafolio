@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "variables" as *;
 
 @mixin layout-navbar {
@@ -17,7 +18,10 @@
   box-sizing: content-box;
   font-family: $font-main;
   font-weight: $font-bold;
-  background: $linear-gradient;
+  background-image: $body-background-gradient;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 @mixin padding-margin($padding, $margin: 0px) {
@@ -35,10 +39,10 @@
 
 @mixin gradient-opacity($opacity: 1) {
   background: linear-gradient(
-    to right,
-    rgba($color-background-dark, $opacity),
-    rgba($color-primary, $opacity),
-    rgba($color-background-deep, $opacity)
+        to right,
+    rgba($color-black, $opacity),
+    rgba(color.adjust($color-black, $lightness: 6%, $space: hsl), $opacity),
+    rgba(color.adjust($color-black, $lightness: 14%, $space: hsl), $opacity)
   );
 }
 
