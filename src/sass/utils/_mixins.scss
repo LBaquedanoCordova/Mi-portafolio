@@ -1,5 +1,6 @@
 @use "sass:color";
-@use "variables" as *;
+@use "./variables" as *;
+@use "./theme" as *;
 
 @mixin layout-navbar {
   box-sizing: border-box;
@@ -9,7 +10,7 @@
   top: 0;
   left: 0;
   border-radius: $border-radius;
-  background: $color-background-transparent;
+  background: var(--color-transparent);
   z-index: 10;
 }
 
@@ -18,7 +19,8 @@
   box-sizing: content-box;
   font-family: $font-main;
   font-weight: $font-bold;
-  background-image: $body-background-gradient;
+  background-color: var(--bg-body-solid);
+  background-image: var(--bg-body-gradient);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -35,15 +37,6 @@
   height: 100%;
   pointer-events: none;
   z-index: -1;
-}
-
-@mixin gradient-opacity($opacity: 1) {
-  background: linear-gradient(
-        to right,
-    rgba($color-black, $opacity),
-    rgba(color.adjust($color-black, $lightness: 6%, $space: hsl), $opacity),
-    rgba(color.adjust($color-black, $lightness: 14%, $space: hsl), $opacity)
-  );
 }
 
 //mixins para la seccion intro

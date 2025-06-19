@@ -1,5 +1,6 @@
 @use "../utils/mixins" as *;
 @use "../utils/variables" as *;
+@use "../utils/theme" as *;
 @use "../utils/mixinTech" as *;
 @use "../utils/placeholders" as *;
 
@@ -34,17 +35,13 @@
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.07em;
-      color: $color-text;
+      color: var(--highlight-title-color);
     }
 
     .about-me__highlight-text {
       border-radius: calc($border-radius - 6px);
-      background: linear-gradient(
-        90deg,
-        rgba($color-text, 0.3),
-        rgba($color-white, 0.1)
-      );
-      color: $color-white;
+      background-image: var(--highlight-bg);
+      color: var(--highlight-text-color);
     }
   }
 
@@ -62,13 +59,13 @@
       object-fit: cover;
       border-radius: calc($border-radius + 5px);
       transform: rotateY(-10deg) rotateX(10deg) scale(1.05);
-      box-shadow: 0px 10px 10px 4px rgba($color-black, 0.6);
+      box-shadow: var(--img-shadow);
       transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
       cursor: pointer;
 
       &:hover {
         transform: rotateY(0deg) rotateX(0deg) scale(1.1);
-        box-shadow: 0px 15px 15px 5px rgba($color-black, 0.8);
+        box-shadow: var(--img-shadow-hover);
       }
     }
   }

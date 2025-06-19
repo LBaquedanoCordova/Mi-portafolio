@@ -1,0 +1,247 @@
+html[data-theme="light"] {
+  // Paleta de colores base utilizada en distintas secciones y elementos de la web.
+  --color-primary: #041820;
+  --color-text: #59f8ae;
+  --color-accent-teal: #2a9d8f;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-neutral: #cccccc;
+  --color-transparent: transparent;
+
+  // Gradiente completo del fondo del body
+  --bg-body-solid: #f2f6f7;
+  --bg-body-gradient: radial-gradient(
+      circle at top left,
+      rgba(110, 110, 110, 0.6) 0%,
+      var(--color-transparent) 60%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      #59f8ae 0%,
+      var(--color-transparent) 70%
+    ),
+    linear-gradient(to bottom, #e8f0f1 0%, #d6e2e4 50%, #c4d3d6 100%);
+
+  // Sombra y color de fondo principal de la barra de navegación
+  --navbar-shadow: 0 4px 6px rgba(4, 24, 32, 0.2),
+    0 10px 20px rgba(4, 24, 32, 0.1);
+  --navbar-bg-gradient: linear-gradient(
+    to right,
+    rgba(135, 135, 135, 0.7),
+    rgba(130, 130, 130, 0.7),
+    rgba(125, 125, 125, 0.7)
+  );
+
+  // Se usa para enlaces activos en la navbar
+  --color-state-active: var(--color-text);
+
+  // Color para iconos de theme light/dark
+  --color-theme-icon: var(--color-primary);
+
+  // Color para iconos de menu open/close
+  --color-menu-icon: var(--color-primary);
+
+  //Color de texto de introducción
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-primary);
+
+ // Fondo del contenedor de la lista de enlaces
+  --bg-links-list: rgba(4, 24, 32, 0.9);
+
+  // Gradiente de fondo para enlaces
+  --bg-links-gradient: linear-gradient(
+    45deg,
+    var(--color-white),
+    #c3c3c3,
+    #a5a5a5
+  );
+
+  // Gradiente de fondo en estado hover para enlaces
+  --bg-links-gradient-hover: linear-gradient(
+    45deg,
+    #f5f5f5,
+    #dcdcdc,
+    #c8c8c8
+  );
+
+  //Color de texto de enlaces
+  --links-text-color: var(--color-black);
+
+  // Estilos base para botón destacado "Abierto a posibilidades"
+  --cta-bg: rgba(100, 100, 100, 0.5);
+  --cta-border-color: var(--color-black);
+  --cta-bg-hover: rgba(100, 100, 100, 0.2);
+  --cta-shadow-hover: 0px 0px 12px rgba(0, 0, 0, 0.6);
+
+  //Fondo y color de tooltip
+  --tooltip-bg: var(--color-white);
+  --tooltip-text-color: var(--color-black);
+
+  //Color de arrow de scroll
+  --color-scroll-arrow: var(--color-black);
+
+  //Color de subtitulos en diferentes secciones
+  --color-section-subtitle-main: var(--color-black);
+  --color-section-subtitle-alt: #2c2c2c;
+  --color-section-paragraph: var(--color-primary);
+
+  // Fondos, sombras y efectos de profundidad aplicados a hexágonos y contenedores.
+  // Se utilizan en elementos decorativos y al hacer hover para reforzar el efecto visual 3D.
+  --hexagon-bg: linear-gradient(135deg, #1b1b1b, #222222);
+  --hexagon-bg-pseudo-before: var(--color-white);
+  --hexagon-bg-pseudo-after: linear-gradient(
+    180deg,
+    var(--color-transparent),
+    rgba(0, 0, 0, 0.5)
+  );
+
+  --hexagon-shadow-inset: inset 3px 3px 6px rgba(123, 123, 123, 0.4),
+    inset -3px -3px 6px rgba(195, 195, 195, 0.2);
+
+  --hexagon-shadow-hover: 0px 8px 12px rgba(216, 216, 216, 0.8),
+    inset 5px 5px 8px rgba(148, 148, 148, 0.6),
+    inset -5px -5px 8px rgba(56, 56, 56, 0.4);
+  
+  --label-tech-color: var(--color-white);
+  --label-bg: rgba(0, 0, 0, 0.5);
+
+  // Color del borde y fondo del marcador para timeline
+  --border-color: var(--color-primary);
+  --bg-timeline-marker: var(--color-primary);
+
+  // Estilos visuales: resaltado de texto y sombras en imágenes
+  --highlight-bg: linear-gradient(
+    to right,
+    rgba(4, 24, 32, 0.3),
+    rgba(204, 204, 204, 0.1)
+  );
+  --highlight-text-color: #2c2c2c;
+  --highlight-title-color: var(--color-black);
+  --img-shadow: 0px 10px 10px 4px rgba(4, 24, 32, 0.6);
+  --img-shadow-hover: 0px 15px 15px 5px rgba(4, 24, 32, 0.8);
+}
+
+html[data-theme="dark"] {
+  // Paleta de colores base utilizada en distintas secciones y elementos de la web.
+  --color-primary: #041820;
+  --color-text: #59f8ae;
+  --color-accent-teal: #2a9d8f;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-neutral: #cccccc;
+  --color-transparent: transparent;
+
+  // Gradiente completo del fondo del body
+  --bg-body-solid: #001f1d;
+  --bg-body-gradient: radial-gradient(
+      circle at top left,
+      rgba(0, 95, 88, 0.75) 0%,
+      var(--color-transparent) 60%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(0, 20, 18, 0.8) 0%,
+      var(--color-transparent) 70%
+    ),
+    linear-gradient(to bottom, #004f4b 0%, #003936 50%, #000f0e 100%);
+
+  // Sombra y color de fondo principal de la barra de navegación
+  --navbar-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+  --navbar-bg-gradient: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(15, 15, 15, 0.5),
+    rgba(35, 35, 35, 0.5)
+  );
+
+  // Se usa para enlaces activos en la navbar
+  --color-state-active: var(--color-neutral);
+
+  // Color para iconos de theme light/dark
+  --color-theme-icon: var(--color-text);
+
+  // Color para iconos de menu open/close
+  --color-menu-icon: var(--color-text);
+
+  // Colores de texto de introducción
+  --color-text-primary: var(--color-white);
+  --color-text-secondary: var(--color-text);
+
+  // Fondo del contenedor de la lista de enlaces
+  --bg-links-list: #1e754e;
+
+  // Gradiente de fondo para enlaces
+  --bg-links-gradient: linear-gradient(
+    45deg,
+    var(--color-text),
+    #33c684,
+    #2eb277
+  );
+
+  // Gradiente de fondo en estado hover para enlaces
+  --bg-links-gradient-hover: linear-gradient(
+    45deg,
+    #6dd9a8,
+    #81deb4,
+    var(--color-text)
+  );
+
+  // Color de texto de enlaces
+  --links-text-color: var(--color-primary);
+
+  // Estilos base para botón destacado "Abierto a posibilidades"
+  --cta-bg: rgba(0, 0, 0, 0.5);
+  --cta-border-color: var(--color-white);
+  --cta-bg-hover: rgba(0, 0, 0, 0.2);
+  --cta-shadow-hover: 0px 0px 12px rgba(255, 255, 255, 0.3);
+
+  // Fondo y color de tooltip
+  --tooltip-bg: var(--color-black);
+  --tooltip-text-color: var(--color-white);
+
+  // Color de arrow de scroll
+  --color-scroll-arrow: var(--color-white);
+
+  // Color de subtitulos en diferentes secciones
+  --color-section-subtitle-main: var(--color-text);
+  --color-section-subtitle-alt: var(--color-white);
+  --color-section-paragraph: var(--color-neutral);
+
+  // Fondos, sombras y efectos de profundidad aplicados a hexágonos y contenedores.
+  // Se utilizan en elementos decorativos y al hacer hover para reforzar el efecto visual 3D.
+  --hexagon-bg: linear-gradient(
+    135deg,
+    var(--color-text),
+    var(--color-accent-teal)
+  );
+  --hexagon-bg-pseudo-before: rgba(15, 15, 15, 0.7);
+  --hexagon-bg-pseudo-after: linear-gradient(
+    180deg,
+    var(--color-transparent),
+    var(--hexagon-bg-pseudo-before)
+  );
+  --hexagon-shadow-inset: inset 3px 3px 6px rgba(0, 0, 0, 0.4),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.2);
+  --hexagon-shadow-hover: 0px 8px 12px #333333,
+    inset 5px 5px 8px rgba(0, 0, 0, 0.5),
+    inset -5px -5px 8px rgba(255, 255, 255, 0.3);
+
+  --label-tech-color: var(--color-black);
+  --label-bg: rgba(172, 172, 172, 0.7);
+
+  // Color del borde y fondo del marcador para timeline
+  --border-color: var(--color-neutral);
+  --bg-timeline-marker: var(--color-neutral);
+
+  // Estilos visuales: resaltado de texto y sombras en imágenes
+  --highlight-bg: linear-gradient(
+    to right,
+    rgba(89, 248, 174, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
+  --highlight-text-color: var(--color-white);
+  --highlight-title-color: var(--color-text);
+
+  --img-shadow: 0px 10px 10px 4px rgba(0, 0, 0, 0.6);
+  --img-shadow-hover: 0px 15px 15px 5px rgba(0, 0, 0, 0.8);
+}

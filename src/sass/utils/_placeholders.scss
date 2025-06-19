@@ -1,6 +1,7 @@
 @use "sass:color";
 @use "./mixins" as *;
 @use "./variables" as *;
+@use "./theme" as *;
 
 %flex-center {
   display: flex;
@@ -12,13 +13,13 @@
   position: absolute;
   left: 0px;
   width: 100%;
-  @include gradient-opacity(0.5);
+  background-image: var(--navbar-bg-gradient);
   backdrop-filter: $blur;
 }
 
 %link-reset {
   text-decoration: none;
-  color: $color-text;
+  color: var(--color-text-secondary);
 }
 
 %img-responsive {
@@ -33,7 +34,7 @@
   @include padding-margin($spacing-sm, 0px);
   flex-wrap: wrap;
   border-radius: $border-radius;
-  background-color: color.adjust($color-text, $lightness: -30%);
+  background-color: var(--bg-links-list);
 }
 
 %link-list-item {
@@ -41,13 +42,13 @@
   @include box-style(6px, calc($border-radius - 5px));
   font-size: $fs-miniSmall;
   text-decoration: none;
-  color: $color-primary;
-  background-image: $links-bg-gradient;
+  color: var(--links-text-color);
+  background-image: var(--bg-links-gradient);
   cursor: pointer;
   transition: background-image 4s ease-in-out;
 
   &:hover {
-    background-image: $links-bg-gradient-hover;
+    background-image: var(--bg-links-gradient-hover);
   }
   i {
     @include font($icon-size, $icon-weight);
@@ -62,6 +63,11 @@
   }
 }
 
+%pseudo-abs{
+  content: "";
+  position: absolute;
+}
+
 %tooltip-style{
   display: block;
   position: absolute;
@@ -69,8 +75,8 @@
   border-radius: calc($border-radius - 5px);
   font-size: 12px;
   letter-spacing: 0.1em;
-  background-color: $color-black;
-  color: $color-white;
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-text-color);
   z-index: 1;
 
   &::before {
@@ -82,7 +88,7 @@
     aspect-ratio: 1;
     clip-path: polygon(100% 0, 0 50%, 100% 100%);
     transform: translateY(-50%);
-    background-color: $color-black;
+    background-color: var(--tooltip-bg);
   }
 
   &.email-tooltip--top::before {
@@ -112,27 +118,22 @@
   padding: $spacing-sm $spacing-lg;
 }
 
-%pseudo-abs{
-  content: "";
-  position: absolute;
-}
-
 %header-text-spacing{
   margin: $spacing-sm $spacing-md;
 }
 
 %section-subtitle{
   font-size: $fs-xlarge;
-  color: $color-text;
+  color: var(--color-section-subtitle-main);
 }
 
 %section-subtitle-light{
   font-size: $fs-large;
-  color: $color-white;
+  color: var(--color-section-subtitle-alt);
 }
 
 %section-paragraph-default{
   font-size: $fs-small;
   text-align: justify;
-  color: $color-neutral;
+  color: var(--color-section-paragraph);
 }

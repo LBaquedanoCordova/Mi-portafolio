@@ -1,5 +1,6 @@
 @use "../utils/mixins" as *;
 @use "../utils/variables" as *;
+@use "../utils/theme" as *;
 @use "../utils/mixinTech" as *;
 @use "../utils/placeholders" as *;
 
@@ -36,7 +37,7 @@
     &-subtitle {
       @include font(clamp(25px, 5vw, 35px), 900);
       text-align: center;
-      color: $color-white;
+      color: var(--color-section-subtitle-alt)
     }
 
     &-title {
@@ -44,7 +45,7 @@
       font-family: '"Merriweather", serif';
       text-align: center;
       word-break: break-word;
-      color: $color-text;
+      color: var(--color-section-subtitle-main);
     }
 
     &-description {

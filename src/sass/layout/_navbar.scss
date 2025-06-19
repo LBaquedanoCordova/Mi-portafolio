@@ -1,7 +1,7 @@
 @use "../utils/mixins" as *;
 @use "../utils/variables" as *;
+@use "../utils/theme" as *;
 @use "../utils/placeholders" as *;
-
 
 .nav {
   @extend %flex-center;
@@ -66,7 +66,7 @@
       @extend %link-reset;
 
       &--active {
-        color: $color-neutral;
+        color: var(--color-state-active);
       }
 
       &:hover {
@@ -79,7 +79,7 @@
       width: 20px;
       aspect-ratio: 1;
       font-size: calc($icon-size + 4px);
-      color: $color-text;
+      color: var(--color-theme-icon);
     }
   }
 
@@ -87,7 +87,7 @@
   &__toggle {
     border: none;
     outline: none;
-    background-color: $color-background-transparent;
+    background-color: var(--color-transparent);
     cursor: pointer;
   }
 
@@ -104,7 +104,7 @@
     &-icon,
     &-icon--close {
       font-size: 26px;
-      color: $color-text;
+      color: var(--color-menu-icon);
       cursor: pointer;
     }
   }
@@ -115,9 +115,9 @@
     width: 100%;
     @include padding-margin($spacing-xs, 0px);
     border-radius: 0px;
-    @include gradient-opacity(0.5);
+    background-image: var(--navbar-bg-gradient);
     backdrop-filter: $blur;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--navbar-shadow);
 
     &::before {
       content: none;

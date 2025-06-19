@@ -1,6 +1,7 @@
 @use "../utils/mixins" as *;
 @use "../utils/mixinTech" as *;
 @use "../utils/variables" as *;
+@use "../utils/theme" as *;
 @use "../utils/placeholders" as *;
 @use "../utils/animations" as *;
 
@@ -28,12 +29,12 @@
       overflow: hidden;
       white-space: nowrap;
       font-size: $fs-small;
-      color: $color-white;
+      color: var(--color-text-primary);
       animation: fadeInLeft 1.2s ease-out;
     }
 
     &-cursor {
-      color: $color-white;
+      color: var(--color-text-primary);
       animation: blink 500ms step-end infinite;
     }
 
@@ -44,7 +45,7 @@
     &-title,
     &-subtitle {
       margin: 0px;
-      color: $color-text;
+      color: var(--color-text-secondary);
     }
 
     &-title {
@@ -84,7 +85,7 @@
       @include box-style();
       border: 1px solid transparent;
       text-align: center;
-      background-color: rgba($color-black, 0.5);
+      background-color: var(--cta-bg);
       transition: transform 0.3s ease, background-color 0.3s ease,
         border-color 0.3s ease;
       cursor: pointer;
@@ -93,9 +94,9 @@
     
     &-availability:hover {
       transform: scale(1.05);
-      background-color: rgba($color-black, 0.2);
-      border-color: $color-white;
-      box-shadow: 0px 0px 12px rgba($color-white, 0.3);
+      background-color: var(--cta-bg-hover);
+      border-color: var(--cta-border-color);
+      box-shadow: var(--cta-shadow-hover);
 
       .intro__availability-icon {
         animation-play-state: paused;
@@ -108,7 +109,7 @@
       flex-wrap: wrap;
       gap: 8px;
       font-size: $fs-miniSmall;
-      color: $color-white;
+      color: var(--color-text-primary);
     }
 
     .intro__availability-icon {
@@ -131,7 +132,7 @@
       position: absolute;
       transform: scale(0);
       opacity: 0;
-      color: $color-white;
+      color: var(--color-scroll-arrow);
       animation: scroll-animation 3s ease-in-out infinite;
     }
     &-arrow:nth-child(1) {
