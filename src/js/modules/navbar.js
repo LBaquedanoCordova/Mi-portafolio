@@ -1,9 +1,15 @@
+import { initTheme } from "./theme.js";
+
+const html = document.documentElement;
 const nav = document.querySelector(".nav");
+const imgLogo = nav.querySelector(".nav__logo-image");
 const navOptions = nav.querySelector(".nav__options");
 const navToggleButton = nav.querySelector(".nav__toggle");
 const navThemeToggle = navOptions.querySelector(".nav__theme-toggle");
 const navToggleIcon = navToggleButton.querySelector(".nav__toggle-icon");
-const navThemeIcon = navThemeToggle.querySelector(".nav__theme-icon--light-mode");
+const navThemeIcon = navThemeToggle.querySelector(
+  ".nav__theme-icon--light-mode"
+);
 const navLinks = navOptions.querySelectorAll("li .nav__link");
 
 const sections = [];
@@ -15,13 +21,13 @@ const observerOptions = {
   threshold: [0.25, 0.5, 0.75],
 };
 
-// Función auxiliar para actualizar clases
+// Actualiza las clases de un elemento reemplazando las antiguas por las nuevas
 function updateIcon(element, oldClasses, newClasses) {
   element?.classList.remove(...oldClasses);
   element?.classList.add(...newClasses);
 }
 
-// Función para cerrar el menú en pantallas grandes o después de un clic en un enlace
+// Cierra el menú de navegación si está abierto
 function closeNavigationMenu() {
   if (nav.classList.contains("nav--open")) {
     nav.classList.remove("nav--open");
@@ -35,36 +41,60 @@ function closeNavigationMenu() {
   }
 }
 
-// Controlador único para el evento resize
+// Cierra el menú de navegación si el ancho de la ventana es mayor a 767px
 function handleResize() {
   if (window.innerWidth > 767) {
     closeNavigationMenu();
   }
 }
 
-// Función para alternar el menú de navegación
+// Alterna la visibilidad del menú de navegación y actualiza el icono del botón
 function toggleNavigationMenu() {
   const isActive = nav.classList.toggle("nav--open");
   navOptions.classList.toggle("nav__options--active", isActive);
 
   updateIcon(
     navToggleIcon,
-    isActive ? ["fa-bars", "nav__toggle-icon"] : ["fa-xmark", "nav__toggle-icon--close"],
-    isActive ? ["fa-xmark", "nav__toggle-icon--close"] : ["fa-bars", "nav__toggle-icon"]
+    isActive
+      ? ["fa-bars", "nav__toggle-icon"]
+      : ["fa-xmark", "nav__toggle-icon--close"],
+    isActive
+      ? ["fa-xmark", "nav__toggle-icon--close"]
+      : ["fa-bars", "nav__toggle-icon"]
   );
 }
 
-// Función para alternar el tema
-function toggleItemTheme(e) {
-  e.preventDefault();
-
-  const isLightMode = navThemeIcon?.classList.contains("nav__theme-icon--light-mode");
+// Actualiza el icono del tema de navegación según el tema actual
+function updateNavThemeIcon(theme) {
+  const isDark = theme === "dark";
   updateIcon(
     navThemeIcon,
-    isLightMode ? ["fa-sun", "nav__theme-icon--light-mode"] : ["fa-moon", "nav__theme-icon--dark-mode"],
-    isLightMode ? ["fa-moon", "nav__theme-icon--dark-mode"] : ["fa-sun", "nav__theme-icon--light-mode"]
+    isDark
+      ? ["fa-sun", "nav__theme-icon--light-mode"]
+      : ["fa-moon", "nav__theme-icon--dark-mode"],
+    isDark
+      ? ["fa-moon", "nav__theme-icon--dark-mode"]
+      : ["fa-sun", "nav__theme-icon--light-mode"]
   );
 }
+
+//Cambia el theme de la interfaz entre claro y oscuro.
+function toggleItemTheme() {
+  const currentTheme = html.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", newTheme);
+
+  initTheme({
+    html,
+    imgLogo,
+    navThemeToggle,
+    onThemeChange: updateNavThemeIcon,
+  });
+  closeNavigationMenu();
+}
+
+// Inicializa el theme visual al cargar la página
+initTheme({ html, imgLogo, navThemeToggle, onThemeChange: updateNavThemeIcon });
 
 // Maneja el clic en los enlaces de navegación con desplazamiento suave y bloqueo temporal
 function handleClickNavbarLink(e, targetId, section) {
@@ -119,7 +149,10 @@ function setupSectionObserver(sections) {
 
     // Activar el link correspondiente
     navLinks.forEach((link) => {
-      link.classList.toggle("nav__link--active", link.dataset.target === mostVisibleId);
+      link.classList.toggle(
+        "nav__link--active",
+        link.dataset.target === mostVisibleId
+      );
     });
   }, observerOptions);
 
@@ -127,7 +160,7 @@ function setupSectionObserver(sections) {
   sections.forEach(({ section }) => observer.observe(section));
 }
 
-
+// Inicializa los enlaces de la barra de navegación y sus eventos asociados
 function initNavbarLinks() {
   navLinks.forEach((link) => {
     const targetId = link.dataset.target;
@@ -144,11 +177,14 @@ function initNavbarLinks() {
   });
 }
 
-export const initNavbar = () => {
+// Inicializa los eventos y funcionalidades principales de la barra de navegación
+const initNavbar = () => {
   window.addEventListener("resize", handleResize);
 
   navToggleButton.addEventListener("click", toggleNavigationMenu);
- navThemeToggle.addEventListener("click", toggleItemTheme);
+  navThemeToggle.addEventListener("click", toggleItemTheme);
 
   initNavbarLinks();
 };
+
+export { navThemeToggle, initNavbar };
