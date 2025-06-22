@@ -48,25 +48,30 @@
   &__image {
     @extend %flex-center;
     margin: 0px;
-    perspective: 1000px;
-    transform-style: preserve-3d;
+
+    .about-me__photo-wrapper{
+      display: inline-block;
+      width: 100%;
+      max-width: clamp(210px, 65%, 280px);
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      
+      &:hover .about-me__photo {
+        transform: rotateY(0deg) rotateX(0deg) scale(1.1);
+        box-shadow: var(--img-shadow-hover);
+      }
+    }
 
     .about-me__photo {
       width: 100%;
-      max-width: clamp(210px, 65%, 280px);
       height: auto;
-      margin: 10px 0px;
+      margin: 0px;
       object-fit: cover;
       border-radius: calc($border-radius + 5px);
       transform: rotateY(-10deg) rotateX(10deg) scale(1.05);
       box-shadow: var(--img-shadow);
       transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
-      cursor: pointer;
-
-      &:hover {
-        transform: rotateY(0deg) rotateX(0deg) scale(1.1);
-        box-shadow: var(--img-shadow-hover);
-      }
     }
   }
 }
