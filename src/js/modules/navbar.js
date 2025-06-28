@@ -4,9 +4,8 @@ const html = document.documentElement;
 const nav = document.querySelector(".nav");
 const imgLogo = nav.querySelector(".nav__logo-image");
 const navOptions = nav.querySelector(".nav__options");
-const navToggleButton = nav.querySelector(".nav__toggle");
 const navThemeToggle = navOptions.querySelector(".nav__theme-toggle");
-const navToggleIcon = navToggleButton.querySelector(".nav__toggle-icon");
+const navToggleIcon = nav.querySelector(".nav__toggle-icon");
 const navThemeIcon = navThemeToggle.querySelector(
   ".nav__theme-icon--light-mode"
 );
@@ -49,7 +48,7 @@ function handleResize() {
 }
 
 // Alterna la visibilidad del menú de navegación y actualiza el icono del botón
-function toggleNavigationMenu() {
+function  handlerNavigationMenu() {
   const isActive = nav.classList.toggle("nav--open");
   navOptions.classList.toggle("nav__options--active", isActive);
 
@@ -79,7 +78,7 @@ function updateNavThemeIcon(theme) {
 }
 
 //Cambia el theme de la interfaz entre claro y oscuro.
-function toggleItemTheme() {
+function handlerToggleTheme() {
   const currentTheme = html.getAttribute("data-theme");
   const newTheme = currentTheme === "dark" ? "light" : "dark";
   localStorage.setItem("theme", newTheme);
@@ -97,7 +96,7 @@ function toggleItemTheme() {
 initTheme({ html, imgLogo, navThemeToggle, onThemeChange: updateNavThemeIcon });
 
 // Maneja el clic en los enlaces de navegación con desplazamiento suave y bloqueo temporal
-function handleClickNavbarLink(e, targetId, section) {
+function handlerNavbarLink(e, targetId, section) {
   e.preventDefault();
 
   if (tempBlockedSections.has(targetId)) return;
@@ -118,6 +117,29 @@ function handleClickNavbarLink(e, targetId, section) {
   closeNavigationMenu();
 }
 
+// Mapa de selectores de la barra de navegación y sus manejadores de eventos
+const navbarHandlers = new Map([
+  [".nav__theme-toggle", handlerToggleTheme],
+  [".nav__toggle", handlerNavigationMenu],
+  [".nav__link", (item, e) => {
+    const targetId = item.dataset.target;
+    const section = document.getElementById(targetId);
+    if (section) handlerNavbarLink(e, targetId, section);
+  }],
+]);
+
+// Activa el enlace de navegación cuando la seccion correspondiente es visible
+function activateLinkById(id) {
+  navLinks.forEach((link) => {
+    link.classList.toggle("nav__link--active", link.dataset.target === id);
+  });
+}
+
+// Elimina la clase activa de todos los enlaces de navegación
+function clearActiveLinks() {
+  navLinks.forEach((link) => link.classList.remove("nav__link--active"));
+}
+
 // Observa qué sección es más visible en el viewport y activa su enlace en la barra de navegación
 function setupSectionObserver(sections) {
   let visibleSections = new Map();
@@ -135,7 +157,10 @@ function setupSectionObserver(sections) {
       }
     });
 
-    if (visibleSections.size === 0) return;
+    if (visibleSections.size === 0) {
+      clearActiveLinks();
+      return
+    };
 
     // Obtener el ID con mayor altura visible
     let mostVisibleId = null;
@@ -147,44 +172,45 @@ function setupSectionObserver(sections) {
       }
     }
 
-    // Activar el link correspondiente
-    navLinks.forEach((link) => {
-      link.classList.toggle(
-        "nav__link--active",
-        link.dataset.target === mostVisibleId
-      );
-    });
+    activateLinkById(mostVisibleId);
   }, observerOptions);
 
   // Empezamos a observar cada sección
   sections.forEach(({ section }) => observer.observe(section));
 }
 
-// Inicializa los enlaces de la barra de navegación y sus eventos asociados
-function initNavbarLinks() {
+// Mapea los enlaces de navegación a sus respectivas secciones del DOM
+function mapNavLinksToSections() {
   navLinks.forEach((link) => {
     const targetId = link.dataset.target;
     const section = document.getElementById(targetId);
 
     if (section) {
       sections.push({ id: targetId, section, link });
-
-      link.addEventListener("click", (e) =>
-        handleClickNavbarLink(e, targetId, section)
-      );
-      setupSectionObserver(sections);
     }
   });
 }
 
+
+// Inicializa los manejadores y observadores del navbar para la navegación de secciones.
+function initNavbarHandler() {
+  mapNavLinksToSections();
+
+nav.addEventListener("click", (e) => {
+  for (const [selector, handler] of navbarHandlers) {
+    const item = e.target.closest(selector);
+    if (item) {
+      handler(item, e);
+      break;
+    }
+  }
+});
+  setupSectionObserver(sections);
+}
+
+
 // Inicializa los eventos y funcionalidades principales de la barra de navegación
-const initNavbar = () => {
+export const initNavbar = () => {
   window.addEventListener("resize", handleResize);
-
-  navToggleButton.addEventListener("click", toggleNavigationMenu);
-  navThemeToggle.addEventListener("click", toggleItemTheme);
-
-  initNavbarLinks();
+  initNavbarHandler();
 };
-
-export { navThemeToggle, initNavbar };

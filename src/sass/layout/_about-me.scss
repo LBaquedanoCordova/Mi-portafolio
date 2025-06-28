@@ -7,6 +7,7 @@
 .about-me {
   @extend %flex-center;
   @extend %flex-column-base;
+  min-height: 45vh;
 
   &__content, &__image{
         @extend %section-subblock;
