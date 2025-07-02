@@ -2,11 +2,17 @@
 @use "../utils/variables" as *;
 @use "../utils/theme" as *;
 @use "../utils/placeholders" as *;
+@use "../utils/animations" as *;
 
 .nav {
   @extend %flex-center;
   @include layout-navbar();
-  justify-content: space-between;
+
+  &--animating-in{
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: dropInNav 0.6s ease-out 4s forwards;
+  }
 
   &::before {
     @include before-overlay();
@@ -86,12 +92,15 @@
       }
     }
 
-    .nav__theme-icon--light-mode,
-    .nav__theme-icon--dark-mode {
+    .nav__theme-icon{
       width: 20px;
       aspect-ratio: 1;
       font-size: calc($icon-size + 4px);
       color: var(--color-theme-icon);
+
+      &--fade-out-rotate{animation: fadeOutRotate 0.25s ease forwards;}
+
+      &--fade-in-rotate{animation: fadeInRotate 0.25s ease forwards;}
     }
   }
 

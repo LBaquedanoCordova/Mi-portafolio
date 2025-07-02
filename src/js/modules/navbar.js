@@ -6,9 +6,7 @@ const imgLogo = nav.querySelector(".nav__logo-image");
 const navOptions = nav.querySelector(".nav__options");
 const navThemeToggle = navOptions.querySelector(".nav__theme-toggle");
 const navToggleIcon = nav.querySelector(".nav__toggle-icon");
-const navThemeIcon = navThemeToggle.querySelector(
-  ".nav__theme-icon--light-mode"
-);
+const navThemeIcon = navThemeToggle.querySelector(".nav__theme-icon");
 const navLinks = navOptions.querySelectorAll("li .nav__link");
 
 const sections = [];
@@ -63,18 +61,39 @@ function  handlerNavigationMenu() {
   );
 }
 
-// Actualiza el icono del tema de navegación según el tema actual
+// Actualiza el ícono del tema y aplica animación de transición visual entre modos
 function updateNavThemeIcon(theme) {
-  const isDark = theme === "dark";
-  updateIcon(
-    navThemeIcon,
-    isDark
-      ? ["fa-sun", "nav__theme-icon--light-mode"]
-      : ["fa-moon", "nav__theme-icon--dark-mode"],
-    isDark
-      ? ["fa-moon", "nav__theme-icon--dark-mode"]
-      : ["fa-sun", "nav__theme-icon--light-mode"]
-  );
+  if (!navThemeIcon) return;
+  
+  if (navThemeIcon.classList.contains("is-animating")) return;
+
+    navThemeIcon.classList.add(
+    "nav__theme-icon--is-animating",
+    "nav__theme-icon--fade-out-rotate"
+  ); 
+
+  setTimeout(() => {
+    const isDark = theme === "dark";
+    updateIcon(
+      navThemeIcon,
+      isDark
+        ? ["fa-sun", "nav__theme-icon--light-mode"]
+        : ["fa-moon", "nav__theme-icon--dark-mode"],
+      isDark
+        ? ["fa-moon", "nav__theme-icon--dark-mode"]
+        : ["fa-sun", "nav__theme-icon--light-mode"]
+      );
+    
+    navThemeIcon.classList.remove("nav__theme-icon--fade-out-rotate");
+    navThemeIcon.classList.add("nav__theme-icon--fade-in-rotate");
+
+    setTimeout(() => {
+      navThemeIcon.classList.remove(
+        "nav__theme-icon--fade-in-rotate",
+        "nav__theme-icon--is-animating"
+      );
+    }, 250);
+  }, 250);
 }
 
 //Cambia el theme de la interfaz entre claro y oscuro.
@@ -94,6 +113,14 @@ function handlerToggleTheme() {
 
 // Inicializa el theme visual al cargar la página
 initTheme({ html, imgLogo, navThemeToggle, onThemeChange: updateNavThemeIcon });
+
+// Limpia estilos residuales tras la animación para restaurar el desenfoque en Chrome
+function handleNavTransitionEnd() {
+  nav.addEventListener("animationend", () => {
+    nav.classList.remove("nav--animating-in");
+  });
+}
+handleNavTransitionEnd();
 
 // Maneja el clic en los enlaces de navegación con desplazamiento suave y bloqueo temporal
 function handlerNavbarLink(e, targetId, section) {

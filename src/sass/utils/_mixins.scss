@@ -4,6 +4,7 @@
 
 @mixin layout-navbar {
   box-sizing: border-box;
+  justify-content: space-between;
   @include padding-margin($spacing-sm $spacing-xs, $spacing-sm);
   width: calc(100% - 16px);
   position: fixed;

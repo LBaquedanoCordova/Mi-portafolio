@@ -8,7 +8,7 @@ const allLinks = document.querySelectorAll(
 );
 let tooltipExists = null;
 
-function positionTooltip(contactLink, contactItem, tooltip) {
+function positionTooltip(emailSpan, contactItem, tooltip) {
   const {
     top: linkTop,
     left: linkLeft,
@@ -16,7 +16,7 @@ function positionTooltip(contactLink, contactItem, tooltip) {
     bottom: linkBottom,
     height: linkHeight,
     width: linkWidth,
-  } = contactLink.getBoundingClientRect();
+  } = emailSpan.getBoundingClientRect();
   const { top: itemTop, left: itemLeft } = contactItem.getBoundingClientRect();
   const { width: tooltipWidth, height: tooltipHeight } =
     tooltip.getBoundingClientRect();
@@ -35,10 +35,10 @@ function positionTooltip(contactLink, contactItem, tooltip) {
   tooltip.classList.toggle("email-tooltip--top", !isEnoughSpaceRight);
 }
 
-function showTooltip(contactLink, contactItem) {
+function showTooltip(emailSpan, contactItem) {
   if (tooltipExists) return;
 
-  navigator.clipboard.writeText(contactLink.textContent.trim());
+  navigator.clipboard.writeText(emailSpan.textContent.trim());
 
   const tooltip = createElementWithClass("span", "email-tooltip", "Copiado!");
   tooltip.dataset.tooltip = "active";
@@ -46,7 +46,7 @@ function showTooltip(contactLink, contactItem) {
   contactItem.append(tooltip);
   tooltipExists = tooltip;
 
-  const copyIcon = contactLink.querySelector(".fa-copy");
+  const copyIcon = emailSpan.querySelector(".fa-copy");
   if (copyIcon) copyIcon.classList.replace("fa-copy", "fa-check");
 
   setTimeout(() => {
@@ -55,7 +55,7 @@ function showTooltip(contactLink, contactItem) {
     tooltipExists = null;
   }, 1500);
   requestAnimationFrame(() =>
-    positionTooltip(contactLink, contactItem, tooltip)
+    positionTooltip(emailSpan, contactItem, tooltip)
   );
 }
 
@@ -90,12 +90,11 @@ function addClickAnimations() {
 
 export const initCopyEmail = () => {
   contactItems.forEach((contactItem) => {
-    const contactLink = contactItem.querySelector(".copy-email-link");
+    const emailSpan = contactItem.querySelector(".copy-email-link");
 
-    if (!contactLink) return;
-    contactLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      showTooltip(e.currentTarget, contactItem);
+    if (!emailSpan) return;
+    emailSpan.addEventListener("click", () => {
+      showTooltip(emailSpan, contactItem);
     });
   });
 
