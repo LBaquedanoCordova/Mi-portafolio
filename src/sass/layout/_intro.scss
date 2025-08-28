@@ -22,7 +22,6 @@
 
   &__hero {
     @include text-style(center, 0.2em, 0.2em, 1.2);
-    animation: fadeInUp 2s ease-out;
 
     &-text {
       display: inline-block;
@@ -31,7 +30,7 @@
       font-size: $fs-small;
       color: var(--color-text-primary);
       opacity: 0;
-      animation: slideDownLarge 0.6s ease-out 0.2s forwards;
+      animation: slideDownLarge 0.4s ease-out 0.2s forwards;
     }
 
     &-cursor {
@@ -53,23 +52,22 @@
     &-title {
       @include font(clamp(40px, 12vw, 75px), 900);
       font-family: '"Merriweather", serif';
-      animation: slideDownMedium 0.6s ease-out 1s forwards;
+      animation: slideDownMedium 0.4s ease-out 0.7s forwards;
     }
 
     &-subtitle {
       @include font(clamp(20px, 6vw, 35px), 900);
-      animation: slideInLeft 0.6s ease-out 1.8s forwards;
+      animation: slideInLeft 0.5s ease-out 1.2s forwards;
     }
   }
 
   &__contact {
     gap: 15px;
-    animation: fadeInUp 1.8s ease-out;
 
     &-list {
       @extend %list-container-flex;
       opacity: 0;
-      animation: slideInRight 0.6s ease-out 2.6s forwards;
+      animation: slideInRight 0.5s ease-out 1.8s forwards;
     }
 
     &-item {
@@ -95,7 +93,7 @@
         border-color 0.3s ease;
       cursor: pointer;
       opacity: 0;
-      animation: slideInLeft 0.6s ease-out 3.2s forwards;
+      animation: slideInLeft 0.5s ease-out 2.4s forwards;
     }
     
     &-availability:hover {
@@ -133,7 +131,7 @@
     bottom: 90px;
     transform: translate(-50%, -150px);
     opacity: 0;
-    animation: dropInScroll 0.6s ease-out 4s forwards;
+    animation: dropInScroll 0.4s ease-out 3s forwards;
 
     &-arrow {
       position: absolute;
