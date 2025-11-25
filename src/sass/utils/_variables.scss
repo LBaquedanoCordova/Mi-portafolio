@@ -22,7 +22,9 @@ $spacing-xxl: 32px;
 $spacing-xxxl: 40px;
 $spacing-jumbo: 48px;
 
-// Clip-path en forma de hexágono para listas de ítems y sus pseudoelementos ::before
+// Fondo, color de labels y Clip-path en forma de hexágono para listas de ítems y sus pseudoelementos ::before
+$label-bg: rgba(0, 0, 0, 0.5);
+$label-tech-color: #ffffff;
 $clip-hexagon: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 
 //variable general usada en diferentes elementos
@@ -30,3 +32,4 @@ $border-radius: 10px;
 
 // Filtro de desenfoque aplicado al fondo de la barra de navegación para lograr un efecto de transparencia suave.
 $blur: blur(5px);
+
