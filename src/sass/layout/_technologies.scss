@@ -6,11 +6,61 @@
 .technologies {
   @extend %flex-center;
   @extend %flex-column-base;
+  min-height: 70vh;
 
   &__header,
   &__content {
     @extend %section-subblock;
   }
+
+  &__nav {
+    @include padding-margin($spacing-sm, 0 auto);
+    position: relative;
+    width: 300px;
+    max-width: 900px;
+    border-radius: $border-radius;
+    overflow-x: auto;
+    background-color: var(--bg-links-list);
+
+    .technologies__menu {
+      @extend %flex-center;
+      flex-wrap: nowrap;
+      gap: 15px;
+      min-width: max-content;
+      @include padding-margin($spacing-xs $spacing-sm, 0);
+      list-style: none;
+
+      &-btn {
+        @extend %flex-center;
+        display: inline-flex;
+        border: none;
+        padding: $spacing-sm $spacing-md;
+        color: var(--links-text-color);
+        background-image: var(--bg-links-gradient);
+        opacity: 0.8;
+        border-radius: calc($border-radius - 5px);
+        cursor: pointer;
+        transition: transform 0.25s ease, filter 0.25s ease, opacity 0.25s ease;
+        transform: scale(1); 
+      }
+      &-btn:hover {
+        filter: brightness(1.1);
+      }
+      &-btn.is-active {
+        opacity: 1;
+        transform: scale(1.1);
+        filter: brightness(1.15);
+      }
+
+      &-btn i{
+        font-size: $icon-size;
+        font-weight: $icon-weight;
+        width: 20px;
+        height: 16px;
+      }
+    }
+  }
+
   &__header {
     @extend %text-format-base;
 
@@ -26,7 +76,7 @@
     .technologies__subtitle {
       @extend %section-subtitle-light;
     }
-    
+
     .technologies__description {
       @extend %section-paragraph-default;
     }
@@ -36,7 +86,7 @@
     @extend %flex-center;
     display: grid;
     @include padding-margin($spacing-xxxl $spacing-xxl, 0px auto);
-    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(75px, 120px));
     gap: 5px;
     list-style: none;
   }
@@ -84,7 +134,7 @@
       padding: $spacing-md clamp(25px, 2.5vw, 35px);
     }
     &__list {
-      grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(75px, 115px));
       padding: $spacing-xl $spacing-jumbo;
       gap: 7px;
     }

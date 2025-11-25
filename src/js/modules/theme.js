@@ -14,12 +14,12 @@ function getTheme({ localStorageTheme, systemSettingDark }) {
 }
 
 // Inicializa el them según la preferencia del usuario o del sistema.
-export function initTheme({ html, imgLogo, navThemeToggle, onThemeChange }) {
+export function initTheme({ html, imgLogo, navThemeToggle, onThemeChange}) {
   const localStorageTheme = localStorage.getItem("theme");
   const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
   const theme = getTheme({ localStorageTheme, systemSettingDark });
 
-  if (typeof onThemeChange === "function") onThemeChange(theme);
+  onThemeChange?.(theme);
 
   updateAttributeElem({ elem: html, attr: "data-theme", value: theme });
 

@@ -38,7 +38,8 @@
 }
 
 %link-list-item {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   @include box-style(6px, calc($border-radius - 5px));
   font-size: $fs-miniSmall;
   text-decoration: none;
@@ -50,16 +51,32 @@
   &:hover {
     background-image: var(--bg-links-gradient-hover);
   }
-  i {
+  i, .icon-copy-check{
     @include font($icon-size, $icon-weight);
+    width: 16px;
+    height: 16px;
   }
+  
   .intro__contact-icon,
   .contact__icon {
     margin-right: 5px;
   }
   .intro__contact-icon--copy,
   .contact__icon--copy {
+    @extend %flex-center;
+    border: none;
+    outline: none;
+    padding: 0;
     margin-left: 5px;
+    background-color: var(--color-transparent);
+    
+    .icon-copy-check{
+      stroke: var(--links-text-color);
+      
+      #copyIcon-front{
+        fill: var(--links-text-color);
+      }
+    }
   }
 }
 

@@ -2,11 +2,17 @@
 @use "../utils/variables" as *;
 @use "../utils/theme" as *;
 @use "../utils/placeholders" as *;
+@use "../utils/animations" as *;
 
 .nav {
   @extend %flex-center;
   @include layout-navbar();
-  justify-content: space-between;
+
+  &--animating-in{
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: dropInNav 0.4s ease-out 3s forwards;
+  }
 
   &::before {
     @include before-overlay();
@@ -40,10 +46,17 @@
     top: 100%;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
-    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+    
 
-    &--active {
-      display: block;
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .nav__list {
@@ -86,15 +99,23 @@
       }
     }
 
-    .nav__theme-icon--light-mode,
-    .nav__theme-icon--dark-mode {
-      width: 20px;
-      aspect-ratio: 1;
-      font-size: calc($icon-size + 4px);
-      color: var(--color-theme-icon);
+    .nav__theme-icon{
+      width: 22px;
+      height: 22px;
+      stroke: var(--color-theme-icon);
+      fill: var(--color-theme-icon);
+    }
+    
+    .theme-icon--sun {
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
   }
-
+  &__theme-toggle{
+    @extend %flex-center;
+    padding: 0;
+  }
   &__theme-toggle,
   &__toggle {
     border: none;
@@ -113,10 +134,10 @@
     cursor: pointer;
     z-index: 10;
 
-    &-icon,
-    &-icon--close {
-      font-size: 26px;
-      color: var(--color-menu-icon);
+    &-icon{
+      width: 28px;
+      height: 28px;
+      stroke: var(--color-menu-icon);
       cursor: pointer;
     }
   }
@@ -140,12 +161,15 @@
     }
 
     &__options {
-      display: block;
       width: initial;
       border-radius: 0px;
       position: static;
       background: none;
       backdrop-filter: none;
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      transition: none;
 
       .nav__list {
         justify-content: end;

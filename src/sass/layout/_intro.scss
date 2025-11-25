@@ -22,7 +22,6 @@
 
   &__hero {
     @include text-style(center, 0.2em, 0.2em, 1.2);
-    animation: fadeInUp 1s ease-out;
 
     &-text {
       display: inline-block;
@@ -30,7 +29,8 @@
       white-space: nowrap;
       font-size: $fs-small;
       color: var(--color-text-primary);
-      animation: fadeInLeft 1.2s ease-out;
+      opacity: 0;
+      animation: slideDownLarge 0.4s ease-out 0.2s forwards;
     }
 
     &-cursor {
@@ -46,25 +46,28 @@
     &-subtitle {
       margin: 0px;
       color: var(--color-text-secondary);
+      opacity: 0;
     }
 
     &-title {
       @include font(clamp(40px, 12vw, 75px), 900);
       font-family: '"Merriweather", serif';
+      animation: slideDownMedium 0.4s ease-out 0.7s forwards;
     }
 
     &-subtitle {
       @include font(clamp(20px, 6vw, 35px), 900);
+      animation: slideInLeft 0.5s ease-out 1.2s forwards;
     }
   }
 
   &__contact {
     gap: 15px;
-    animation: fadeInUp 1.8s ease-out;
 
     &-list {
       @extend %list-container-flex;
-      animation: fadeInRight 1.5s ease-out;
+      opacity: 0;
+      animation: slideInRight 0.5s ease-out 1.8s forwards;
     }
 
     &-item {
@@ -89,7 +92,8 @@
       transition: transform 0.3s ease, background-color 0.3s ease,
         border-color 0.3s ease;
       cursor: pointer;
-      animation: bounceIn 1.5s ease-out;
+      opacity: 0;
+      animation: slideInLeft 0.5s ease-out 2.4s forwards;
     }
     
     &-availability:hover {
@@ -125,8 +129,9 @@
     position: absolute;
     left: 50%;
     bottom: 90px;
-    transform: translateX(-50%);
-    animation: slideUp 2s ease-out;
+    transform: translate(-50%, -150px);
+    opacity: 0;
+    animation: dropInScroll 0.4s ease-out 3s forwards;
 
     &-arrow {
       position: absolute;

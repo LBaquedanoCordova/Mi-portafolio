@@ -101,9 +101,6 @@ html[data-theme="light"] {
   --hexagon-shadow-hover: 0px 8px 12px rgba(216, 216, 216, 0.8),
     inset 5px 5px 8px rgba(148, 148, 148, 0.6),
     inset -5px -5px 8px rgba(56, 56, 56, 0.4);
-  
-  --label-tech-color: var(--color-white);
-  --label-bg: rgba(0, 0, 0, 0.5);
 
   // Color del borde y fondo del marcador para timeline
   --border-color: var(--color-primary);
@@ -225,9 +222,6 @@ html[data-theme="dark"] {
   --hexagon-shadow-hover: 0px 8px 12px #333333,
     inset 5px 5px 8px rgba(0, 0, 0, 0.5),
     inset -5px -5px 8px rgba(255, 255, 255, 0.3);
-
-  --label-tech-color: var(--color-black);
-  --label-bg: rgba(172, 172, 172, 0.7);
 
   // Color del borde y fondo del marcador para timeline
   --border-color: var(--color-neutral);

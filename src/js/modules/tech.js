@@ -1,23 +1,29 @@
 import { createElementWithClass } from "./intro.js";
+// import { gsap } from "./gsapInstance.js";
 
 const technologies = [
-  { name: "HTML", img: "/assets/icons/html.svg" },
-  { name: "CSS", img: "/assets/icons/css.svg" },
-  { name: "JavaScript", img: "/assets/icons/js.svg" },
-  { name: "Bootstrap", img: "/assets/icons/bootstrap.svg" },
-  { name: "Sass", img: "/assets/icons/sass.svg" },
-  { name: "GIT", img: "/assets/icons/git.svg" },
-  { name: "GitHub", img: "/assets/icons/github.svg" },
-  { name: "VS Code", img: "/assets/icons/vscode.svg" },
-  { name: "Windows", img: "/assets/icons/windows.svg" },
+  { name: "HTML", img: "/assets/icons/html.svg", category: "languages" },
+  { name: "CSS", img: "/assets/icons/css.svg", category: "languages" },
+  { name: "JavaScript", img: "/assets/icons/js.svg", category: "languages" },
+  { name: "Bootstrap", img: "/assets/icons/bootstrap.svg", category: "styles"},
+  { name: "Sass", img: "/assets/icons/sass.svg", category: "styles"},
+  { name: "GIT", img: "/assets/icons/git.svg", category: "version-control" },
+  { name: "GitHub", img: "/assets/icons/github.svg", category: "version-control" },
+  { name: "VS Code", img: "/assets/icons/vscode.svg", category: "tools" },
+  { name: "Windows", img: "/assets/icons/windows.svg", category: "tools" },
+  { name: "React", img: "/assets/icons/react.svg", category: "frameworks" },
 ];
+
+const techList = document.querySelector(".technologies__list");
+const techNav = document.querySelector(".technologies__nav");
+const techMenuButtons = document.querySelectorAll(".technologies__menu-btn");
+
+let currentTechnologies = [];
 
 // Renderiza la lista de tecnologías dentro del contenedor correspondiente.
 function initTech() {
-  const techList = document.querySelector(".technologies__list");
   techList.innerHTML = "";
-
-  technologies.forEach((tech) => {
+  currentTechnologies.forEach((tech) => {
     const li = createElementWithClass("li", "technologies__item");
 
     const img = createElementWithClass("img", "technologies__icon");
@@ -31,4 +37,41 @@ function initTech() {
   });
 }
 
-export { initTech };
+// Filtra los ítems tech en la sección Technologies.
+function filterByCategory(category) {
+  currentTechnologies = technologies.filter(t => t.category === category);
+  initTech();
+}
+
+techNav.addEventListener("click", (e) => {
+  const btn = e.target.closest(".technologies__menu-btn");
+  if (!btn) return;
+
+  const category = btn.dataset.category;
+  if (!category) return;
+
+  filterByCategory(category);
+
+  techMenuButtons.forEach(b => b.classList.remove("is-active"));
+
+  btn.classList.add("is-active");
+});
+
+function initDefaultCategory() {
+  const firstBtn = techNav.querySelector(".technologies__menu-btn");
+  if (!firstBtn) return;
+
+  const defaultCategory = firstBtn.dataset.category;
+  if (!defaultCategory) return;
+
+  firstBtn.classList.add("is-active");
+
+  filterByCategory(defaultCategory);
+}
+
+// Aplica animación con GSAP a los ítems de tecnologías
+// function animationListTech() {
+
+// }
+
+export { initDefaultCategory, /* animationListTech  */};
