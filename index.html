@@ -383,9 +383,192 @@
       </section>
     </section>
 
-    <section id="projects" class="projects">
-      <div class="projects__header"></div>
-      <div class="projects__content"></div>
+    <section id="projects" class="projects" aria-labelledby="projects-title">
+      <div class="projects__header">
+        <h2 class="projects__title">Mis proyectos</h2>
+        <p class="projects__subtitle">
+          Colaboración y proyectos propios que he desarrollado.
+        </p>
+      </div>
+      <div class="projects__content">
+        <!-- Project 1 -->
+        <div class="projects__content-wrapper">
+          <article class="projects__item" aria-labelledby="project-01-title">
+            <header class="projects__item-header">
+              <span class="projects__item-index" aria-hidden="true">01</span>
+              <h3 class="projects__item-title">
+                Colaboración en proyecto Digitalcoursefront
+              </h3>
+            </header>
+            <div class="projects__details">
+              <section
+                aria-labelledby="project-01-overview-title"
+                class="projects__description"
+              >
+                <h4 class="projects__description-title">
+                  <i
+                    class="fa-regular fa-rectangle-list"
+                    aria-hidden="true"
+                  ></i>
+                  Descripción general
+                </h4>
+
+                <p class="projects__description-text">
+                  Aplicación web en desarrollo que actúa como la interfaz de una
+                  plataforma de cursos digitales, permitiendo mostrar y entregar
+                  lecciones y materiales educativos desde el navegador.
+                </p>
+              </section>
+
+              <section
+                aria-labelledby="project-01-tech-title"
+                class="projects__tech"
+              >
+                <h4 class="projects__tech-title">
+                  <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                  Tecnologías utilizadas
+                </h4>
+
+                <div class="projects__tech-wrapper">
+                  <ul class="projects__tech-list">
+                    <li class="projects__tech-item">Angular 17</li>
+                    <li class="projects__tech-item">TypeScript</li>
+                    <li class="projects__tech-item">Bootstrap 5</li>
+                    <li class="projects__tech-item">HTML</li>
+                    <li class="projects__tech-item">CSS</li>
+                  </ul>
+                </div>
+
+                <div class="projects__tech-buttons projects__tech-links">
+                  <a
+                    href="https://github.com/LitanoGroupCorporation/digitalcoursefront/tree/develop"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="projects__link projects__link--code"
+                    aria-label="Abrir repositorio de código en GitHub (se abre en una nueva pestaña)"
+                  >
+                    <i
+                      class="fa-solid fa-arrow-up-right-from-square"
+                      aria-hidden="true"
+                    ></i>
+                    Code
+                  </a>
+
+                  <a
+                    href="https://lbaquedanocordova.github.io/pomodoro-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="projects__link projects__link--demo"
+                    aria-label="Abrir demostración del proyecto en una nueva pestaña"
+                  >
+                    <i
+                      class="fa-solid fa-arrow-up-right-from-square"
+                      aria-hidden="true"
+                    ></i>
+                    Demo
+                  </a>
+                </div>
+              </section>
+
+              <figure class="projects__extra">
+                <div class="projects__preview-wrapper">
+                  <img
+                    src="/assets/images/appPomodoro.png"
+                    alt="Vista previa del proyecto Pomodoro App mostrando su interfaz principal"
+                    class="projects__preview"
+                  />
+                </div>
+              </figure>
+            </div>
+          </article>
+        </div>
+        <!-- Project 2 -->
+        <div class="projects__content-wrapper">
+          <article class="projects__item" aria-labelledby="project-02-title">
+            <header class="projects__item-header">
+              <span class="projects__item-index" aria-hidden="true">02</span>
+              <h3 class="projects__item-title">Pomodoro App</h3>
+            </header>
+            <div class="projects__details">
+              <section
+                aria-labelledby="project-02-overview-title"
+                class="projects__description"
+              >
+                <h4 class="projects__description-title">
+                  <i
+                    class="fa-regular fa-rectangle-list"
+                    aria-hidden="true"
+                  ></i>
+                  Descripción general
+                </h4>
+
+                <p class="projects__description-text">
+                  Aplicación Pomodoro sencilla y elegante que te ayuda a
+                  concentrarte y prevenir el desgaste mental.
+                </p>
+              </section>
+
+              <section
+                aria-labelledby="project-02-tech-title"
+                class="projects__tech"
+              >
+                <h4 class="projects__tech-title">
+                  <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                  Tecnologías utilizadas
+                </h4>
+
+                <div class="projects__tech-wrapper">
+                  <ul class="projects__tech-list">
+                    <li class="projects__tech-item">JS</li>
+                    <li class="projects__tech-item">HTML</li>
+                    <li class="projects__tech-item">CSS</li>
+                  </ul>
+                </div>
+
+                <div class="projects__tech-buttons projects__tech-links">
+                  <a
+                    href="https://github.com/LBaquedanoCordova/pomodoro-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="projects__link projects__link--code"
+                    aria-label="Abrir repositorio de código en GitHub (se abre en una nueva pestaña)"
+                  >
+                    <i
+                      class="fa-solid fa-arrow-up-right-from-square"
+                      aria-hidden="true"
+                    ></i>
+                    Code
+                  </a>
+
+                  <a
+                    href="https://lbaquedanocordova.github.io/pomodoro-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="projects__link projects__link--demo"
+                    aria-label="Abrir demostración del proyecto en una nueva pestaña"
+                  >
+                    <i
+                      class="fa-solid fa-arrow-up-right-from-square"
+                      aria-hidden="true"
+                    ></i>
+                    Demo
+                  </a>
+                </div>
+              </section>
+
+              <figure class="projects__extra">
+                <div class="projects__preview-wrapper">
+                  <img
+                    src="/assets/images/appPomodoro.png"
+                    alt="Vista previa del proyecto Pomodoro App mostrando su interfaz principal"
+                    class="projects__preview"
+                  />
+                </div>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section id="about-me" class="about-me" aria-labelledby="about-me__title">

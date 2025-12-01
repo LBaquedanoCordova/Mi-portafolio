@@ -4,8 +4,9 @@ import { gsap } from "./gsapInstance.js";
 const contactItems = document.querySelectorAll(
   ".intro__contact-item--email, .contact__list-item--email"
 );
+
 const allLinks = document.querySelectorAll(
-  ".intro__contact-link, .contact__link"
+  ".intro__contact-link, .contact__link, .projects__link"
 );
 
 function positionTooltip(emailSpan, contactItem, tooltip) {
@@ -71,7 +72,7 @@ function showTooltip(emailSpan, contactItem) {
   // configuración que puedes ajustar
   const morphDuration = 0.36;      // duración de cada morph
   const tooltipInDelay = 0.32;     // retraso desde el inicio del morph para mostrar tooltip
-  const tooltipVisibleTime = 1.5;  // tiempo total que quieres que el tooltip esté visible
+  const tooltipVisibleTime = 0.8;  // tiempo total que quieres que el tooltip esté visible
   const tooltipInDuration = 0.18;
   const tooltipOutDuration = 0.14;
   
@@ -151,7 +152,7 @@ function handleAnimation(item, callback) {
 
 function addClickAnimations() {
   allLinks.forEach((link) => {
-    const item = link.closest('.contact__list-item, .intro__contact-item');
+    const item = link.closest('.contact__list-item, .intro__contact-item, .projects__link');
 
     link.addEventListener("click", (e) => {
       if (link.target === "_blank") {
