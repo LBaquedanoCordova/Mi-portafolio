@@ -11,8 +11,9 @@
   position: relative;
   overflow: hidden;
   gap: 5px;
+  background-color: var(--color-surface-alt);
   @include responsive-height();
-  
+
   &__hero,
   &__contact {
     @extend %flex-center;
@@ -34,7 +35,6 @@
     }
 
     &-cursor {
-      color: var(--color-text-primary);
       animation: blink 500ms step-end infinite;
     }
 
@@ -45,7 +45,7 @@
     &-title,
     &-subtitle {
       margin: 0px;
-      color: var(--color-text-secondary);
+      color: var(--color-accent);
       opacity: 0;
     }
 
@@ -84,23 +84,43 @@
       @extend %tooltip-style;
     }
 
-    &-availability {
-      @include box-style();
-      border: 1px solid transparent;
-      text-align: center;
-      background-color: var(--cta-bg);
-      transition: transform 0.3s ease, background-color 0.3s ease,
-        border-color 0.3s ease;
-      cursor: pointer;
+    &-availability-wrapper {
       opacity: 0;
       animation: slideInLeft 0.5s ease-out 2.4s forwards;
+      margin: $spacing-sm 0px;
     }
-    
+
+    &-availability {
+      --availability-bg: var(--gradient-accent);
+      --availability-text-color: var(--color-text-primary);
+      --availability-press-offset: 4px;
+
+      @include box-style();
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+      background-image: var(--availability-bg);
+      box-shadow: inset 0 1px 0 var(--availability-inset),
+        0 2px 0 var(--availability-edge), 0 4px 0 var(--color-border),
+        0 6px 0 var(--color-surface-alt), 0 8px 0 var(--color-background),
+        0 12px 24px var(--availability-ambient);
+      overflow: hidden;
+    }
+
+    &-availability::before {
+      @extend %pseudo-abs;
+      inset: 0;
+      background-image: var(--bg-scene-texture);
+      pointer-events: none;
+    }
+
     &-availability:hover {
-      transform: scale(1.05);
-      background-color: var(--cta-bg-hover);
-      border-color: var(--cta-border-color);
-      box-shadow: var(--cta-shadow-hover);
+      transform: translateY(var(--availability-press-offset));
+      box-shadow: inset 0 1px 0 var(--availability-inset),
+        0 1px 0 var(--availability-edge), 0 2px 0 var(--color-border),
+        0 3px 0 var(--color-surface-alt), 0 4px 0 var(--color-background),
+        0 6px 12px var(--availability-ambient);
 
       .intro__availability-icon {
         animation-play-state: paused;
@@ -113,7 +133,7 @@
       flex-wrap: wrap;
       gap: 8px;
       font-size: $fs-miniSmall;
-      color: var(--color-text-primary);
+      color: var(--availability-text-color);
     }
 
     .intro__availability-icon {
@@ -137,7 +157,7 @@
       position: absolute;
       transform: scale(0);
       opacity: 0;
-      color: var(--color-scroll-arrow);
+      color: var(--color-accent-alt);
       animation: scroll-animation 3s ease-in-out infinite;
     }
     &-arrow:nth-child(1) {

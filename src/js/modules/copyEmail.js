@@ -36,24 +36,47 @@ function positionTooltip(emailSpan, contactItem, tooltip) {
   tooltip.classList.toggle("email-tooltip--top", !isEnoughSpaceRight);
 }
 
+function createTooltip() {
+  const tooltip = createElementWithClass("span", "email-tooltip");
+  tooltip.dataset.tooltip = "active";
+
+  const contentBorder = createElementWithClass("span", "email-tooltip__border");
+  const content = createElementWithClass(
+    "span",
+    "email-tooltip__content",
+    "Copiado!"
+  );
+
+  const arrowBorder = createElementWithClass(
+    "span",
+    "email-tooltip__arrow-border"
+  );
+  const arrow = createElementWithClass("span", "email-tooltip__arrow");
+
+  arrowBorder.append(arrow);
+  contentBorder.append(content, arrowBorder);
+  tooltip.append(contentBorder);
+  console.log(tooltip);
+
+  return tooltip;
+}
 
 // Mostrar tooltip y orquestar morph + tooltip con un solo timeline (GSAP + MorphSVGPlugin)
 function showTooltip(emailSpan, contactItem) {
-
-  if (!contactItem._tooltipState) contactItem._tooltipState = {tooltipExists: null, isOpen: false};
+  if (!contactItem._tooltipState)
+    contactItem._tooltipState = { tooltipExists: null, isOpen: false };
 
   const state = contactItem._tooltipState;
 
   if (state.isOpen) return;
 
   state.isOpen = true;
-  
+
   // copia al portapapeles (no bloqueante)
   navigator.clipboard.writeText(emailSpan.textContent.trim());
 
   // crear e insertar tooltip (pero invisible al inicio)
-  const tooltip = createElementWithClass("span", "email-tooltip", "Copiado!");
-  tooltip.dataset.tooltip = "active";
+  const tooltip = createTooltip();
   contactItem.append(tooltip);
   state.tooltipExists = tooltip;
 
@@ -63,19 +86,23 @@ function showTooltip(emailSpan, contactItem) {
   const copyIconFrontPath = emailSpan.querySelector("#copyIcon-front");
   const copyIconBackPath = emailSpan.querySelector("#copyIcon-back");
 
-  const copyIconFrontShape = copyIconFrontPath.dataset.original || "M15 2C10 2 10 2 10 7L10 17C10 22 10 22 15 22L21 22C26 22 26 22 26 17L26 7 21 2Z";
-  const copyIconBackShape = copyIconBackPath.dataset.original || "M10 8 9 8C4 8 4 8 4 13L4 23C4 28 4 28 9 28L15 28C20 28 20 28 20 23L20 22 15 22C10 22 10 22 10 17Z";
+  const copyIconFrontShape =
+    copyIconFrontPath.dataset.original ||
+    "M15 2C10 2 10 2 10 7L10 17C10 22 10 22 15 22L21 22C26 22 26 22 26 17L26 7 21 2Z";
+  const copyIconBackShape =
+    copyIconBackPath.dataset.original ||
+    "M10 8 9 8C4 8 4 8 4 13L4 23C4 28 4 28 9 28L15 28C20 28 20 28 20 23L20 22 15 22C10 22 10 22 10 17Z";
 
   const checFirstStroke = "M7 16 12 25";
   const checkSecondStroke = "M12 25 23 5";
 
   // configuración que puedes ajustar
-  const morphDuration = 0.36;      // duración de cada morph
-  const tooltipInDelay = 0.32;     // retraso desde el inicio del morph para mostrar tooltip
-  const tooltipVisibleTime = 0.8;  // tiempo total que quieres que el tooltip esté visible
+  const morphDuration = 0.36; // duración de cada morph
+  const tooltipInDelay = 0.32; // retraso desde el inicio del morph para mostrar tooltip
+  const tooltipVisibleTime = 0.8; // tiempo total que quieres que el tooltip esté visible
   const tooltipInDuration = 0.18;
   const tooltipOutDuration = 0.14;
-  
+
   const removeTooltip = () => {
     tooltip.remove();
     state.tooltipExists = null;
@@ -86,48 +113,91 @@ function showTooltip(emailSpan, contactItem) {
     gsap.set(tooltip, { opacity: 0, scale: 0.9 });
 
     const tl = gsap.timeline({
-    defaults: { ease: "power4.inOut" },
-    onComplete: removeTooltip
-  });
+      defaults: { ease: "power4.inOut" },
+      onComplete: removeTooltip,
+    });
 
-  // Morph a "check"
-  tl.to(copyIconFrontPath, {
-    duration: morphDuration,
-    morphSVG: { type: "rotational", map: "position", shape: checFirstStroke}
-  }, 0);
-  tl.to(copyIconBackPath, {
-    duration: morphDuration,
-    morphSVG: { type: "rotational", map: "position", shape: checkSecondStroke}
-  }, 0);
+    // Morph a "check"
+    tl.to(
+      copyIconFrontPath,
+      {
+        duration: morphDuration,
+        morphSVG: {
+          type: "rotational",
+          map: "position",
+          shape: checFirstStroke,
+        },
+      },
+      0
+    );
+    tl.to(
+      copyIconBackPath,
+      {
+        duration: morphDuration,
+        morphSVG: {
+          type: "rotational",
+          map: "position",
+          shape: checkSecondStroke,
+        },
+      },
+      0
+    );
 
-  // Mostrar tooltip
-  tl.to(tooltip, {
-    duration: tooltipInDuration,
-    opacity: 1,
-    scale: 1,
-    ease: "power3.out",
-  }, tooltipInDelay);
+    // Mostrar tooltip
+    tl.to(
+      tooltip,
+      {
+        duration: tooltipInDuration,
+        opacity: 1,
+        scale: 1,
+        ease: "power3.out",
+      },
+      tooltipInDelay
+    );
 
-  // Mantener tooltip visible
-  tl.to({}, { duration: Math.max(0, tooltipVisibleTime - tooltipInDuration) });
+    // Mantener tooltip visible
+    tl.to(
+      {},
+      { duration: Math.max(0, tooltipVisibleTime - tooltipInDuration) }
+    );
 
-  // Morph de regreso a "copy"
-  tl.to(copyIconFrontPath, {
-    duration: morphDuration,
-    morphSVG: { type: "rotational", map: "position", shape: copyIconFrontShape}
-  }, ">");
-  tl.to(copyIconBackPath, {
-    duration: morphDuration,
-    morphSVG: { type: "rotational", map: "position", shape: copyIconBackShape }
-  }, "<");
+    // Morph de regreso a "copy"
+    tl.to(
+      copyIconFrontPath,
+      {
+        duration: morphDuration,
+        morphSVG: {
+          type: "rotational",
+          map: "position",
+          shape: copyIconFrontShape,
+        },
+      },
+      ">"
+    );
+    tl.to(
+      copyIconBackPath,
+      {
+        duration: morphDuration,
+        morphSVG: {
+          type: "rotational",
+          map: "position",
+          shape: copyIconBackShape,
+        },
+      },
+      "<"
+    );
 
-  // Ocultar tooltip
-  tl.to(tooltip, {
-    duration: tooltipOutDuration,
-    opacity: 0,
-    scale: 0.92,
-    ease: "power2.in"
-  }, `-=${tooltipOutDuration * 0.5}`);
+    // Ocultar tooltip
+    tl.to(
+      tooltip,
+      {
+        duration: tooltipOutDuration,
+        opacity: 0,
+        scale: 0.92,
+        ease: "power2.in",
+      },
+      `-=${tooltipOutDuration * 0.5}`
+    );
   } catch (error) {
     tooltip.style.opacity = "1";
     tooltip.style.transform = "scale(1)";
@@ -152,7 +222,9 @@ function handleAnimation(item, callback) {
 
 function addClickAnimations() {
   allLinks.forEach((link) => {
-    const item = link.closest('.contact__list-item, .intro__contact-item, .projects__link');
+    const item = link.closest(
+      ".contact__list-item, .intro__contact-item, .projects__link"
+    );
 
     link.addEventListener("click", (e) => {
       if (link.target === "_blank") {

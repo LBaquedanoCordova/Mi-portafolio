@@ -13,13 +13,13 @@
   position: absolute;
   left: 0px;
   width: 100%;
-  background-image: var(--navbar-bg-gradient);
+  background-image: var(--gradient-background);
   backdrop-filter: $blur;
 }
 
 %link-reset {
   text-decoration: none;
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
 }
 
 %img-responsive {
@@ -28,13 +28,12 @@
   object-fit: cover;
 }
 
-%list-container-flex{
+%list-container-flex {
   @extend %flex-center;
   display: inline-flex;
   @include padding-margin($spacing-sm, 0px);
   flex-wrap: wrap;
   border-radius: $border-radius;
-  background-color: var(--bg-links-list);
 }
 
 %link-list-item {
@@ -43,20 +42,24 @@
   @include box-style(6px, calc($border-radius - 5px));
   font-size: $fs-miniSmall;
   text-decoration: none;
-  color: var(--links-text-color);
-  background-image: var(--bg-links-gradient);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
   cursor: pointer;
-  transition: background-image 4s ease-in-out;
+  transition: border-color 0.2s ease, filter 0.2s ease;
 
   &:hover {
-    background-image: var(--bg-links-gradient-hover);
+    border-color: var(--color-accent);
+    filter: drop-shadow(1px 1px 2px var(--color-accent));
   }
-  i, .icon-copy-check{
+  i,
+  .icon-copy-check {
     @include font($icon-size, $icon-weight);
     width: 16px;
     height: 16px;
+    color: var(--color-accent-alt);
   }
-  
+
   .intro__contact-icon,
   .contact__icon {
     margin-right: 5px;
@@ -68,61 +71,99 @@
     outline: none;
     padding: 0;
     margin-left: 5px;
-    background-color: var(--color-transparent);
-    
-    .icon-copy-check{
-      stroke: var(--links-text-color);
-      
-      #copyIcon-front{
-        fill: var(--links-text-color);
+    background-color: transparent;
+
+    .icon-copy-check {
+      stroke: var(--color-accent-alt);
+
+      #copyIcon-front {
+        fill: var(--color-accent-alt);
       }
     }
   }
 }
 
-%pseudo-abs{
+%pseudo-abs {
   content: "";
   position: absolute;
 }
 
-%tooltip-style{
-  display: block;
+%tooltip-style {
   position: absolute;
-  padding: $spacing-xs $spacing-sm;
-  border-radius: calc($border-radius - 5px);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  background-color: var(--tooltip-bg);
-  color: var(--tooltip-text-color);
   z-index: 1;
+  pointer-events: none;
+  display: block;
 
-  &::before {
-    @extend %pseudo-abs;
-    display: inline-block;
-    top: 50%;
-    left: -9px;
-    width: 10px;
-    aspect-ratio: 1;
-    clip-path: polygon(100% 0, 0 50%, 100% 100%);
-    transform: translateY(-50%);
-    background-color: var(--tooltip-bg);
+  .email-tooltip__border,
+  .email-tooltip__content {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: calc($border-radius - 5px);
   }
 
-  &.email-tooltip--top::before {
-    top: -9px;
-    left: 50%;
-    clip-path: polygon(0 100%, 50% 0, 100% 100%);
-    transform: translateX(-50%);
+  .email-tooltip__border {
+    @extend %flex-center;
+    background-color: var(--color-border);
+    padding: 1px;
+  }
+
+  .email-tooltip__content {
+    display: block;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    filter: brightness(1.25);
+    padding: $spacing-xs $spacing-sm;
+    z-index: 2;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .email-tooltip__arrow-border {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-border);
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    @extend %flex-center;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .email-tooltip__arrow {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-background);
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    z-index: 2;
+    margin: auto;
+    display: block;
+  }
+
+  &.email-tooltip--top {
+    .email-tooltip__arrow-border {
+      left: 50%;
+      top: -10px;
+      transform: translateX(-50%);
+      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    }
+    .email-tooltip__arrow {
+      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    }
   }
 }
 
-%flex-column-base{
+%flex-column-base {
   flex-direction: column;
   padding: $spacing-jumbo $spacing-lg;
   gap: 10px;
 }
 
-%text-format-base{
+%text-format-base {
   text-align: start;
   letter-spacing: 0.05em;
   word-spacing: 0.01em;
@@ -130,26 +171,26 @@
   line-height: 1.6;
 }
 
-%section-subblock{
+%section-subblock {
   width: 100%;
   padding: $spacing-sm $spacing-lg;
 }
 
-%header-text-spacing{
+%header-text-spacing {
   margin: $spacing-sm $spacing-md;
 }
 
-%section-subtitle{
+%section-subtitle {
   font-size: $fs-xlarge;
   color: var(--color-section-subtitle-main);
 }
 
-%section-subtitle-light{
+%section-subtitle-light {
   font-size: $fs-large;
   color: var(--color-section-subtitle-alt);
 }
 
-%section-paragraph-default{
+%section-paragraph-default {
   font-size: $fs-small;
   text-align: justify;
   color: var(--color-section-paragraph);

@@ -8,7 +8,7 @@
   @extend %flex-center;
   @include layout-navbar();
 
-  &--animating-in{
+  &--animating-in {
     transform: translateY(-100%);
     opacity: 0;
     animation: dropInNav 0.4s ease-out 3s forwards;
@@ -30,12 +30,11 @@
     padding: $spacing-xs;
     margin-left: 4px;
 
-
     &-link {
       @extend %link-reset;
     }
 
-    &-image{
+    &-image {
       @extend %img-responsive;
       width: 150px;
     }
@@ -49,8 +48,8 @@
     opacity: 0;
     transform: translateY(-20px);
     visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
-    
+    transition: opacity 0.3s ease, transform 0.3s ease,
+      visibility 0s linear 0.3s;
 
     &--visible {
       opacity: 1;
@@ -75,15 +74,15 @@
 
     .nav__link {
       font-size: $fs-medium;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, color 0.2s ease;
       @extend %link-reset;
 
       &--active {
         position: relative;
-        color: var(--color-state-active);
-        
-        &::after{
-          content: '';
+        color: var(--color-accent);
+
+        &::after {
+          content: "";
           position: absolute;
           left: 0;
           bottom: -5px;
@@ -96,31 +95,34 @@
 
       &:hover {
         transform: scale(1.1);
+        color: var(--color-accent);
       }
     }
 
-    .nav__theme-icon{
+    .nav__theme-icon {
       width: 22px;
       height: 22px;
-      stroke: var(--color-theme-icon);
-      fill: var(--color-theme-icon);
+      stroke: var(--color-accent);
+      fill: none;
     }
-    
+
     .theme-icon--sun {
       stroke-width: 2.5;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
   }
-  &__theme-toggle{
+
+  &__theme-toggle {
     @extend %flex-center;
     padding: 0;
   }
+
   &__theme-toggle,
   &__toggle {
     border: none;
     outline: none;
-    background-color: var(--color-transparent);
+    background-color: transparent;
     cursor: pointer;
   }
 
@@ -131,13 +133,12 @@
     top: 50%;
     right: 22px;
     transform: translateY(-50%);
-    cursor: pointer;
     z-index: 10;
 
-    &-icon{
+    &-icon {
       width: 28px;
       height: 28px;
-      stroke: var(--color-menu-icon);
+      stroke: var(--color-accent);
       cursor: pointer;
     }
   }
@@ -148,9 +149,10 @@
     width: 100%;
     @include padding-margin($spacing-xs, 0px);
     border-radius: 0px;
-    background-image: var(--navbar-bg-gradient);
+    background-image: var(--gradient-background);
+    box-shadow: var(--shadow-elevation);
+    border-bottom: 1px solid var(--color-border);
     backdrop-filter: $blur;
-    box-shadow: var(--navbar-shadow);
 
     &::before {
       content: none;
@@ -182,7 +184,7 @@
         @include padding-margin(0px, $spacing-xs $spacing-sm);
       }
     }
-    
+
     .nav__toggle {
       display: none;
     }

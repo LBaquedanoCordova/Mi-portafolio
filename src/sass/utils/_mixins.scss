@@ -11,7 +11,6 @@
   top: 0;
   left: 0;
   border-radius: $border-radius;
-  background: var(--color-transparent);
   z-index: 10;
 }
 
@@ -20,8 +19,8 @@
   box-sizing: content-box;
   font-family: $font-main;
   font-weight: $font-bold;
-  background-color: var(--bg-body-solid);
-  background-image: var(--bg-body-gradient);
+  background-color: var(--bg-scene-base);
+  background-image: var(--bg-body-composed);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
