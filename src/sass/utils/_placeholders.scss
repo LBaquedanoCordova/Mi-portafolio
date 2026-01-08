@@ -182,16 +182,34 @@
 
 %section-subtitle {
   font-size: $fs-xlarge;
-  color: var(--color-section-subtitle-main);
+  color: var(--color-accent-alt);
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.08em;
+  filter: drop-shadow(0 2px 8px var(--color-shadow));
 }
 
 %section-subtitle-light {
   font-size: $fs-large;
-  color: var(--color-section-subtitle-alt);
+  color: var(--color-text-primary);
 }
 
 %section-paragraph-default {
   font-size: $fs-small;
   text-align: justify;
-  color: var(--color-section-paragraph);
+  color: var(--color-text-secondary);
+}
+
+%section-paragraph-secondary {
+  font-size: $fs-medium;
+  color: var(--color-text-secondary);
+  padding: $spacing-xs $spacing-md;
+}
+
+%card-hover-effect {
+  box-shadow: 0 8px 32px 0 var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-4px) scale(1.02);
 }

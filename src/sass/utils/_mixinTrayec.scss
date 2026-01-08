@@ -5,9 +5,11 @@
     width: $size;
     height: $size;
     top: 0%;
-    left: -23px;
+    left: -8px;
+    border: 2px solid var(--color-border);
     border-radius: 50%;
-    background-color: $color;
+    background-image: $color;
+    box-shadow: 0 0 8px 2px var(--color-accent);
     transform: translate(-50%, -50%);
 }
 

@@ -35,8 +35,13 @@
     }
 
     &-image {
-      @extend %img-responsive;
-      width: 150px;
+      display: block;
+      width: 120px;
+
+      path,
+      line {
+        transition: stroke 0.25s ease, fill 0.25s ease;
+      }
     }
   }
 
@@ -82,8 +87,7 @@
         color: var(--color-accent);
 
         &::after {
-          content: "";
-          position: absolute;
+          @extend %pseudo-abs;
           left: 0;
           bottom: -5px;
           width: 100%;

@@ -56,7 +56,6 @@ function createTooltip() {
   arrowBorder.append(arrow);
   contentBorder.append(content, arrowBorder);
   tooltip.append(contentBorder);
-  console.log(tooltip);
 
   return tooltip;
 }

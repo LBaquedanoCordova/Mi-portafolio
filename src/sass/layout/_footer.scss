@@ -2,19 +2,29 @@
 @use "../utils/variables" as *;
 @use "../utils/theme" as *;
 @use "../utils/mixinTech" as *;
+@use "../utils/placeholders" as *;
 
 .footer {
   @extend %flex-center;
   @extend %text-format-base;
+  @include box-style($spacing-lg, $border-radius $border-radius 0 0);
+  align-items: initial;
   text-align: center;
   flex-wrap: wrap;
   overflow: hidden;
   font-size: $fs-small;
-  padding: $spacing-lg;
+  margin: 0px $spacing-md;
+  position: relative;
+  z-index: 2;
+  min-height: 180px;
+  background-color: rgba(var(--color-white), 0.08);
+  box-shadow: 0 8px 32px 0 var(--color-shadow);
+  backdrop-filter: saturate(1.2);
+  border-top: 1px solid transparent;
 
   &__text,
   &__social-link {
-    color: var(--color-section-subtitle-main);
+    color: var(--color-accent);
     opacity: 0.8;
     transition: opacity 0.3s ease, transform 0.3s ease-in-out;
 
@@ -33,6 +43,7 @@
 
     &-link {
       text-decoration: none;
+      
       &:hover {
         transform: translateY(-3px);
       }
@@ -41,5 +52,14 @@
         @include font($icon-size, $icon-weight);
       }
     }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .footer {
+    border-radius: 0;
+    margin: 0px;
+    align-items: center;
+    border-top-color: var(--color-border);
   }
 }

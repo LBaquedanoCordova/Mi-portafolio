@@ -37,15 +37,15 @@
     &-subtitle {
       @include font(clamp(25px, 5vw, 35px), 900);
       text-align: center;
-      color: var(--color-section-subtitle-alt)
+      color: var(--color-text-primary);
     }
 
     &-title {
+      @extend %section-subtitle;
       @include font(clamp(45px, 8.5vw, 55px), 900);
       font-family: '"Merriweather", serif';
       text-align: center;
       word-break: break-word;
-      color: var(--color-section-subtitle-main);
     }
 
     &-description {

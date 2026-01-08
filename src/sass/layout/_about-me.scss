@@ -36,13 +36,13 @@
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.07em;
-      color: var(--highlight-title-color);
+      color: var(--color-accent);
     }
 
     .about-me__highlight-text {
       border-radius: calc($border-radius - 6px);
-      background-image: var(--highlight-bg);
-      color: var(--highlight-text-color);
+      background-color: var(--color-background);
+      color: var(--color-accent-alt);
     }
   }
 
@@ -60,7 +60,8 @@
       
       &:hover .about-me__photo {
         transform: rotateY(0deg) rotateX(0deg) scale(1.1);
-        box-shadow: var(--img-shadow-hover);
+        box-shadow: 0 8px 32px 0 var(--tech-active-glow-soft);
+        border-color: var(--color-accent);
       }
     }
 
@@ -70,9 +71,10 @@
       margin: 0px;
       object-fit: cover;
       border-radius: calc($border-radius + 5px);
+      border: 2px solid transparent;
       transform: rotateY(-10deg) rotateX(10deg) scale(1.05);
-      box-shadow: var(--img-shadow);
-      transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+      box-shadow: 0 8px 32px 0 rgb(var(--color-black), 0.6);
+      transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, border-color 0.4s ease-out;
     }
   }
 }

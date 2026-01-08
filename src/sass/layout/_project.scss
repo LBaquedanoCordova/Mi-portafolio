@@ -1,6 +1,7 @@
 @use "../utils/placeholders" as *;
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
+@use "../utils/theme" as *;
 
 .projects {
   @extend %flex-center;
@@ -22,7 +23,7 @@
       @extend %section-subtitle;
     }
     .projects__subtitle {
-      @extend %section-subtitle-light;
+      @extend %section-paragraph-secondary;
     }
   }
 
@@ -30,12 +31,16 @@
     &-wrapper {
       border-radius: $border-radius;
       @include padding-margin($spacing-xl $spacing-xxl, $spacing-lg);
-      background-color: var(--bg-body-solid);
-      transition: box-shadow 0.3s ease;
+      background-color: rgba(var(--color-white), 0.04);
+      border: 2px solid var(--color-border);
+      box-shadow: 0 4px 24px 0 var(--color-shadow);
+      transition: box-shadow 0.3s ease, border-color 0.3s ease,
+        transform 0.3s ease, background-color 0.3s ease;
 
-      &:hover {
-        box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000,
-          0 10px 15px -3px #59f8ae, 0 4px 6px -4px #2a9d8f;
+      &:hover,
+      &:focus-within {
+        @extend %card-hover-effect;
+        background-color: rgba(var(--color-white), 0.1);
       }
     }
 
@@ -47,19 +52,19 @@
       }
 
       &-index {
+        @include box-style($spacing-md, 50%);
         aspect-ratio: 1;
-        padding: $spacing-md;
         font-size: $fs-medium;
-        border-radius: 50%;
         line-height: initial;
         letter-spacing: initial;
-        background-color: var(--color-section-paragraph);
-        color: var(--color-black);
+        background-image: var(--gradient-accent);
+        color: rgb(var(--color-white));
+        box-shadow: 0 2px 8px 0 var(--color-shadow);
       }
 
       &-title {
         font-size: $fs-medium;
-        color: var(--color-white);
+        color: var(--color-accent);
       }
     }
 
@@ -70,20 +75,18 @@
     }
 
     .projects__description {
-      border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+      border-bottom: 1px solid var(--color-border);
       order: 1;
+      padding-bottom: $spacing-sm;
 
       &-title {
         font-size: $fs-small;
-        color: var(--color-white);
-        i {
-          color: var(--color-section-subtitle-main);
-        }
+        color: var(--color-accent-alt);
       }
-      
+
       &-text {
         font-size: $fs-miniSmall;
-        color: var(--color-section-paragraph);
+        color: var(--color-text-secondary);
       }
     }
 
@@ -98,10 +101,7 @@
 
       &-title {
         font-size: $fs-miniSmall;
-        color: var(--color-white);
-        i {
-              color: var(--color-section-subtitle-main);
-        }
+        color: var(--color-accent);
       }
 
       &-wrapper {
@@ -118,12 +118,18 @@
       }
 
       &-item {
+        @include font(clamp(10px, 2vw, 13px), 500);
+        @include box-style($spacing-xs $spacing-sm, calc($border-radius - 5px));
         border: none;
-        border-radius: calc($border-radius - 5px);
-        padding: $spacing-xs $spacing-sm;
-        font-size: clamp(10px, 2vw, 13px);
-        background-color: var(--color-black);
-        color: var(--color-neutral);
+        background-color: var(--tech-hover-bg);
+        color: var(--color-accent-alt);
+        box-shadow: 0 1px 4px 0 var(--color-shadow);
+        transition: background 0.2s ease, color 0.2s ease;
+
+        &:hover {
+          background-image: var(--gradient-accent);
+          color: rgb(var(--color-white));
+        }
       }
 
       &-links {
@@ -133,45 +139,54 @@
       }
 
       .projects__link {
-        padding: 6px $spacing-sm;
-        border-radius: calc($border-radius - 5px);
+        @include box-style(6px $spacing-sm, calc($border-radius - 5px));
         font-size: clamp(10px, 2vw, 13px);
         text-decoration: none;
-        filter: drop-shadow(2px 2px 2px var(--color-black)) contrast(1);
-        background-image: var(--bg-links-gradient);
-        color: var(--links-text-color);
-        transition: filter 0.3s ease;
+        background: var(--gradient-accent);
+        color: rgb(var(--color-white));
+        box-shadow: 0 1px 4px 0 var(--color-shadow);
+        transition: background 0.2s ease, box-shadow 0.2s ease;
 
-        &:hover {
-          filter: drop-shadow(2px 6px 6px var(--color-black)) contrast(1.25);
+        &:hover,
+        &:focus {
+          background: var(--color-accent);
+          box-shadow: 0 2px 8px 0 var(--color-accent);
         }
       }
     }
 
     .projects__extra {
-      margin: 0px;
+      @include padding-margin($spacing-xs $spacing-md, 0px);
       order: 2;
     }
 
     .projects__preview-wrapper {
       display: inline-flex;
-      background-color: var(--color-black);
       position: relative;
-      padding: 6px;
-      border-radius: calc($border-radius - 2px);
+      @include box-style(6px, calc($border-radius - 2px));
+      background-color: var(--color-surface-alt);
+      box-shadow: 0 2px 8px 0 var(--color-shadow);
 
       &::after {
         @extend %pseudo-abs;
         inset: 0;
-        border: 2px solid var(--color-neutral);
+        border: 2px solid var(--color-accent-alt);
         border-radius: inherit;
         pointer-events: none;
+        opacity: 0.5;
       }
     }
+
     .projects__preview {
       width: 100%;
       object-fit: cover;
       border-radius: inherit;
+      filter: brightness(1.08);
+      transition: filter 0.2s ease;
+
+      &:hover {
+        filter: brightness(1.18) saturate(1.1);
+      }
     }
   }
 }

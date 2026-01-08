@@ -2,6 +2,7 @@
 @use "../utils/variables" as *;
 @use "../utils/mixinTech" as *;
 @use "../utils/placeholders" as *;
+@use "../utils/theme" as *;
 
 .technologies {
   @extend %flex-center;
@@ -14,49 +15,86 @@
   }
 
   &__nav {
-    @include padding-margin($spacing-sm, 0 auto);
+    @include padding-margin(10px $spacing-md, 0 auto);
     position: relative;
-    width: 300px;
-    max-width: 900px;
-    border-radius: $border-radius;
+    width: fit-content;
+    max-width: 100%;
+    border-radius: calc($border-radius + 4px);
     overflow-x: auto;
-    background-color: var(--bg-links-list);
+    background-image: var(--gradient-background), var(--bg-scene-texture);
+    backdrop-filter: $blur;
+    box-shadow: var(--shadow-elevation);
+    border: 1px solid var(--color-border);
+    filter: brightness(1.2);
+    scrollbar-width: none;
 
     .technologies__menu {
       @extend %flex-center;
       flex-wrap: nowrap;
       gap: 15px;
       min-width: max-content;
-      @include padding-margin($spacing-xs $spacing-sm, 0);
+      @include padding-margin(6px 10px, 0);
       list-style: none;
+
+      &-item {
+        position: relative;
+      }
 
       &-btn {
         @extend %flex-center;
         display: inline-flex;
-        border: none;
-        padding: $spacing-sm $spacing-md;
-        color: var(--links-text-color);
-        background-image: var(--bg-links-gradient);
-        opacity: 0.8;
-        border-radius: calc($border-radius - 5px);
+        position: relative;
+        width: 42px;
+        height: 42px;
+        border: 1px solid transparent;
+        color: var(--color-text-secondary);
+        background-color: transparent;
+        border-radius: $border-radius;
         cursor: pointer;
-        transition: transform 0.25s ease, filter 0.25s ease, opacity 0.25s ease;
-        transform: scale(1); 
-      }
-      &-btn:hover {
-        filter: brightness(1.1);
-      }
-      &-btn.is-active {
-        opacity: 1;
-        transform: scale(1.1);
-        filter: brightness(1.15);
+        transition: color 0.3s ease, background-color 0.3s ease,
+          transform 0.25s ease, box-shadow 0.3s ease;
+
+        &:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 3px var(--tech-focus-ring);
+        }
       }
 
-      &-btn i{
-        font-size: $icon-size;
-        font-weight: $icon-weight;
-        width: 20px;
-        height: 16px;
+      &-btn:hover {
+        color: var(--color-accent);
+        background-color: var(--tech-hover-bg);
+        transform: translateY(-2px);
+      }
+
+      &-btn.is-active {
+        color: var(--color-accent);
+        background-image: linear-gradient(
+          180deg,
+          var(--tech-active-bg-start),
+          var(--tech-active-bg-end)
+        );
+        border-color: var(--tech-active-border);
+        box-shadow: 0 0 0 1px var(--tech-active-border),
+          0 8px 24px var(--tech-active-glow-strong);
+        transform: scale(1.12);
+      }
+
+      &-btn.is-active::after {
+        @extend %pseudo-abs;
+        bottom: -10px;
+        left: 50%;
+        width: 18px;
+        height: 4px;
+        border-radius: $border-radius;
+        transform: translateX(-50%);
+        background-image: var(--gradient-accent);
+        box-shadow: 0 0 12px var(--tech-active-glow-soft);
+      }
+
+      &-btn i {
+        font-size: calc($icon-size + 1px);
+        line-height: 1;
+        pointer-events: none;
       }
     }
   }
