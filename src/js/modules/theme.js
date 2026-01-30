@@ -1,3 +1,5 @@
+const pathThemeIcon = document.querySelector("#themeIcon");
+
 // Actualiza el valor de un atributo en un elemento
 function updateAttributeElem({ elem, attr, value }) {
   elem?.setAttribute(attr, value);
@@ -18,7 +20,7 @@ export function initTheme({ html, navThemeToggle, onThemeChange}) {
   const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
   const theme = getTheme({ localStorageTheme, systemSettingDark });
 
-  onThemeChange?.(theme);
+  onThemeChange?.(pathThemeIcon, theme);
 
   updateAttributeElem({ elem: html, attr: "data-theme", value: theme });
 
