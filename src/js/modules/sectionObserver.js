@@ -38,13 +38,14 @@ export function setupSectionObserver(sections, navLinks, observerOptions) {
       }
     });
 
+    let mostVisibleId = null;
+    let maxHeight = 0;
+
     if (visibleSections.size === 0) {
       clearActiveLinks(navLinks);
       return;
     }
 
-    let mostVisibleId = null;
-    let maxHeight = 0;
     for (const [id, height] of visibleSections.entries()) {
       if (height > maxHeight) {
         mostVisibleId = id;
@@ -52,7 +53,13 @@ export function setupSectionObserver(sections, navLinks, observerOptions) {
       }
     }
 
-    activateLinkById(navLinks, mostVisibleId);
+    // Si la sección más visible es 'intro', no hay enlace que activar
+    if (mostVisibleId === "intro") {
+      clearActiveLinks(navLinks);
+    } else {
+      // Si es cualquier otra sección, activamos su enlace
+      activateLinkById(navLinks, mostVisibleId);
+    }
   }, observerOptions);
 
   sections.forEach(({ section }) => observer.observe(section));

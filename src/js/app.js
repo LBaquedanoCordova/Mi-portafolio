@@ -4,8 +4,10 @@ import { initNavbar } from "./modules/navbar.js";
 import { initTypingText } from "./modules/intro.js";
 import { initDefaultCategory } from "./modules/tech.js";
 import { initCopyEmail } from "./modules/copyEmail.js";
+import { initRouter } from './modules/router.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    initRouter();
     initNavbar();
     initTypingText();
     initDefaultCategory();

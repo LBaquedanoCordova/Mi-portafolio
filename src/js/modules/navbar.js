@@ -1,6 +1,7 @@
 import { initTheme } from "./theme.js";
 import { setupSectionObserver } from "./sectionObserver.js";
 import { setNavThemeIcon, updatePathSVG } from "./themeNavbar.js";
+import { navigateToSection } from "./router.js";
 
 const html = document.documentElement;
 const nav = document.querySelector(".nav");
@@ -8,9 +9,9 @@ const navOptions = nav.querySelector(".nav__options");
 const navThemeToggle = navOptions.querySelector(".nav__theme-toggle");
 const pathMenuIcon = nav.querySelector("#navMenuIcon");
 const navLinks = navOptions.querySelectorAll("li .nav__link");
+const introSection = document.querySelector(".intro");
 
 const sections = [];
-const tempBlockedSections = new Set();
 
 const observerOptions = {
   root: null,
@@ -73,7 +74,7 @@ function handleNavTransitionEnd() {
     () => {
       nav.classList.remove("nav--animating-in");
     },
-    { once: true }
+    { once: true },
   );
 }
 handleNavTransitionEnd();
@@ -84,23 +85,10 @@ function handlerNavbarLink() {
 
   const item = event.target;
   const targetId = item.dataset.target;
-  const section = document.getElementById(targetId);
 
-  if (tempBlockedSections.has(targetId)) return;
+  if (!targetId) return;
 
-  tempBlockedSections.add(targetId);
-
-  setTimeout(() => {
-    tempBlockedSections.delete(targetId); // desbloquear después de un corto tiempo
-  }, 500);
-
-  const navbarHeight = nav.offsetHeight;
-
-  window.scrollTo({
-    top: section.offsetTop - navbarHeight,
-    behavior: "smooth",
-  });
-
+  navigateToSection(targetId);
   toggleNavigationMenu(false);
 }
 
@@ -136,6 +124,15 @@ function initNavbarHandler() {
       }
     }
   });
+
+  // La sección 'intro' no está en navLinks, por lo que no se observará directamente.
+  // Se añade explícitamente al array de secciones para que el observer la tenga en cuenta.
+  if (introSection) {
+    if (!introSection.id) {
+      introSection.id = "intro";
+    }
+    sections.push({ id: introSection.id, section: introSection, link: null });
+  }
   setupSectionObserver(sections, navLinks, observerOptions);
 }
 
