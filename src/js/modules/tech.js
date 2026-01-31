@@ -4,6 +4,7 @@ const technologies = [
   { name: "HTML", img: "/assets/icons/html.svg", category: "languages" },
   { name: "CSS", img: "/assets/icons/css.svg", category: "languages" },
   { name: "JavaScript", img: "/assets/icons/js.svg", category: "languages" },
+  { name: "TypeScript", img: "/assets/icons/ts.svg", category: "languages" },
   { name: "Bootstrap", img: "/assets/icons/bootstrap.svg", category: "styles" },
   { name: "Sass", img: "/assets/icons/sass.svg", category: "styles" },
   { name: "GIT", img: "/assets/icons/git.svg", category: "version-control" },
@@ -15,6 +16,7 @@ const technologies = [
   { name: "VS Code", img: "/assets/icons/vscode.svg", category: "tools" },
   { name: "Windows", img: "/assets/icons/windows.svg", category: "tools" },
   { name: "React", img: "/assets/icons/react.svg", category: "frameworks" },
+  { name: "Angular", img: "/assets/icons/angular.svg", category: "frameworks" },
 ];
 
 const techList = document.querySelector(".technologies__list");

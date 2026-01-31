@@ -28,6 +28,12 @@
   }
 
   &__content {
+    &-wrapper:nth-child(odd){
+      .projects__link:nth-child(even) {
+        display: none;
+      }
+    }
+    
     &-wrapper {
       border-radius: $border-radius;
       @include padding-margin($spacing-xl $spacing-xxl, $spacing-lg);
