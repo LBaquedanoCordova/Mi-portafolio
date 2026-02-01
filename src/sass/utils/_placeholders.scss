@@ -189,6 +189,10 @@
   background-clip: text;
   letter-spacing: 0.08em;
   filter: drop-shadow(0 2px 8px var(--color-shadow));
+
+@media screen and (min-width: 580px) {
+    font-size: clamp(36px, 5vw, 42px);
+  }
 }
 
 %section-subtitle-light {
@@ -198,6 +202,7 @@
 
 %section-paragraph-default {
   font-size: $fs-small;
+  font-weight: 500;
   text-align: justify;
   color: var(--color-text-secondary);
 }
