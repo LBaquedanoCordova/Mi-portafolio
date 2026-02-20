@@ -1,4 +1,5 @@
 import { createElementWithClass } from "./intro.js";
+import { observeElements } from "./observerManager.js";
 
 const technologies = [
   { name: "HTML", img: "/assets/icons/html.svg", category: "languages" },
@@ -28,8 +29,19 @@ let currentTechnologies = [];
 // Renderiza la lista de tecnologías dentro del contenedor correspondiente.
 function initTech() {
   techList.innerHTML = "";
-  currentTechnologies.forEach((tech) => {
-    const li = createElementWithClass("li", "technologies__item");
+  const staggerDelayIncrement = 100;
+
+  const newItems = []; // Array para guardar los nuevos elementos
+
+  currentTechnologies.forEach((tech, index) => {
+    const li = createElementWithClass("li", [
+      "technologies__item",
+      "animate-on-scroll",
+      "stagger-item",
+    ]);
+
+    const delay = index * staggerDelayIncrement;
+    li.style.setProperty("--stagger-delay", `${delay}ms`);
 
     const img = createElementWithClass("img", "technologies__icon");
     img.src = tech.img;
@@ -39,7 +51,13 @@ function initTech() {
 
     li.append(img, p);
     techList.append(li);
+    newItems.push(li);
   });
+
+  // Pedir al gestor que observe todos los nuevos ítems creados
+  if (newItems.length > 0) {
+    observeElements(newItems);
+  }
 }
 
 // Filtra los ítems tech en la sección Technologies.

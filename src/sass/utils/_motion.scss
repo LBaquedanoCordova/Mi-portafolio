@@ -1,0 +1,49 @@
+// --- Estado Base ---
+// Define el estado inicial para todos los elementos que se animarán al hacer scroll.
+// Por defecto, están invisibles y listos para la transición.
+.animate-on-scroll {
+  opacity: 0;
+  // Se usa una variable para el delay, que puede ser sobrescrita en el HTML o CSS.
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  transition-delay: var(--animation-delay, 0ms);
+}
+
+// Para elementos que se deslizan desde abajo
+.animate-on-scroll.slide-up {
+  transform: translateY(80px);
+}
+
+// Para elementos que aparecen escalando
+.animate-on-scroll.scale-in {
+  transform: scale(0.75);
+}
+
+// --- Estado Final ---
+// Cuando se añade la clase .is-visible, el elemento transiciona
+// a su estado final (totalmente visible y en su posición original).
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+// --- Estilos para Staggering (Aparición escalonada) ---
+// Estos estilos se aplicarán a los elementos generados por JS, como los de la lista de tecnologías.
+// El `animationObserver` se encargará de añadirles la clase `is-visible`.
+.stagger-item {
+  opacity: 0;
+  transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale(0.75);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease-out,
+    filter 0.3s ease-out,
+    box-shadow 0.3s ease-out;
+  transition-delay: var(--stagger-delay, 0ms);
+
+  &.is-visible {
+    opacity: 1;
+    transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale(1);
+    // transition-delay: 0ms !important;
+  }
+}

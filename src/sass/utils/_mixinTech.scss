@@ -50,9 +50,7 @@
   overflow: hidden;
   background-image: var(--gradient-accent);
   box-shadow: inset 3px 3px 6px rgba(var(--color-black), 0.4), inset -3px -3px 6px rgba(var(--color-white), 0.2);
-  transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale(1);
   cursor: pointer;
-  transition: transform 0.3s ease-out, filter 0.3s ease-out;
 }
 
 @mixin tech-hexagon-hover() {

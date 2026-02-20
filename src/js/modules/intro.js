@@ -1,7 +1,9 @@
 // Crea un elemento con clase y contenido opcional
 function createElementWithClass(tag, classes, content = "") {
   const element = document.createElement(tag);
-  element.classList.add(classes);
+  Array.isArray(classes)
+    ? element.classList.add(...classes)
+    : element.classList.add(classes);
   if (content) element.textContent = content;
   return element;
 }
