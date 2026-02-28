@@ -10,8 +10,7 @@ $fs-miniSmall: clamp(12px, 2.5vw, 15px);
 $fs-small: clamp(14px, 2.5vw, 16px);
 $fs-medium: clamp(16px, 2.5vw, 18px);
 $fs-large: clamp(16px, 3vw, 22px);
-// $fs-xlarge: clamp(26px, 3.5vw, 36px);
-$fs-xlarge: clamp(30px, 5vw, 36px);;
+$fs-xlarge: clamp(30px, 5vw, 36px);
 
 // Escala de padding y margin
 $spacing-xs: 4px;
@@ -32,3 +31,6 @@ $border-radius: 10px;
 // Filtro de desenfoque aplicado al fondo de la barra de navegación para lograr un efecto de transparencia suave.
 $blur: blur(5px);
 
+// Breakpoints
+$bp-xl: 1440px;
+$bp-xxl: 1920px;

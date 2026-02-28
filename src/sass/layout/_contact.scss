@@ -16,10 +16,10 @@
     @extend %section-subblock;
   }
 
-  &__content{
+  &__content {
     width: initial;
 
-    .contact__list{
+    .contact__list {
       @extend %list-container-flex;
     }
   }
@@ -63,8 +63,42 @@
     .contact__link {
       @extend %link-list-item;
     }
-    .email-tooltip{
+
+    .email-tooltip {
       @extend %tooltip-style;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xl) {
+  .contact {
+    &__header {
+      &-subtitle {
+        font-size: clamp(35px, 3.5vw, 45px);
+      }
+
+      &-title {
+        font-size: clamp(55px, 6vw, 85px);
+      }
+
+      &-description {
+        line-height: 1.6;
+        margin: $spacing-xl calc($spacing-md - 6px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xxl) {
+  .contact {
+    &__header {
+      &-subtitle {
+        font-size: clamp(45px, 3vw, 55px);
+      }
+
+      &-title {
+        font-size: clamp(85px, 5vw, 120px);
+      }
     }
   }
 }

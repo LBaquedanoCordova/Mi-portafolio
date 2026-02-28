@@ -35,7 +35,7 @@
     left: 0px;
     transform: scaleY(0);
     transform-origin: bottom;
-    background: linear-gradient( 180deg, transparent, rgba(var(--color-black), 0.4));
+    background: linear-gradient(180deg, transparent, rgba(var(--color-black), 0.4));
     opacity: 0;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     z-index: 0;
@@ -73,14 +73,14 @@
   @include padding-margin($spacing-xs 2px, 0px);
   position: absolute;
   transform: translateY(250%);
-  @include font(clamp(10px, 1vw, 12px), 500);
+  @include font(clamp(10px, 1.2vw, 20px), 500);
   color: rgb(var(--color-white));
   border-radius: calc($border-radius - 6px);
   opacity: 0;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   z-index: 1;
-  
-  &::before{
+
+  &::before {
     @extend %pseudo-abs;
     inset: 0;
     background-color: rgba(var(--color-black), 0.5);

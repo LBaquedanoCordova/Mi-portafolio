@@ -7,14 +7,23 @@
 .about-me {
   @extend %flex-center;
   @extend %flex-column-base;
-  min-height: 45vh;
+  @extend %section-viewport-padding-x;
+  min-height: 60vh;
+  gap: $spacing-xl;
 
-  &__content, &__image{
-        @extend %section-subblock;
+  &__content,
+  &__image {
+    @extend %section-subblock;
   }
 
   &__content {
     @extend %text-format-base;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
+  &__header {
 
     h2,
     h3,
@@ -25,24 +34,89 @@
     .about-me__title {
       @extend %section-subtitle;
     }
+
     .about-me__name {
       @extend %section-subtitle-light;
     }
+
     .about-me__text {
       @extend %section-paragraph-default;
     }
+  }
 
-    .about-me__highlight-title {
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--color-accent);
+  &__highlight-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-accent);
+  }
+
+  &__highlight-text {
+    border-radius: calc($border-radius - 6px);
+    background-color: var(--color-background);
+    color: var(--color-accent-alt);
+    padding: 2px 6px;
+  }
+
+  &__bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    width: 100%;
+
+    @media screen and (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    @include box-style(20px, $border-radius);
+    background-image: var(--gradient-background), var(--bg-scene-texture);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-elevation);
+      border-color: var(--tech-active-border);
+
+      .about-me__card-icon i {
+        color: var(--color-accent);
+        transform: scale(1.1);
+      }
     }
 
-    .about-me__highlight-text {
-      border-radius: calc($border-radius - 6px);
-      background-color: var(--color-background);
-      color: var(--color-accent-alt);
+    &-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: calc($border-radius - 4px);
+      background-image: var(--gradient-accent);
+      box-shadow: 0 4px 12px var(--tech-active-glow-soft);
+      margin-bottom: $spacing-xs;
+
+      i {
+        font-size: 20px;
+        color: rgb(var(--color-white));
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+    }
+
+    &-title {
+      @extend %section-subtitle-light;
+      font-size: clamp(18px, 2vw, 22px);
+      margin: 0;
+    }
+
+    &-text {
+      @extend %section-paragraph-default;
+      margin: 0;
     }
   }
 
@@ -50,14 +124,14 @@
     @extend %flex-center;
     margin: 0px;
 
-    .about-me__photo-wrapper{
+    .about-me__photo-wrapper {
       display: inline-block;
       width: 100%;
       max-width: clamp(210px, 65%, 280px);
-      perspective: 1000px;
+      perspective: 1200px;
       transform-style: preserve-3d;
       cursor: pointer;
-      
+
       &:hover .about-me__photo {
         transform: rotateY(0deg) rotateX(0deg) scale(1.1);
         box-shadow: 0 8px 32px 0 var(--tech-active-glow-soft);
@@ -79,27 +153,115 @@
   }
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1024px) {
   .about-me {
     flex-direction: row;
+    align-items: stretch;
 
     &__content,
     &__image {
       width: 50%;
-      padding: $spacing-md clamp(15px, 2.5vw, 25px);
     }
-    
-    &__image .about-me__photo{
-      max-width: clamp(280px, 75%, 300px);
+
+    &__content {
+      justify-content: center;
+    }
+
+    &__image .about-me__photo-wrapper {
+      max-width: clamp(280px, 80%, 350px);
     }
   }
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: $bp-xl) {
   .about-me {
-    .about-me__content,
-    .about-me__image {
-      padding: $spacing-md clamp(25px, 2.5vw, 35px);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: $spacing-xxxl;
+    align-items: center;
+
+    &__content,
+    &__image {
+      width: 100%;
+      padding: 0;
+    }
+
+    &__header {
+      margin-bottom: $spacing-md;
+    }
+
+    &__bento-grid {
+      gap: $spacing-xl;
+    }
+
+    &__card {
+      padding: 30px;
+      gap: $spacing-md;
+
+      &-icon {
+        width: 55px;
+        height: 55px;
+
+        i {
+          font-size: 26px;
+        }
+      }
+
+      &-title {
+        font-size: clamp(22px, 2.5vw, 28px);
+      }
+    }
+
+    &__image .about-me__photo-wrapper {
+      max-width: clamp(350px, 80%, 400px);
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xxl) {
+  .about-me {
+    grid-template-columns: 1fr 1.2fr 0.8fr;
+    gap: $spacing-jumbo;
+
+    &__content {
+      display: contents;
+    }
+
+    &__header {
+      align-self: center;
+      margin-bottom: 0;
+    }
+
+    &__bento-grid {
+      grid-template-columns: 1fr;
+      align-self: center;
+      gap: $spacing-xxl;
+    }
+
+    &__card {
+      padding: 40px;
+      gap: $spacing-lg;
+
+      &-icon {
+        width: 70px;
+        height: 70px;
+
+        i {
+          font-size: 34px;
+        }
+      }
+
+      &-title {
+        font-size: clamp(28px, 3.5vw, 36px);
+      }
+    }
+
+    &__image {
+      align-self: center;
+
+      .about-me__photo-wrapper {
+        max-width: clamp(400px, 100%, 450px);
+      }
     }
   }
 }

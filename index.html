@@ -622,30 +622,46 @@
 
     <section id="about-me" class="about-me" aria-labelledby="about-me__title">
       <div class="about-me__content">
-        <h2 id="about-me__title" class="about-me__title">Conóceme más</h2>
-        <h3 class="about-me__name">Luis Fernando</h3>
-        <p class="about-me__text">
-          Soy
-          <span class="about-me__highlight-title">Desarrollador Front-end</span>
-          e
-          <span class="about-me__highlight-title">Ingeniero de Sistemas</span>.
-          Me considero una persona
-          <span class="about-me__highlight-text"
-            >entusiasta, creativa y disciplinada</span
-          >.
-        </p>
-        <p class="about-me__text">
-          Aunque mi experiencia profesional en desarrollo web está en sus
-          inicios, he aprovechado mi sólida base en programación para
-          especializarme en
-          <span class="about-me__highlight-text">Full-Stack</span>, comenzando
-          por el Front-end.
-        </p>
-        <p class="about-me__text">
-          Además, mi pasión por el
-          <span class="about-me__highlight-text">gimnasio</span> ha fortalecido
-          mi disciplina, lo cual se refleja en todos los aspectos de mi vida.
-        </p>
+        <header class="about-me__header">
+          <h2 id="about-me__title" class="about-me__title">Conóceme más</h2>
+          <h3 class="about-me__name">Luis Fernando</h3>
+          <p class="about-me__text">
+            Soy
+            <span class="about-me__highlight-title">Desarrollador Front-end</span>
+            e
+            <span class="about-me__highlight-title">Ingeniero de Sistemas</span>.
+            Me considero una persona
+            <span class="about-me__highlight-text"
+              >entusiasta, creativa y disciplinada</span
+            >.
+          </p>
+        </header>
+
+        <div class="about-me__bento-grid">
+          <article class="about-me__card animate-on-scroll slide-up">
+            <div class="about-me__card-icon">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+            </div>
+            <h4 class="about-me__card-title">Enfoque Full-Stack</h4>
+            <p class="about-me__card-text">
+              Aunque mi experiencia profesional web está en sus
+              inicios, aprovecho mi base en programación para
+              especializarme en <span class="about-me__highlight-text">Full-Stack</span>, comenzando por el Front-end.
+            </p>
+          </article>
+          
+          <article class="about-me__card animate-on-scroll slide-up" style="--stagger-delay: 150ms">
+            <div class="about-me__card-icon">
+              <i class="fa-solid fa-dumbbell" aria-hidden="true"></i>
+            </div>
+            <h4 class="about-me__card-title">Disciplina Creada</h4>
+            <p class="about-me__card-text">
+              Mi pasión por el <span class="about-me__highlight-text">gimnasio</span> 
+              ha fortalecido mi constancia día tras día, lo cual se refleja directamente en 
+              todos los aspectos de mi vida y mi código.
+            </p>
+          </article>
+        </div>
       </div>
       <figure
         class="about-me__image"

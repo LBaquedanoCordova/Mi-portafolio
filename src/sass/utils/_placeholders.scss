@@ -48,22 +48,44 @@
   cursor: pointer;
   transition: border-color 0.2s ease, filter 0.2s ease;
 
+  @media screen and (min-width: $bp-xl) {
+    font-size: clamp(15px, 1.2vw, 17px);
+    @include box-style(10px 15px, calc($border-radius - 2px));
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    font-size: clamp(18px, 1.2vw, 24px);
+    @include box-style(14px 20px, calc($border-radius - 2px));
+  }
+
   &:hover {
     border-color: var(--color-accent);
     filter: drop-shadow(1px 1px 2px var(--color-accent));
   }
+
   i,
   .icon-copy-check {
     @include font($icon-size, $icon-weight);
     width: 16px;
     height: 16px;
     color: var(--color-accent-alt);
+
+    @media screen and (min-width: $bp-xxl) {
+      width: clamp(20px, 1.5vw, 28px);
+      height: clamp(20px, 1.5vw, 28px);
+      font-size: clamp(20px, 1.5vw, 28px);
+    }
   }
 
   .intro__contact-icon,
   .contact__icon {
     margin-right: 5px;
+
+    @media screen and (min-width: $bp-xxl) {
+      margin-right: 10px;
+    }
   }
+
   .intro__contact-icon--copy,
   .contact__icon--copy {
     @extend %flex-center;
@@ -151,10 +173,36 @@
       transform: translateX(-50%);
       clip-path: polygon(0 100%, 50% 0, 100% 100%);
     }
+
     .email-tooltip__arrow {
       clip-path: polygon(0 100%, 50% 0, 100% 100%);
     }
   }
+
+  @media screen and (min-width: $bp-xl) {
+    .email-tooltip__content {
+      font-size: clamp(13px, 1.2vw, 15px);
+      padding: 8px 12px;
+    }
+
+    .email-tooltip__arrow {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    .email-tooltip__content {
+      font-size: clamp(15px, 1.2vw, 17px);
+      padding: 10px 14px;
+    }
+
+    .email-tooltip__arrow {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
 }
 
 %flex-column-base {
@@ -172,8 +220,33 @@
 }
 
 %section-subblock {
-  width: 100%;
   padding: $spacing-sm $spacing-lg;
+
+  @media screen and (min-width: 720px) {
+    padding: $spacing-md clamp(15px, 2.5vw, 25px);
+  }
+
+  @media screen and (min-width: 1020px) {
+    padding: $spacing-md clamp(25px, 2.5vw, 35px);
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    padding: $spacing-xl clamp(40px, 4vw, 80px);
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    padding: $spacing-xxxl clamp(80px, 6vw, 150px);
+  }
+}
+
+%section-viewport-padding-x {
+  @media screen and (min-width: $bp-xl) {
+    padding-inline: clamp(40px, 4vw, 80px);
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    padding-inline: clamp(80px, 6vw, 150px);
+  }
 }
 
 %header-text-spacing {
@@ -190,21 +263,68 @@
   letter-spacing: 0.08em;
   filter: drop-shadow(0 2px 8px var(--color-shadow));
 
-@media screen and (min-width: 580px) {
-    font-size: clamp(36px, 5vw, 42px);
+  @media screen and (min-width: 580px) {
+    font-size: clamp(36px, 3vw, 42px);
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    font-size: clamp(45px, 3vw, 60px);
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    font-size: clamp(65px, 3.5vw, 85px);
   }
 }
 
 %section-subtitle-light {
   font-size: $fs-large;
   color: var(--color-text-primary);
+
+  @media screen and (min-width: 580px) {
+    font-size: clamp(22px, 2.5vw, 30px);
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    font-size: clamp(32px, 3vw, 40px);
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    font-size: clamp(42px, 3.5vw, 52px);
+  }
+}
+
+%section-subtitle-secondary {
+  font-size: $fs-medium;
+
+  @media screen and (min-width: 580px) {
+    font-size: clamp(18px, 2.5vw, 22px);
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    font-size: clamp(22px, 2.5vw, 28px);
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    font-size: clamp(28px, 3vw, 36px);
+  }
 }
 
 %section-paragraph-default {
-  font-size: $fs-small;
-  font-weight: 500;
+  @include font($fs-small, 500);
   text-align: justify;
   color: var(--color-text-secondary);
+
+  @media screen and (min-width: 580px) {
+    font-size: clamp(16px, 2.5vw, 18px);
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    font-size: clamp(18px, 2.5vw, 24px);
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    font-size: clamp(26px, 3vw, 32px);
+  }
 }
 
 %section-paragraph-secondary {

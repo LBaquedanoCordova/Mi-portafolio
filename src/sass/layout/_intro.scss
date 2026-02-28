@@ -160,12 +160,15 @@
       color: var(--color-accent-alt);
       animation: scroll-animation 3s ease-in-out infinite;
     }
+
     &-arrow:nth-child(1) {
       animation-delay: 0s;
     }
+
     &-arrow:nth-child(2) {
       animation-delay: 1s;
     }
+
     &-arrow:nth-child(3) {
       animation-delay: 2s;
     }
@@ -179,8 +182,46 @@
 @media screen and (min-width: 768px) {
   .intro {
     gap: 10px;
+
     &__hero {
       @include text-style(center, 0.4em, 0.4em, 1.4);
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xxl) {
+  .intro {
+    gap: 20px;
+
+    &__hero {
+      &-text {
+        font-size: clamp(16px, 1.5vw, 28px);
+      }
+
+      &-title {
+        @include font(clamp(75px, 5vw, 120px), 900);
+      }
+
+      &-subtitle {
+        @include font(clamp(35px, 3vw, 55px), 900);
+      }
+    }
+
+    &__contact {
+      gap: 25px;
+
+      &-availability-wrapper {
+        margin: $spacing-lg 0;
+      }
+
+      &-availability {
+        @include box-style(15px 30px, calc($border-radius + 2px));
+      }
+
+      .intro__availability-text {
+        font-size: clamp(16px, 1.2vw, 26px);
+        gap: 12px;
+      }
     }
   }
 }
