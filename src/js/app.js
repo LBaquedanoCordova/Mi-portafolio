@@ -7,6 +7,7 @@ import { initAnimationObserver } from "./modules/animationObserver.js";
 import { initCopyEmail } from "./modules/copyEmail.js";
 import { initRouter } from './modules/router.js';
 import { initializeObserver } from './modules/observerManager.js';
+import { initExperienceTimeline } from './modules/experience.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeObserver();
@@ -16,4 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initDefaultCategory();
     initCopyEmail();
     initAnimationObserver();
+    initExperienceTimeline();
 });

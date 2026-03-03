@@ -3,11 +3,15 @@
 // Por defecto, están invisibles y listos para la transición.
 .animate-on-scroll {
   opacity: 0;
-  // Se usa una variable para el delay, que puede ser sobrescrita en el HTML o CSS.
+  // Se usa una variable para el duration, permitiendo escalabilidad en la velocidad de la animación
   transition:
-    opacity 0.6s ease-out,
-    transform 0.6s ease-out;
+    opacity var(--animation-duration, 0.6s) ease-out,
+    transform var(--animation-duration, 0.6s) ease-out;
   transition-delay: var(--animation-delay, 0ms);
+}
+
+.animate-duration-slow {
+  --animation-duration: 0.8s;
 }
 
 // Para elementos que se deslizan desde abajo
@@ -44,6 +48,5 @@
   &.is-visible {
     opacity: 1;
     transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale(1);
-    // transition-delay: 0ms !important;
   }
 }

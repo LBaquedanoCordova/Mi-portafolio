@@ -1,446 +1,325 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Portafolio</title>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@800;900&family=Roboto+Condensed:wght@500&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&text=menu,dark_mode,light_mode,close,download"
-      rel="stylesheet"
-    />
-    <script type="module" src="/src/js/app.js"></script>
-  </head>
-  <body>
-    <nav class="nav nav--animating-in" role="navigation" aria-label="Main menu">
-      <div class="nav__logo">
-        <a href="#" class="nav__logo-link" aria-label="Home"
-          ><svg
-            class="nav__logo-image"
-            viewBox="153.337 40.69 261.6 100.31"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M154.237 89V64.34L153.337 59.84L154.237 57.14H169.537C172.927 57.14 175.642 57.77 177.682 59.03C179.722 60.29 180.742 62.33 180.742 65.15C180.742 66.56 180.502 67.835 180.022 68.975C179.542 70.115 178.852 71 177.952 71.63C179.992 72.29 181.492 73.295 182.452 74.645C183.412 75.995 183.892 77.6 183.892 79.46C183.892 82.73 182.932 85.145 181.012 86.705C179.122 88.235 176.347 89 172.687 89H154.237ZM162.337 69.515H169.447C170.467 69.515 171.202 69.275 171.652 68.795C172.102 68.315 172.327 67.685 172.327 66.905C172.327 65.915 171.997 65.24 171.337 64.88C170.677 64.52 169.897 64.34 168.997 64.34H162.337V69.515ZM162.337 81.8H171.337C172.417 81.8 173.212 81.665 173.722 81.395C174.262 81.125 174.607 80.78 174.757 80.36C174.937 79.94 175.027 79.505 175.027 79.055C175.027 78.275 174.742 77.615 174.172 77.075C173.632 76.505 172.837 76.22 171.787 76.22H162.337V81.8ZM203.177 89.45C201.137 89.45 199.157 89.225 197.237 88.775C195.317 88.295 193.577 87.455 192.017 86.255C190.487 85.055 189.272 83.39 188.372 81.26C187.472 79.13 187.022 76.4 187.022 73.07C187.022 69.98 187.472 67.385 188.372 65.285C189.272 63.185 190.472 61.505 191.972 60.245C193.472 58.985 195.107 58.085 196.877 57.545C198.677 56.975 200.477 56.69 202.277 56.69C203.807 56.69 205.292 56.81 206.732 57.05C208.202 57.29 209.267 57.56 209.927 57.86L214.922 61.955L210.872 68.48L203.177 64.52C201.047 64.52 199.247 65.225 197.777 66.635C196.307 68.015 195.572 70.16 195.572 73.07C195.572 75.14 195.932 76.82 196.652 78.11C197.402 79.4 198.422 80.345 199.712 80.945C201.002 81.545 202.472 81.845 204.122 81.845C205.862 81.845 207.347 81.71 208.577 81.44C209.807 81.14 210.887 80.795 211.817 80.405C212.747 79.985 213.632 79.58 214.472 79.19V86.75C213.422 87.41 212.027 88.025 210.287 88.595C208.547 89.165 206.177 89.45 203.177 89.45ZM233.082 89.45C231.162 89.45 229.287 89.225 227.457 88.775C225.657 88.295 224.022 87.455 222.552 86.255C221.112 85.055 219.957 83.39 219.087 81.26C218.247 79.13 217.827 76.4 217.827 73.07C217.827 69.74 218.247 67.01 219.087 64.88C219.957 62.75 221.112 61.085 222.552 59.885C224.022 58.685 225.657 57.86 227.457 57.41C229.287 56.93 231.162 56.69 233.082 56.69C235.002 56.69 236.862 56.93 238.662 57.41C240.492 57.89 242.127 58.73 243.567 59.93C245.037 61.13 246.192 62.795 247.032 64.925C247.902 67.055 248.337 69.77 248.337 73.07C248.337 76.37 247.902 79.085 247.032 81.215C246.192 83.345 245.037 85.01 243.567 86.21C242.127 87.41 240.492 88.25 238.662 88.73C236.862 89.21 235.002 89.45 233.082 89.45ZM233.082 81.8C235.302 81.8 236.982 81.14 238.122 79.82C239.262 78.5 239.832 76.25 239.832 73.07C239.832 69.89 239.262 67.64 238.122 66.32C236.982 65 235.302 64.34 233.082 64.34C230.892 64.34 229.227 65.015 228.087 66.365C226.947 67.715 226.377 69.95 226.377 73.07C226.377 76.19 226.947 78.425 228.087 79.775C229.227 81.125 230.892 81.8 233.082 81.8ZM253.729 89V64.385L252.829 59.84L253.729 57.14H268.129C270.319 57.14 272.284 57.485 274.024 58.175C275.794 58.835 277.189 59.975 278.209 61.595C279.259 63.185 279.784 65.39 279.784 68.21C279.784 70.76 279.319 72.83 278.389 74.42C277.459 75.98 276.169 77.15 274.519 77.93L274.969 78.425L279.424 84.005L281.989 86.3V89H271.864L265.564 79.415H261.829V81.755L262.279 86.255L261.829 89H253.729ZM261.829 72.35H266.239C267.799 72.35 269.044 72.065 269.974 71.495C270.904 70.895 271.369 69.8 271.369 68.21C271.369 67.1 271.144 66.275 270.694 65.735C270.244 65.165 269.614 64.79 268.804 64.61C268.024 64.43 267.109 64.34 266.059 64.34H261.379L261.829 72.35ZM286.029 89V64.385L285.129 59.885L286.029 57.14H299.439C301.599 57.14 303.669 57.35 305.649 57.77C307.659 58.16 309.444 58.91 311.004 60.02C312.594 61.13 313.839 62.72 314.739 64.79C315.669 66.86 316.134 69.545 316.134 72.845C316.134 76.145 315.669 78.86 314.739 80.99C313.809 83.09 312.549 84.725 310.959 85.895C309.369 87.065 307.569 87.875 305.559 88.325C303.579 88.775 301.539 89 299.439 89H286.029ZM294.219 81.8H299.439C302.079 81.8 304.104 81.11 305.514 79.73C306.924 78.32 307.629 76.025 307.629 72.845C307.629 69.665 306.909 67.46 305.469 66.23C304.059 64.97 302.049 64.34 299.439 64.34H294.219V81.8ZM334.992 89.45C333.072 89.45 331.197 89.225 329.367 88.775C327.567 88.295 325.932 87.455 324.462 86.255C323.022 85.055 321.867 83.39 320.997 81.26C320.157 79.13 319.737 76.4 319.737 73.07C319.737 69.74 320.157 67.01 320.997 64.88C321.867 62.75 323.022 61.085 324.462 59.885C325.932 58.685 327.567 57.86 329.367 57.41C331.197 56.93 333.072 56.69 334.992 56.69C336.912 56.69 338.772 56.93 340.572 57.41C342.402 57.89 344.037 58.73 345.477 59.93C346.947 61.13 348.102 62.795 348.942 64.925C349.812 67.055 350.247 69.77 350.247 73.07C350.247 76.37 349.812 79.085 348.942 81.215C348.102 83.345 346.947 85.01 345.477 86.21C344.037 87.41 342.402 88.25 340.572 88.73C338.772 89.21 336.912 89.45 334.992 89.45ZM334.992 81.8C337.212 81.8 338.892 81.14 340.032 79.82C341.172 78.5 341.742 76.25 341.742 73.07C341.742 69.89 341.172 67.64 340.032 66.32C338.892 65 337.212 64.34 334.992 64.34C332.802 64.34 331.137 65.015 329.997 66.365C328.857 67.715 328.287 69.95 328.287 73.07C328.287 76.19 328.857 78.425 329.997 79.775C331.137 81.125 332.802 81.8 334.992 81.8ZM361.509 89L353.409 64.295L352.059 59.84V57.14H360.609L366.954 80.81H367.854L374.109 57.14H382.569V59.84L381.219 64.295L373.164 89H361.509ZM381.228 89L383.388 81.395V75.68L386.718 74.33L392.568 57.185H404.223L411.468 77.345L414.933 83.735V89H406.968L404.718 81.8H391.623L389.688 89H381.228ZM394.593 74.87H402.243L398.823 64.565H397.878L394.593 74.87Z"
-              fill="var(--logo-primary)"
-            />
-            <path
-              d="M259.512 137H254.668L254.707 133.934H259.512C261.217 133.934 262.604 133.608 263.672 132.957C264.74 132.293 265.527 131.316 266.035 130.027C266.543 128.725 266.797 127.117 266.797 125.203V120.34C266.797 118.829 266.654 117.527 266.367 116.434C266.081 115.34 265.651 114.441 265.078 113.738C264.505 113.035 263.783 112.514 262.91 112.176C262.038 111.824 261.016 111.648 259.844 111.648H254.57V108.562H259.844C261.445 108.562 262.891 108.816 264.18 109.324C265.469 109.819 266.576 110.568 267.5 111.57C268.424 112.56 269.128 113.79 269.609 115.262C270.104 116.733 270.352 118.439 270.352 120.379V125.203C270.352 127.143 270.104 128.849 269.609 130.32C269.128 131.792 268.418 133.022 267.48 134.012C266.543 135.001 265.404 135.75 264.062 136.258C262.734 136.753 261.217 137 259.512 137ZM256.66 108.562V137H253.066V108.562H256.66ZM291.211 133.934V137H278.867V133.934H291.211ZM279.512 108.562V137H275.918V108.562H279.512ZM289.551 120.789V123.855H278.867V120.789H289.551ZM291.016 108.562V111.648H278.867V108.562H291.016ZM303.613 132.684L310.449 108.562H314.355L305.527 137H302.773L303.613 132.684ZM297.48 108.562L304.258 132.684L305.156 137H302.402L293.574 108.562H297.48Z"
-              fill="var(--logo-primary)"
-            />
-            <line
-              x1="168"
-              y1="101"
-              x2="246"
-              y2="101"
-              stroke="var(--logo-primary)"
-              stroke-width="2"
-            />
-            <line
-              x1="319"
-              y1="45"
-              x2="397"
-              y2="45"
-              stroke="var(--logo-primary)"
-              stroke-width="2"
-            />
-          </svg>
-        </a>
-      </div>
 
-      <div class="nav__options">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#technologies" class="nav__link" data-target="technologies"
-              >Tecnologías</a
-            >
-          </li>
-          <li class="nav__item">
-            <a href="#experience" class="nav__link" data-target="experience"
-              >Trayectoria</a
-            >
-          </li>
-          <li class="nav__item">
-            <a href="#projects" class="nav__link" data-target="projects"
-              >Proyectos</a
-            >
-          </li>
-          <li class="nav__item">
-            <a href="#about-me" class="nav__link" data-target="about-me"
-              >Luis</a
-            >
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link" data-target="contact"
-              >Contacto</a
-            >
-          </li>
-          <li class="nav__item nav__item--theme">
-            <button class="nav__theme-toggle" aria-label="Activate light theme">
-              <svg
-                class="nav__theme-icon"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  id="themeIcon"
-                  class="theme-icon--sun"
-                  d="M 12 1.605V 2.76M 12 21.24V 22.395M 2.76 12H 1.605M 5.43281 5.43281L 4.4925 4.4925M 18.56722 5.43281L 19.5075 4.4925M 5.43281 18.57195L 4.4925 19.50762M 18.56722 18.57195L 19.5075 19.50762M 22.395 12H 21.24M 16.62 12C 16.62 14.5515 14.5515 16.62 12 16.62C 9.44844 16.62 7.38 14.5515 7.38 12C 7.38 9.44844 9.44844 7.38 12 7.38C 14.5515 7.38 16.62 9.44844 16.62 12Z"
-                />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portafolio</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@800;900&family=Roboto+Condensed:wght@500&family=Roboto+Mono&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&text=menu,dark_mode,light_mode,close,download"
+    rel="stylesheet" />
+  <script type="module" src="/src/js/app.js"></script>
+</head>
+
+<body>
+  <nav class="nav nav--animating-in" role="navigation" aria-label="Main menu">
+    <div class="nav__logo">
+      <a href="#" class="nav__logo-link" aria-label="Home"><svg class="nav__logo-image"
+          viewBox="153.337 40.69 261.6 100.31" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path
+            d="M154.237 89V64.34L153.337 59.84L154.237 57.14H169.537C172.927 57.14 175.642 57.77 177.682 59.03C179.722 60.29 180.742 62.33 180.742 65.15C180.742 66.56 180.502 67.835 180.022 68.975C179.542 70.115 178.852 71 177.952 71.63C179.992 72.29 181.492 73.295 182.452 74.645C183.412 75.995 183.892 77.6 183.892 79.46C183.892 82.73 182.932 85.145 181.012 86.705C179.122 88.235 176.347 89 172.687 89H154.237ZM162.337 69.515H169.447C170.467 69.515 171.202 69.275 171.652 68.795C172.102 68.315 172.327 67.685 172.327 66.905C172.327 65.915 171.997 65.24 171.337 64.88C170.677 64.52 169.897 64.34 168.997 64.34H162.337V69.515ZM162.337 81.8H171.337C172.417 81.8 173.212 81.665 173.722 81.395C174.262 81.125 174.607 80.78 174.757 80.36C174.937 79.94 175.027 79.505 175.027 79.055C175.027 78.275 174.742 77.615 174.172 77.075C173.632 76.505 172.837 76.22 171.787 76.22H162.337V81.8ZM203.177 89.45C201.137 89.45 199.157 89.225 197.237 88.775C195.317 88.295 193.577 87.455 192.017 86.255C190.487 85.055 189.272 83.39 188.372 81.26C187.472 79.13 187.022 76.4 187.022 73.07C187.022 69.98 187.472 67.385 188.372 65.285C189.272 63.185 190.472 61.505 191.972 60.245C193.472 58.985 195.107 58.085 196.877 57.545C198.677 56.975 200.477 56.69 202.277 56.69C203.807 56.69 205.292 56.81 206.732 57.05C208.202 57.29 209.267 57.56 209.927 57.86L214.922 61.955L210.872 68.48L203.177 64.52C201.047 64.52 199.247 65.225 197.777 66.635C196.307 68.015 195.572 70.16 195.572 73.07C195.572 75.14 195.932 76.82 196.652 78.11C197.402 79.4 198.422 80.345 199.712 80.945C201.002 81.545 202.472 81.845 204.122 81.845C205.862 81.845 207.347 81.71 208.577 81.44C209.807 81.14 210.887 80.795 211.817 80.405C212.747 79.985 213.632 79.58 214.472 79.19V86.75C213.422 87.41 212.027 88.025 210.287 88.595C208.547 89.165 206.177 89.45 203.177 89.45ZM233.082 89.45C231.162 89.45 229.287 89.225 227.457 88.775C225.657 88.295 224.022 87.455 222.552 86.255C221.112 85.055 219.957 83.39 219.087 81.26C218.247 79.13 217.827 76.4 217.827 73.07C217.827 69.74 218.247 67.01 219.087 64.88C219.957 62.75 221.112 61.085 222.552 59.885C224.022 58.685 225.657 57.86 227.457 57.41C229.287 56.93 231.162 56.69 233.082 56.69C235.002 56.69 236.862 56.93 238.662 57.41C240.492 57.89 242.127 58.73 243.567 59.93C245.037 61.13 246.192 62.795 247.032 64.925C247.902 67.055 248.337 69.77 248.337 73.07C248.337 76.37 247.902 79.085 247.032 81.215C246.192 83.345 245.037 85.01 243.567 86.21C242.127 87.41 240.492 88.25 238.662 88.73C236.862 89.21 235.002 89.45 233.082 89.45ZM233.082 81.8C235.302 81.8 236.982 81.14 238.122 79.82C239.262 78.5 239.832 76.25 239.832 73.07C239.832 69.89 239.262 67.64 238.122 66.32C236.982 65 235.302 64.34 233.082 64.34C230.892 64.34 229.227 65.015 228.087 66.365C226.947 67.715 226.377 69.95 226.377 73.07C226.377 76.19 226.947 78.425 228.087 79.775C229.227 81.125 230.892 81.8 233.082 81.8ZM253.729 89V64.385L252.829 59.84L253.729 57.14H268.129C270.319 57.14 272.284 57.485 274.024 58.175C275.794 58.835 277.189 59.975 278.209 61.595C279.259 63.185 279.784 65.39 279.784 68.21C279.784 70.76 279.319 72.83 278.389 74.42C277.459 75.98 276.169 77.15 274.519 77.93L274.969 78.425L279.424 84.005L281.989 86.3V89H271.864L265.564 79.415H261.829V81.755L262.279 86.255L261.829 89H253.729ZM261.829 72.35H266.239C267.799 72.35 269.044 72.065 269.974 71.495C270.904 70.895 271.369 69.8 271.369 68.21C271.369 67.1 271.144 66.275 270.694 65.735C270.244 65.165 269.614 64.79 268.804 64.61C268.024 64.43 267.109 64.34 266.059 64.34H261.379L261.829 72.35ZM286.029 89V64.385L285.129 59.885L286.029 57.14H299.439C301.599 57.14 303.669 57.35 305.649 57.77C307.659 58.16 309.444 58.91 311.004 60.02C312.594 61.13 313.839 62.72 314.739 64.79C315.669 66.86 316.134 69.545 316.134 72.845C316.134 76.145 315.669 78.86 314.739 80.99C313.809 83.09 312.549 84.725 310.959 85.895C309.369 87.065 307.569 87.875 305.559 88.325C303.579 88.775 301.539 89 299.439 89H286.029ZM294.219 81.8H299.439C302.079 81.8 304.104 81.11 305.514 79.73C306.924 78.32 307.629 76.025 307.629 72.845C307.629 69.665 306.909 67.46 305.469 66.23C304.059 64.97 302.049 64.34 299.439 64.34H294.219V81.8ZM334.992 89.45C333.072 89.45 331.197 89.225 329.367 88.775C327.567 88.295 325.932 87.455 324.462 86.255C323.022 85.055 321.867 83.39 320.997 81.26C320.157 79.13 319.737 76.4 319.737 73.07C319.737 69.74 320.157 67.01 320.997 64.88C321.867 62.75 323.022 61.085 324.462 59.885C325.932 58.685 327.567 57.86 329.367 57.41C331.197 56.93 333.072 56.69 334.992 56.69C336.912 56.69 338.772 56.93 340.572 57.41C342.402 57.89 344.037 58.73 345.477 59.93C346.947 61.13 348.102 62.795 348.942 64.925C349.812 67.055 350.247 69.77 350.247 73.07C350.247 76.37 349.812 79.085 348.942 81.215C348.102 83.345 346.947 85.01 345.477 86.21C344.037 87.41 342.402 88.25 340.572 88.73C338.772 89.21 336.912 89.45 334.992 89.45ZM334.992 81.8C337.212 81.8 338.892 81.14 340.032 79.82C341.172 78.5 341.742 76.25 341.742 73.07C341.742 69.89 341.172 67.64 340.032 66.32C338.892 65 337.212 64.34 334.992 64.34C332.802 64.34 331.137 65.015 329.997 66.365C328.857 67.715 328.287 69.95 328.287 73.07C328.287 76.19 328.857 78.425 329.997 79.775C331.137 81.125 332.802 81.8 334.992 81.8ZM361.509 89L353.409 64.295L352.059 59.84V57.14H360.609L366.954 80.81H367.854L374.109 57.14H382.569V59.84L381.219 64.295L373.164 89H361.509ZM381.228 89L383.388 81.395V75.68L386.718 74.33L392.568 57.185H404.223L411.468 77.345L414.933 83.735V89H406.968L404.718 81.8H391.623L389.688 89H381.228ZM394.593 74.87H402.243L398.823 64.565H397.878L394.593 74.87Z"
+            fill="var(--logo-primary)" />
+          <path
+            d="M259.512 137H254.668L254.707 133.934H259.512C261.217 133.934 262.604 133.608 263.672 132.957C264.74 132.293 265.527 131.316 266.035 130.027C266.543 128.725 266.797 127.117 266.797 125.203V120.34C266.797 118.829 266.654 117.527 266.367 116.434C266.081 115.34 265.651 114.441 265.078 113.738C264.505 113.035 263.783 112.514 262.91 112.176C262.038 111.824 261.016 111.648 259.844 111.648H254.57V108.562H259.844C261.445 108.562 262.891 108.816 264.18 109.324C265.469 109.819 266.576 110.568 267.5 111.57C268.424 112.56 269.128 113.79 269.609 115.262C270.104 116.733 270.352 118.439 270.352 120.379V125.203C270.352 127.143 270.104 128.849 269.609 130.32C269.128 131.792 268.418 133.022 267.48 134.012C266.543 135.001 265.404 135.75 264.062 136.258C262.734 136.753 261.217 137 259.512 137ZM256.66 108.562V137H253.066V108.562H256.66ZM291.211 133.934V137H278.867V133.934H291.211ZM279.512 108.562V137H275.918V108.562H279.512ZM289.551 120.789V123.855H278.867V120.789H289.551ZM291.016 108.562V111.648H278.867V108.562H291.016ZM303.613 132.684L310.449 108.562H314.355L305.527 137H302.773L303.613 132.684ZM297.48 108.562L304.258 132.684L305.156 137H302.402L293.574 108.562H297.48Z"
+            fill="var(--logo-primary)" />
+          <line x1="168" y1="101" x2="246" y2="101" stroke="var(--logo-primary)" stroke-width="2" />
+          <line x1="319" y1="45" x2="397" y2="45" stroke="var(--logo-primary)" stroke-width="2" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="nav__options">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#technologies" class="nav__link" data-target="technologies">Tecnologías</a>
+        </li>
+        <li class="nav__item">
+          <a href="#experience" class="nav__link" data-target="experience">Trayectoria</a>
+        </li>
+        <li class="nav__item">
+          <a href="#projects" class="nav__link" data-target="projects">Proyectos</a>
+        </li>
+        <li class="nav__item">
+          <a href="#about-me" class="nav__link" data-target="about-me">Luis</a>
+        </li>
+        <li class="nav__item">
+          <a href="#contact" class="nav__link" data-target="contact">Contacto</a>
+        </li>
+        <li class="nav__item nav__item--theme">
+          <button class="nav__theme-toggle" aria-label="Activate light theme">
+            <svg class="nav__theme-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path id="themeIcon" class="theme-icon--sun"
+                d="M 12 1.605V 2.76M 12 21.24V 22.395M 2.76 12H 1.605M 5.43281 5.43281L 4.4925 4.4925M 18.56722 5.43281L 19.5075 4.4925M 5.43281 18.57195L 4.4925 19.50762M 18.56722 18.57195L 19.5075 19.50762M 22.395 12H 21.24M 16.62 12C 16.62 14.5515 14.5515 16.62 12 16.62C 9.44844 16.62 7.38 14.5515 7.38 12C 7.38 9.44844 9.44844 7.38 12 7.38C 14.5515 7.38 16.62 9.44844 16.62 12Z" />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <button type="button" class="nav__toggle" aria-label="Open navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet" viewBox="0 0 30 30"
+        class="nav__toggle-icon">
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+          <path id="navMenuIcon" d="M5 7 25 7M5 15 25 15M5 23 25 23" />
+        </g>
+      </svg>
+    </button>
+  </nav>
+
+  <main class="intro">
+    <section class="intro__hero">
+      <span class="intro__hero-text">Hola mi nombre es ...</span>
+      <h1 class="intro__hero-title">Luis Baquedano</h1>
+      <p class="intro__hero-subtitle">Desarrollador Front-end</p>
+    </section>
+    <section class="intro__contact">
+      <ul class="intro__contact-list" role="list">
+        <li class="intro__contact-item intro__contact-item--cv">
+          <a href="/assets/cv/CV_LUISBC_EN.pdf" download="CV-Luis Baquedano Cordova.pdf" class="intro__contact-link"
+            aria-label="Download my curriculum vitae"><i class="fa-solid fa-download intro__contact-icon"
+              aria-hidden="true"></i>Descargar CV</a>
+        </li>
+        <li class="intro__contact-item intro__contact-item--linkedin">
+          <a href="https://www.linkedin.com/in/luisbaquedano-frontend/" target="_blank" class="intro__contact-link"><i
+              class="fa-brands fa-linkedin intro__contact-icon" aria-hidden="true"></i>LinkedIn</a>
+        </li>
+        <li class="intro__contact-item intro__contact-item--github">
+          <a href="https://github.com/LBaquedanoCordova/" target="_blank" class="intro__contact-link"><i
+              class="fa-brands fa-github intro__contact-icon" aria-hidden="true"></i>GitHub</a>
+        </li>
+        <li class="intro__contact-item intro__contact-item--email">
+          <span class="intro__contact-link copy-email-link" aria-label="Copy email">
+            <i class="fa-solid fa-envelope intro__contact-icon" aria-hidden="true"></i>lfbcordova@gmail.com
+            <button class="intro__contact-icon--copy">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 30 30" class="icon-copy-check">
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                  <path id="copyIcon-front"
+                    d="M15 2C10 2 10 2 10 7L10 17C10 22 10 22 15 22L21 22C26 22 26 22 26 17L26 7 21 2Z" />
+                  <path id="copyIcon-back"
+                    d="M10 8 9 8C4 8 4 8 4 13L4 23C4 28 4 28 9 28L15 28C20 28 20 28 20 23L20 22 15 22C10 22 10 22 10 17Z" />
+                </g>
               </svg>
+            </button>
+          </span>
+        </li>
+      </ul>
+      <div class="intro__contact-availability-wrapper">
+        <div class="intro__contact-availability">
+          <span class="intro__availability-text"><i class="fa-solid fa-handshake intro__availability-icon"
+              aria-hidden="true"></i>Abierto a nuevas oportunidades</span>
+        </div>
+      </div>
+    </section>
+    <div class="intro__scroll">
+      <span class="intro__scroll-arrow"><i class="fa-solid fa-angle-down" aria-hidden="true"></i></span>
+      <span class="intro__scroll-arrow"><i class="fa-solid fa-angle-down" aria-hidden="true"></i></span>
+      <span class="intro__scroll-arrow"><i class="fa-solid fa-angle-down" aria-hidden="true"></i></span>
+    </div>
+  </main>
+
+  <section id="technologies" class="technologies" aria-labelledby="technologies-title">
+    <header class="technologies__header">
+      <h2 id="technologies-title" class="technologies__title animate-on-scroll slide-up">
+        Stack Tecnológico
+      </h2>
+      <div class="animate-on-scroll slide-up">
+        <h3 class="technologies__subtitle">Lo que me hace productivo</h3>
+        <p class="technologies__description">
+          Conozco estas tecnologías que me permiten crear experiencias web
+          dinámicas y responsivas. Estas herramientas me permiten trabajar de
+          manera más eficiente y mantener un flujo de trabajo organizado.
+        </p>
+      </div>
+    </header>
+    <div class="technologies__content">
+      <nav class="technologies__nav animate-on-scroll scale-in" aria-label="Menú de categorías de tecnologías">
+        <ul class="technologies__menu">
+          <li class="technologies__menu-item">
+            <button class="technologies__menu-btn" data-category="languages">
+              <i class="fa-solid fa-code"></i>
+            </button>
+          </li>
+          <li class="technologies__menu-item">
+            <button class="technologies__menu-btn" data-category="styles">
+              <i class="fa-solid fa-palette"></i>
+            </button>
+          </li>
+          <li class="technologies__menu-item">
+            <button class="technologies__menu-btn" data-category="version-control">
+              <i class="fa-solid fa-code-branch"></i>
+            </button>
+          </li>
+          <li class="technologies__menu-item">
+            <button class="technologies__menu-btn" data-category="tools">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </button>
+          </li>
+          <li class="technologies__menu-item">
+            <button class="technologies__menu-btn" data-category="frameworks">
+              <i class="fa-solid fa-layer-group"></i>
             </button>
           </li>
         </ul>
-      </div>
+      </nav>
+      <ul class="technologies__list" aria-label="List of technologies">
+        <!-- JS genera dinámicamente los elementos aquí -->
+      </ul>
+    </div>
+  </section>
 
-      <button
-        type="button"
-        class="nav__toggle"
-        aria-label="Open navigation menu"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 30 30"
-          class="nav__toggle-icon"
-        >
-          <g
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="3"
-          >
-            <path id="navMenuIcon" d="M5 7 25 7M5 15 25 15M5 23 25 23" />
-          </g>
-        </svg>
-      </button>
-    </nav>
+  <section id="experience" class="experience">
+    <div class="experience__header animate-on-scroll slide-up">
+      <h2 class="experience__title">Trayectoria en curso</h2>
+      <p class="experience__description">
+        Este es el resumen de mi trayectoria laboral y educacional.
+      </p>
+    </div>
 
-    <main class="intro">
-      <section class="intro__hero">
-        <span class="intro__hero-text">Hola mi nombre es ...</span>
-        <h1 class="intro__hero-title">Luis Baquedano</h1>
-        <p class="intro__hero-subtitle">Desarrollador Front-end</p>
-      </section>
-      <section class="intro__contact">
-        <ul class="intro__contact-list" role="list">
-          <li class="intro__contact-item intro__contact-item--cv">
-            <a
-              href="/assets/cv/CV_LUISBC_EN.pdf"
-              download="CV-Luis Baquedano Cordova.pdf"
-              class="intro__contact-link"
-              aria-label="Download my curriculum vitae"
-              ><i
-                class="fa-solid fa-download intro__contact-icon"
-                aria-hidden="true"
-              ></i
-              >Descargar CV</a
-            >
-          </li>
-          <li class="intro__contact-item intro__contact-item--linkedin">
-            <a
-              href="https://www.linkedin.com/in/luisbaquedano-frontend/"
-              target="_blank"
-              class="intro__contact-link"
-              ><i
-                class="fa-brands fa-linkedin intro__contact-icon"
-                aria-hidden="true"
-              ></i
-              >LinkedIn</a
-            >
-          </li>
-          <li class="intro__contact-item intro__contact-item--github">
-            <a
-              href="https://github.com/LBaquedanoCordova/"
-              target="_blank"
-              class="intro__contact-link"
-              ><i
-                class="fa-brands fa-github intro__contact-icon"
-                aria-hidden="true"
-              ></i
-              >GitHub</a
-            >
-          </li>
-          <li class="intro__contact-item intro__contact-item--email">
-            <span
-              class="intro__contact-link copy-email-link"
-              aria-label="Copy email"
-            >
-              <i
-                class="fa-solid fa-envelope intro__contact-icon"
-                aria-hidden="true"
-              ></i
-              >lfbcordova@gmail.com
-              <button class="intro__contact-icon--copy">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 30 30"
-                  class="icon-copy-check"
-                >
-                  <g
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
-                  >
-                    <path
-                      id="copyIcon-front"
-                      d="M15 2C10 2 10 2 10 7L10 17C10 22 10 22 15 22L21 22C26 22 26 22 26 17L26 7 21 2Z"
-                    />
-                    <path
-                      id="copyIcon-back"
-                      d="M10 8 9 8C4 8 4 8 4 13L4 23C4 28 4 28 9 28L15 28C20 28 20 28 20 23L20 22 15 22C10 22 10 22 10 17Z"
-                    />
-                  </g>
-                </svg>
-              </button>
-            </span>
-          </li>
-        </ul>
-        <div class="intro__contact-availability-wrapper">
-          <div class="intro__contact-availability">
-            <span class="intro__availability-text"
-              ><i
-                class="fa-solid fa-handshake intro__availability-icon"
-                aria-hidden="true"
-              ></i
-              >Abierto a nuevas oportunidades</span
-            >
+    <section class="experience__timeline">
+      <div class="timeline__row">
+        <!-- Columna laboral -->
+        <div class="timeline__column">
+          <h3 class="timeline__section-title">
+            Experiencia Laboral
+            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+          </h3>
+
+          <div class="timeline__box">
+            <!-- Trabajo 1 -->
+            <div class="timeline__entry__wrapper">
+              <article class="timeline__entry">
+                <div class="timeline__year">
+                  <i class="fa-regular fa-calendar" aria-hidden="true"></i>2023 - Act
+                </div>
+                <h4 class="timeline__role">
+                  Full Stack Developer
+                </h4>
+                <p class="timeline__company">LITANO CORPORATIONS GROUP</p>
+                <p class="timeline__details">
+                  Desarrollo de una plataforma web para la gestión de cursos digitales utilizando Angular
+                  bajo un enfoque de Clean Architecture con estructura modular y separación clara de responsabilidades.
+                </p>
+              </article>
+            </div>
+
+            <!-- Trabajo 2 -->
+            <div class="timeline__entry__wrapper">
+              <article class="timeline__entry">
+                <div class="timeline__year">
+                  <i class="fa-regular fa-calendar" aria-hidden="true"></i>2022 - 2023
+                </div>
+                <h4 class="timeline__role">
+                  Freelance como Frontend Developer
+                </h4>
+                <p class="timeline__company">Independiente (freelance)</p>
+                <p class="timeline__details">
+                  Desarrollo de aplicaciones SPA con React, integrando APIs REST, gestionando estado global con Zustand
+                  y
+                  aplicando buenas prácticas de arquitectura y rendimiento. Diseño responsive con CSS y Bootstrap.
+                </p>
+              </article>
+            </div>
+
+            <!-- Trabajo 3 -->
+            <div class="timeline__entry__wrapper">
+              <article class="timeline__entry">
+                <div class="timeline__year">
+                  <i class="fa-regular fa-calendar" aria-hidden="true"></i>2022 - 2024
+                </div>
+                <h4 class="timeline__role">Asistente de Informática</h4>
+                <p class="timeline__company">FRIGOSA SAC</p>
+                <p class="timeline__details">
+                  Soporte e instalación de redes, mantenimiento de equipos y sistemas,
+                  gestión de backups, validación de datos en Excel, elaboración de
+                  reportes y atención a consultas de superiores.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
-      </section>
-      <div class="intro__scroll">
-        <span class="intro__scroll-arrow"
-          ><i class="fa-solid fa-angle-down" aria-hidden="true"></i
-        ></span>
-        <span class="intro__scroll-arrow"
-          ><i class="fa-solid fa-angle-down" aria-hidden="true"></i
-        ></span>
-        <span class="intro__scroll-arrow"
-          ><i class="fa-solid fa-angle-down" aria-hidden="true"></i
-        ></span>
-      </div>
-    </main>
 
-    <section
-      id="technologies"
-      class="technologies"
-      aria-labelledby="technologies-title"
-    >
-      <header class="technologies__header">
-        <h2
-          id="technologies-title"
-          class="technologies__title animate-on-scroll slide-up"
-        >
-          Stack Tecnológico
-        </h2>
-        <div
-          class="animate-on-scroll slide-up"
-        >
-          <h3 class="technologies__subtitle">Lo que me hace productivo</h3>
-          <p class="technologies__description">
-            Conozco estas tecnologías que me permiten crear experiencias web
-            dinámicas y responsivas. Estas herramientas me permiten trabajar de
-            manera más eficiente y mantener un flujo de trabajo organizado.
-          </p>
-        </div>
-      </header>
-      <div class="technologies__content">
-        <nav
-          class="technologies__nav animate-on-scroll scale-in"
-          aria-label="Menú de categorías de tecnologías"
-        >
-          <ul class="technologies__menu">
-            <li class="technologies__menu-item">
-              <button class="technologies__menu-btn" data-category="languages">
-                <i class="fa-solid fa-code"></i>
-              </button>
-            </li>
-            <li class="technologies__menu-item">
-              <button class="technologies__menu-btn" data-category="styles">
-                <i class="fa-solid fa-palette"></i>
-              </button>
-            </li>
-            <li class="technologies__menu-item">
-              <button
-                class="technologies__menu-btn"
-                data-category="version-control"
-              >
-                <i class="fa-solid fa-code-branch"></i>
-              </button>
-            </li>
-            <li class="technologies__menu-item">
-              <button class="technologies__menu-btn" data-category="tools">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-              </button>
-            </li>
-            <li class="technologies__menu-item">
-              <button class="technologies__menu-btn" data-category="frameworks">
-                <i class="fa-solid fa-layer-group"></i>
-              </button>
-            </li>
-          </ul>
-        </nav>
-        <ul class="technologies__list" aria-label="List of technologies">
-          <!-- JS genera dinámicamente los elementos aquí -->
-        </ul>
-      </div>
-    </section>
+        <!-- Columna educativa -->
+        <div class="timeline__column">
+          <h3 class="timeline__section-title">
+            Educación
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          </h3>
 
-    <section id="experience" class="experience">
-      <div class="experience__header">
-        <h2 class="experience__title">Trayectoria en curso</h2>
-        <p class="experience__description">
-          Este es el resumen de mi trayectoria laboral y educacional.
-        </p>
-      </div>
-
-      <section class="experience__timeline">
-        <div class="timeline__row">
-          <!-- Columna laboral -->
-          <div class="timeline__column">
-            <h3 class="timeline__section-title">
-              Experiencia Laboral
-              <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-            </h3>
-
-            <div class="timeline__box">
-              <!-- Trabajo 1 -->
-              <div class="timeline__entry__wrapper">
-                <article class="timeline__entry">
+          <div class="timeline__box">
+            <!-- Estudio 1 -->
+            <div class="timeline__entry__wrapper">
+              <article class="timeline__entry timeline__entry--with-image">
+                <div class="timeline__content">
                   <div class="timeline__year">
-                    <i class="fa-regular fa-calendar" aria-hidden="true"></i
-                    >2022 - 2024
+                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>2024 - Act
                   </div>
-                  <h4 class="timeline__role">Asistente de Informática</h4>
-                  <p class="timeline__company">FRIGOSA SAC</p>
-                  <p class="timeline__details">
-                    Soporte e instalación de redes, mantenía equipos y sistemas,
-                    gestionaba backups, validaba datos en Excel, elaboraba
-                    reportes y atendía consultas de superiores.
-                  </p>
-                </article>
-              </div>
+                  <h4 class="timeline__role">Desarrollador Front-end</h4>
+                  <p class="timeline__company">Autodidacta con Roadmap.sh</p>
+                </div>
+                <figure class="timeline__image">
+                  <img src="/assets/icons/roadmap.sh-logo.svg" alt="Roadmap.sh logo" />
+                </figure>
+              </article>
+            </div>
 
-              <!-- Trabajo 2 -->
-              <div class="timeline__entry__wrapper">
-                <article class="timeline__entry">
+            <!-- Estudio 2 -->
+            <div class="timeline__entry__wrapper">
+              <article class="timeline__entry timeline__entry--with-image">
+                <div class="timeline__content">
                   <div class="timeline__year">
-                    <i class="fa-regular fa-calendar" aria-hidden="true"></i
-                    >2020 - 2021
+                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>2020 - 2021
                   </div>
                   <h4 class="timeline__role">
-                    Practicante Profesional en el Área de Soporte Técnico
+                    Título Prof. en Ingeniería de Sistemas
                   </h4>
-                  <p class="timeline__company">I.E JUAN VELASCO ALVARADO</p>
-                  <p class="timeline__details">
-                    Mantenimiento de equipos, asistencia técnica remota,
-                    diagnóstico y solución de fallos en hardware y software,
-                    además de desarrollar e implementar webs con SGA Moodle.
-                  </p>
-                </article>
-              </div>
+                  <p class="timeline__company">Universidad César Vallejo</p>
+                </div>
+                <figure class="timeline__image">
+                  <img src="/assets/icons/ucv-logo.svg" alt="Universidad César Vallejo logo" />
+                </figure>
+              </article>
             </div>
-          </div>
 
-          <!-- Columna educativa -->
-          <div class="timeline__column">
-            <h3 class="timeline__section-title">
-              Educación
-              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-            </h3>
-
-            <div class="timeline__box">
-              <!-- Estudio 1 -->
-              <div class="timeline__entry__wrapper">
-                <article class="timeline__entry timeline__entry--with-image">
-                  <div class="timeline__content">
-                    <div class="timeline__year">
-                      <i class="fa-regular fa-calendar" aria-hidden="true"></i
-                      >2024 - Act
-                    </div>
-                    <h4 class="timeline__role">Desarrollador Front-end</h4>
-                    <p class="timeline__company">Autodidacta con Roadmap.sh</p>
+            <!-- Estudio 3 -->
+            <div class="timeline__entry__wrapper">
+              <article class="timeline__entry timeline__entry--with-image">
+                <div class="timeline__content">
+                  <div class="timeline__year">
+                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>2015 - 2020
                   </div>
-                  <figure class="timeline__image">
-                    <img
-                      src="/assets/icons/roadmap.sh-logo.svg"
-                      alt="Roadmap.sh logo"
-                    />
-                  </figure>
-                </article>
-              </div>
-
-              <!-- Estudio 2 -->
-              <div class="timeline__entry__wrapper">
-                <article class="timeline__entry timeline__entry--with-image">
-                  <div class="timeline__content">
-                    <div class="timeline__year">
-                      <i class="fa-regular fa-calendar" aria-hidden="true"></i
-                      >2020 - 2021
-                    </div>
-                    <h4 class="timeline__role">
-                      Título Prof. en Ingeniería de Sistemas
-                    </h4>
-                    <p class="timeline__company">Universidad César Vallejo</p>
-                  </div>
-                  <figure class="timeline__image">
-                    <img
-                      src="/assets/icons/ucv-logo.svg"
-                      alt="Universidad César Vallejo logo"
-                    />
-                  </figure>
-                </article>
-              </div>
-
-              <!-- Estudio 3 -->
-              <div class="timeline__entry__wrapper">
-                <article class="timeline__entry timeline__entry--with-image">
-                  <div class="timeline__content">
-                    <div class="timeline__year">
-                      <i class="fa-regular fa-calendar" aria-hidden="true"></i
-                      >2015 - 2020
-                    </div>
-                    <h4 class="timeline__role">
-                      Bachiller en Ingeniería de Sistemas
-                    </h4>
-                    <p class="timeline__company">Universidad César Vallejo</p>
-                  </div>
-                  <figure class="timeline__image">
-                    <img
-                      src="/assets/icons/ucv-logo.svg"
-                      alt="Universidad César Vallejo logo"
-                    />
-                  </figure>
-                </article>
-              </div>
+                  <h4 class="timeline__role">
+                    Bachiller en Ingeniería de Sistemas
+                  </h4>
+                  <p class="timeline__company">Universidad César Vallejo</p>
+                </div>
+                <figure class="timeline__image">
+                  <img src="/assets/icons/ucv-logo.svg" alt="Universidad César Vallejo logo" />
+                </figure>
+              </article>
             </div>
           </div>
         </div>
-      </section>
-    </section>
-
-    <section id="projects" class="projects" aria-labelledby="projects-title">
-      <div class="projects__header">
-        <h2 class="projects__title">Mis proyectos</h2>
-        <p class="projects__subtitle">
-          Colaboración y proyectos propios que he desarrollado.
-        </p>
       </div>
-      <div class="projects__content">
-        <!-- Project 1 -->
+    </section>
+  </section>
+
+  <section id="projects" class="projects" aria-labelledby="projects-title">
+    <div class="projects__header animate-on-scroll slide-up">
+      <h2 class="projects__title">Mis proyectos</h2>
+      <p class="projects__subtitle">
+        Colaboración y proyectos propios que he desarrollado.
+      </p>
+    </div>
+    <div class="projects__content">
+      <!-- Project 1 -->
+      <div class="projects__reveal-wrapper animate-on-scroll animate-duration-slow scale-in">
         <div class="projects__content-wrapper">
           <article class="projects__item" aria-labelledby="project-01-title">
             <header class="projects__item-header">
@@ -450,15 +329,9 @@
               </h3>
             </header>
             <div class="projects__details">
-              <section
-                aria-labelledby="project-01-overview-title"
-                class="projects__description"
-              >
+              <section aria-labelledby="project-01-overview-title" class="projects__description">
                 <h4 class="projects__description-title">
-                  <i
-                    class="fa-regular fa-rectangle-list"
-                    aria-hidden="true"
-                  ></i>
+                  <i class="fa-regular fa-rectangle-list" aria-hidden="true"></i>
                   Descripción general
                 </h4>
 
@@ -469,10 +342,7 @@
                 </p>
               </section>
 
-              <section
-                aria-labelledby="project-01-tech-title"
-                class="projects__tech"
-              >
+              <section aria-labelledby="project-01-tech-title" class="projects__tech">
                 <h4 class="projects__tech-title">
                   <i class="fa-solid fa-microchip" aria-hidden="true"></i>
                   Tecnologías utilizadas
@@ -489,31 +359,17 @@
                 </div>
 
                 <div class="projects__tech-buttons projects__tech-links">
-                  <a
-                    href="https://github.com/LitanoGroupCorporation/digitalcoursefront/tree/develop"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="projects__link projects__link--code"
-                    aria-label="Abrir repositorio de código en GitHub (se abre en una nueva pestaña)"
-                  >
-                    <i
-                      class="fa-solid fa-arrow-up-right-from-square"
-                      aria-hidden="true"
-                    ></i>
+                  <a href="https://github.com/LitanoGroupCorporation/digitalcoursefront/tree/develop" target="_blank"
+                    rel="noopener noreferrer" class="projects__link projects__link--code"
+                    aria-label="Abrir repositorio de código en GitHub (se abre en una nueva pestaña)">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                     Code
                   </a>
 
-                  <a
-                    href="https://lbaquedanocordova.github.io/pomodoro-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <a href="https://lbaquedanocordova.github.io/pomodoro-app" target="_blank" rel="noopener noreferrer"
                     class="projects__link projects__link--demo"
-                    aria-label="Abrir demostración del proyecto en una nueva pestaña"
-                  >
-                    <i
-                      class="fa-solid fa-arrow-up-right-from-square"
-                      aria-hidden="true"
-                    ></i>
+                    aria-label="Abrir demostración del proyecto en una nueva pestaña">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                     Demo
                   </a>
                 </div>
@@ -521,17 +377,17 @@
 
               <figure class="projects__extra">
                 <div class="projects__preview-wrapper">
-                  <img
-                    src="/assets/images/appCorpLitano.webp"
+                  <img src="/assets/images/appCorpLitano.webp"
                     alt="Vista previa del proyecto Pomodoro App mostrando su interfaz principal"
-                    class="projects__preview"
-                  />
+                    class="projects__preview" />
                 </div>
               </figure>
             </div>
           </article>
         </div>
-        <!-- Project 2 -->
+      </div>
+      <!-- Project 2 -->
+      <div class="projects__reveal-wrapper animate-on-scroll animate-duration-slow scale-in">
         <div class="projects__content-wrapper">
           <article class="projects__item" aria-labelledby="project-02-title">
             <header class="projects__item-header">
@@ -539,15 +395,9 @@
               <h3 class="projects__item-title">Pomodoro App</h3>
             </header>
             <div class="projects__details">
-              <section
-                aria-labelledby="project-02-overview-title"
-                class="projects__description"
-              >
+              <section aria-labelledby="project-02-overview-title" class="projects__description">
                 <h4 class="projects__description-title">
-                  <i
-                    class="fa-regular fa-rectangle-list"
-                    aria-hidden="true"
-                  ></i>
+                  <i class="fa-regular fa-rectangle-list" aria-hidden="true"></i>
                   Descripción general
                 </h4>
 
@@ -557,10 +407,7 @@
                 </p>
               </section>
 
-              <section
-                aria-labelledby="project-02-tech-title"
-                class="projects__tech"
-              >
+              <section aria-labelledby="project-02-tech-title" class="projects__tech">
                 <h4 class="projects__tech-title">
                   <i class="fa-solid fa-microchip" aria-hidden="true"></i>
                   Tecnologías utilizadas
@@ -575,31 +422,17 @@
                 </div>
 
                 <div class="projects__tech-buttons projects__tech-links">
-                  <a
-                    href="https://github.com/LBaquedanoCordova/pomodoro-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <a href="https://github.com/LBaquedanoCordova/pomodoro-app" target="_blank" rel="noopener noreferrer"
                     class="projects__link projects__link--code"
-                    aria-label="Abrir repositorio de código en GitHub (se abre en una nueva pestaña)"
-                  >
-                    <i
-                      class="fa-solid fa-arrow-up-right-from-square"
-                      aria-hidden="true"
-                    ></i>
+                    aria-label="Abrir repositorio de código en GitHub (se abre en una nueva pestaña)">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                     Code
                   </a>
 
-                  <a
-                    href="https://lbaquedanocordova.github.io/pomodoro-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <a href="https://lbaquedanocordova.github.io/pomodoro-app" target="_blank" rel="noopener noreferrer"
                     class="projects__link projects__link--demo"
-                    aria-label="Abrir demostración del proyecto en una nueva pestaña"
-                  >
-                    <i
-                      class="fa-solid fa-arrow-up-right-from-square"
-                      aria-hidden="true"
-                    ></i>
+                    aria-label="Abrir demostración del proyecto en una nueva pestaña">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                     Demo
                   </a>
                 </div>
@@ -607,23 +440,23 @@
 
               <figure class="projects__extra">
                 <div class="projects__preview-wrapper">
-                  <img
-                    src="/assets/images/appPomodoro.webp"
+                  <img src="/assets/images/appPomodoro.webp"
                     alt="Vista previa del proyecto Pomodoro App mostrando su interfaz principal"
-                    class="projects__preview"
-                  />
+                    class="projects__preview" />
                 </div>
               </figure>
             </div>
           </article>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about-me" class="about-me" aria-labelledby="about-me__title">
-      <div class="about-me__content">
-        <header class="about-me__header">
-          <h2 id="about-me__title" class="about-me__title">Conóceme más</h2>
+  <section id="about-me" class="about-me" aria-labelledby="about-me__title">
+    <div class="about-me__content">
+      <header class="about-me__header">
+        <h2 id="about-me__title" class="about-me__title animate-on-scroll slide-up">Conóceme más</h2>
+        <div class="animate-on-scroll slide-up">
           <h3 class="about-me__name">Luis Fernando</h3>
           <p class="about-me__text">
             Soy
@@ -631,146 +464,112 @@
             e
             <span class="about-me__highlight-title">Ingeniero de Sistemas</span>.
             Me considero una persona
-            <span class="about-me__highlight-text"
-              >entusiasta, creativa y disciplinada</span
-            >.
+            <span class="about-me__highlight-text">entusiasta, creativa y disciplinada</span>.
           </p>
-        </header>
+        </div>
+      </header>
 
-        <div class="about-me__bento-grid">
-          <article class="about-me__card animate-on-scroll slide-up">
-            <div class="about-me__card-icon">
+      <div class="about-me__bento-grid">
+        <div class="about-me__reveal-wrapper animate-on-scroll slide-up">
+          <article class="about-me__card">
+            <div class="about-me__card-header">
               <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <h4 class="about-me__card-header-title">Enfoque Full-Stack</h4>
             </div>
-            <h4 class="about-me__card-title">Enfoque Full-Stack</h4>
             <p class="about-me__card-text">
-              Aunque mi experiencia profesional web está en sus
-              inicios, aprovecho mi base en programación para
-              especializarme en <span class="about-me__highlight-text">Full-Stack</span>, comenzando por el Front-end.
+              Desarrollador Frontend enfocado en la construcción de interfaces modernas, escalables y orientadas a la
+              experiencia del usuario. Trabajo con React y Angular, aplicando principios de Clean Architecture, gestión
+              de estado e integración de APIs REST para desarrollar soluciones modulares, mantenibles y de alto
+              rendimiento, con visión de crecimiento hacia el desarrollo <span
+                class="about-me__highlight-text">Full-Stack</span>.
             </p>
           </article>
-          
-          <article class="about-me__card animate-on-scroll slide-up" style="--stagger-delay: 150ms">
-            <div class="about-me__card-icon">
+        </div>
+
+        <div class="about-me__reveal-wrapper animate-on-scroll slide-up" style="--animation-delay: 150ms">
+          <article class="about-me__card">
+            <div class="about-me__card-header">
               <i class="fa-solid fa-dumbbell" aria-hidden="true"></i>
+              <h4 class="about-me__card-header-title">Disciplina Creada</h4>
             </div>
-            <h4 class="about-me__card-title">Disciplina Creada</h4>
             <p class="about-me__card-text">
-              Mi pasión por el <span class="about-me__highlight-text">gimnasio</span> 
-              ha fortalecido mi constancia día tras día, lo cual se refleja directamente en 
+              Mi pasión por el <span class="about-me__highlight-text">gimnasio</span>
+              ha fortalecido mi constancia día tras día, lo cual se refleja directamente en
               todos los aspectos de mi vida y mi código.
             </p>
           </article>
         </div>
       </div>
-      <figure
-        class="about-me__image"
-        role="img"
-        aria-label="Photo by Luis Fernando"
-      >
-        <div class="about-me__photo-wrapper">
-          <img
-            src="/assets/images/fernando.webp"
-            alt="Luis Fernando"
-            class="about-me__photo"
-          />
-        </div>
-      </figure>
-    </section>
+    </div>
+    <figure class="about-me__image animate-on-scroll scale-in" role="img" aria-label="Photo by Luis Fernando">
+      <div class="about-me__photo-wrapper">
+        <img src="/assets/images/fernando.webp" alt="Luis Fernando" class="about-me__photo" />
+      </div>
+    </figure>
+  </section>
 
-    <section id="contact" class="contact">
-      <header class="contact__header">
+  <section id="contact" class="contact">
+    <header class="contact__header">
+      <div class="animate-on-scroll slide-up">
         <h2 class="contact__header-subtitle">¿Y si hablamos?</h2>
         <h1 class="contact__header-title">Contáctame</h1>
-        <p class="contact__header-description">
-          ¡Gracias por visitar mi sitio web! Me alegra que estes aquí. Si te
-          interesa conocer más sobre mi trabajo o discutir posibles
-          colaboraciones, estaré encantado de escucharte. No dudes en
-          contactarme para conversar o hacer cualquier consulta. Será un gusto
-          conectar contigo.
-        </p>
-      </header>
-
-      <div class="contact__content">
-        <ul class="contact__list" role="list">
-          <li class="contact__list-item contact__list-item--cv">
-            <a
-              href="/assets/cv/CV_LUISBC_EN.pdf"
-              download="CV-Luis Baquedano Cordova.pdf"
-              class="contact__link"
-              aria-label="Download my curriculum vitae"
-            >
-              <i
-                class="fa-solid fa-download contact__icon"
-                aria-hidden="true"
-              ></i
-              >Descargar CV</a
-            >
-          </li>
-          <li class="contact__list-item contact__list-item--email">
-            <span class="contact__link copy-email-link" aria-label="Copy email">
-              <i
-                class="fa-solid fa-envelope contact__icon"
-                aria-hidden="true"
-              ></i
-              >lfbcordova@gmail.com
-              <button class="contact__icon--copy">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 30 30"
-                  class="icon-copy-check"
-                >
-                  <g
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
-                  >
-                    <path
-                      id="copyIcon-front"
-                      d="M15 2C10 2 10 2 10 7L10 17C10 22 10 22 15 22L21 22C26 22 26 22 26 17L26 7 21 2Z"
-                    ></path>
-                    <path
-                      id="copyIcon-back"
-                      d="M10 8 9 8C4 8 4 8 4 13L4 23C4 28 4 28 9 28L15 28C20 28 20 28 20 23L20 22 15 22C10 22 10 22 10 17Z"
-                    ></path>
-                  </g>
-                </svg>
-              </button>
-            </span>
-          </li>
-        </ul>
       </div>
-    </section>
+      <p class="contact__header-description animate-on-scroll slide-up">
+        ¡Gracias por visitar mi sitio web! Me alegra que estes aquí. Si te
+        interesa conocer más sobre mi trabajo o discutir posibles
+        colaboraciones, estaré encantado de escucharte. No dudes en
+        contactarme para conversar o hacer cualquier consulta. Será un gusto
+        conectar contigo.
+      </p>
+    </header>
 
-    <footer class="footer">
-      <div class="footer__info">
-        <p class="footer__text">
-          Hecho con pasión por Luis Baquedano | &copy; 2025
-        </p>
-      </div>
+    <div class="contact__content">
+      <ul class="contact__list animate-on-scroll scale-in" role="list">
+        <li class="contact__list-item contact__list-item--cv">
+          <a href="/assets/cv/CV_LUISBC_EN.pdf" download="CV-Luis Baquedano Cordova.pdf" class="contact__link"
+            aria-label="Download my curriculum vitae">
+            <i class="fa-solid fa-download contact__icon" aria-hidden="true"></i>Descargar CV</a>
+        </li>
+        <li class="contact__list-item contact__list-item--email">
+          <span class="contact__link copy-email-link" aria-label="Copy email">
+            <i class="fa-solid fa-envelope contact__icon" aria-hidden="true"></i>lfbcordova@gmail.com
+            <button class="contact__icon--copy">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 30 30" class="icon-copy-check">
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                  <path id="copyIcon-front"
+                    d="M15 2C10 2 10 2 10 7L10 17C10 22 10 22 15 22L21 22C26 22 26 22 26 17L26 7 21 2Z"></path>
+                  <path id="copyIcon-back"
+                    d="M10 8 9 8C4 8 4 8 4 13L4 23C4 28 4 28 9 28L15 28C20 28 20 28 20 23L20 22 15 22C10 22 10 22 10 17Z">
+                  </path>
+                </g>
+              </svg>
+            </button>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="footer__social">
-        <a
-          href="https://www.linkedin.com/in/luisbaquedano-frontend/"
-          target="_blank"
-          class="footer__social-link footer__social-link--linkedin"
-          aria-label="LinkedIn"
-        >
-          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-        </a>
+  <footer class="footer contact__list animate-on-scroll scale-in">
+    <div class="footer__info">
+      <p class="footer__text">
+        Hecho con pasión por Luis Baquedano | &copy; 2025
+      </p>
+    </div>
 
-        <a
-          href="https://github.com/LBaquedanoCordova/Mi-portafolio"
-          target="_blank"
-          class="footer__social-link footer__social-link--source"
-          aria-label="Source code of the portfolio"
-        >
-          <span class="footer__social-text">Código Fuente</span>
-        </a>
-      </div>
-    </footer>
-  </body>
+    <div class="footer__social">
+      <a href="https://www.linkedin.com/in/luisbaquedano-frontend/" target="_blank"
+        class="footer__social-link footer__social-link--linkedin" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+      </a>
+
+      <a href="https://github.com/LBaquedanoCordova/Mi-portafolio" target="_blank"
+        class="footer__social-link footer__social-link--source" aria-label="Source code of the portfolio">
+        <span class="footer__social-text">Código Fuente</span>
+      </a>
+    </div>
+  </footer>
+</body>
+
 </html>

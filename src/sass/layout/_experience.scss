@@ -55,7 +55,7 @@
     }
 
     .timeline__box {
-      border-left: 2px solid var(--color-border);
+      border-left: 2px solid transparent;
       position: relative;
       padding-left: $spacing-lg;
       margin-left: $spacing-lg;
@@ -69,7 +69,8 @@
         background: linear-gradient(to bottom,
             var(--color-accent) 0%,
             var(--color-border) 100%);
-        opacity: 0.5;
+        transform: scaleY(var(--line-progress, 1));
+        transform-origin: top;
         z-index: 0;
       }
     }

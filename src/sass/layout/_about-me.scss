@@ -69,49 +69,43 @@
     }
   }
 
+  &__reveal-wrapper {
+    display: flex;
+  }
+
   &__card {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: $spacing-sm;
     @include box-style(20px, $border-radius);
     background-image: var(--gradient-background), var(--bg-scene-texture);
     background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
     &:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-elevation);
       border-color: var(--tech-active-border);
-
-      .about-me__card-icon i {
-        color: var(--color-accent);
-        transform: scale(1.1);
-      }
     }
 
-    &-icon {
-      display: inline-flex;
+    &-header {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      border-radius: calc($border-radius - 4px);
-      background-image: var(--gradient-accent);
-      box-shadow: 0 4px 12px var(--tech-active-glow-soft);
-      margin-bottom: $spacing-xs;
+      gap: $spacing-sm;
 
       i {
         font-size: 20px;
         color: rgb(var(--color-white));
         transition: transform 0.3s ease, color 0.3s ease;
       }
-    }
 
-    &-title {
-      @extend %section-subtitle-light;
-      font-size: clamp(18px, 2vw, 22px);
-      margin: 0;
+      &-title {
+        @extend %section-subtitle-light;
+        font-size: clamp(18px, 2vw, 22px);
+        margin: 0;
+      }
     }
 
     &-text {
@@ -122,6 +116,7 @@
 
   &__image {
     @extend %flex-center;
+    @extend %section-subblock;
     margin: 0px;
 
     .about-me__photo-wrapper {
@@ -198,16 +193,7 @@
       padding: 30px;
       gap: $spacing-md;
 
-      &-icon {
-        width: 55px;
-        height: 55px;
-
-        i {
-          font-size: 26px;
-        }
-      }
-
-      &-title {
+      &-header-title {
         font-size: clamp(22px, 2.5vw, 28px);
       }
     }
@@ -242,16 +228,7 @@
       padding: 40px;
       gap: $spacing-lg;
 
-      &-icon {
-        width: 70px;
-        height: 70px;
-
-        i {
-          font-size: 34px;
-        }
-      }
-
-      &-title {
+      &-header-title {
         font-size: clamp(28px, 3.5vw, 36px);
       }
     }
