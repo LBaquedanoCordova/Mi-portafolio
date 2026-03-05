@@ -453,59 +453,60 @@
   </section>
 
   <section id="about-me" class="about-me" aria-labelledby="about-me__title">
+    <header class="about-me__header">
+      <h2 id="about-me__title" class="about-me__title animate-on-scroll slide-up">Conóceme más</h2>
+      <div class="about-me__header-text animate-on-scroll slide-up">
+        <h3 class="about-me__name">Luis Fernando</h3>
+        <p class="about-me__text">
+          Soy
+          <span class="about-me__highlight-title">Desarrollador Front-end</span>
+          e
+          <span class="about-me__highlight-title">Ingeniero de Sistemas</span>.
+          Me considero una persona
+          <span class="about-me__highlight-text">entusiasta, creativa y disciplinada.</span>
+        </p>
+      </div>
+    </header>
     <div class="about-me__content">
-      <header class="about-me__header">
-        <h2 id="about-me__title" class="about-me__title animate-on-scroll slide-up">Conóceme más</h2>
-        <div class="animate-on-scroll slide-up">
-          <h3 class="about-me__name">Luis Fernando</h3>
-          <p class="about-me__text">
-            Soy
-            <span class="about-me__highlight-title">Desarrollador Front-end</span>
-            e
-            <span class="about-me__highlight-title">Ingeniero de Sistemas</span>.
-            Me considero una persona
-            <span class="about-me__highlight-text">entusiasta, creativa y disciplinada</span>.
+      <div class="about-me__content-card animate-on-scroll slide-up">
+        <article class="about-me__content-card-text">
+          <div class="about-me__content-card-header">
+            <h4 class="about-me__content-card-header-title"><i class="fa-solid fa-code" aria-hidden="true"></i> Enfoque
+              Full-Stack</h4>
+          </div>
+          <p class="about-me__content-card-paragraph">
+            Desarrollador Frontend enfocado en la construcción de interfaces modernas, escalables y orientadas a la
+            experiencia del usuario. Trabajo con React y Angular, aplicando principios de Clean Architecture, gestión
+            de estado e integración de APIs REST para desarrollar soluciones modulares, mantenibles y de alto
+            rendimiento, con visión de crecimiento hacia el desarrollo <span
+              class="about-me__content-card-paragraph-highlight">Full-Stack</span>.
           </p>
-        </div>
-      </header>
-
-      <div class="about-me__bento-grid">
-        <div class="about-me__reveal-wrapper animate-on-scroll slide-up">
-          <article class="about-me__card">
-            <div class="about-me__card-header">
-              <i class="fa-solid fa-code" aria-hidden="true"></i>
-              <h4 class="about-me__card-header-title">Enfoque Full-Stack</h4>
+        </article>
+      </div>
+      <div class="about-me__content-card-container">
+        <div class="about-me__content-card-secondary animate-on-scroll slide-up" style="--animation-delay: 150ms">
+          <article class="about-me__content-card-text">
+            <div class="about-me__content-card-header">
+              <h4 class="about-me__content-card-header-title"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i>
+                Disciplina Creada</h4>
             </div>
-            <p class="about-me__card-text">
-              Desarrollador Frontend enfocado en la construcción de interfaces modernas, escalables y orientadas a la
-              experiencia del usuario. Trabajo con React y Angular, aplicando principios de Clean Architecture, gestión
-              de estado e integración de APIs REST para desarrollar soluciones modulares, mantenibles y de alto
-              rendimiento, con visión de crecimiento hacia el desarrollo <span
-                class="about-me__highlight-text">Full-Stack</span>.
-            </p>
-          </article>
-        </div>
-
-        <div class="about-me__reveal-wrapper animate-on-scroll slide-up" style="--animation-delay: 150ms">
-          <article class="about-me__card">
-            <div class="about-me__card-header">
-              <i class="fa-solid fa-dumbbell" aria-hidden="true"></i>
-              <h4 class="about-me__card-header-title">Disciplina Creada</h4>
-            </div>
-            <p class="about-me__card-text">
-              Mi pasión por el <span class="about-me__highlight-text">gimnasio</span>
+            <p class="about-me__content-card-paragraph">
+              Mi pasión por el <span class="about-me__content-card-paragraph-highlight">gimnasio</span>
               ha fortalecido mi constancia día tras día, lo cual se refleja directamente en
               todos los aspectos de mi vida y mi código.
             </p>
           </article>
         </div>
+
+        <figure class="about-me__content-image animate-on-scroll scale-in" role="img"
+          aria-label="Photo by Luis Fernando">
+          <div class="about-me__content-photo-wrapper">
+            <img src="/assets/images/fernando.webp" alt="Luis Fernando" class="about-me__content-photo" />
+          </div>
+        </figure>
       </div>
+
     </div>
-    <figure class="about-me__image animate-on-scroll scale-in" role="img" aria-label="Photo by Luis Fernando">
-      <div class="about-me__photo-wrapper">
-        <img src="/assets/images/fernando.webp" alt="Luis Fernando" class="about-me__photo" />
-      </div>
-    </figure>
   </section>
 
   <section id="contact" class="contact">

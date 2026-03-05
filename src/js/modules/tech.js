@@ -8,6 +8,7 @@ const technologies = [
   { name: "TypeScript", img: "/assets/icons/ts.svg", category: "languages" },
   { name: "Bootstrap", img: "/assets/icons/bootstrap.svg", category: "styles" },
   { name: "Sass", img: "/assets/icons/sass.svg", category: "styles" },
+  { name: "Tailwind CSS", img: "/assets/icons/tailwindcss.svg", category: "styles" },
   { name: "GIT", img: "/assets/icons/git.svg", category: "version-control" },
   {
     name: "GitHub",

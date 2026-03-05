@@ -65,6 +65,8 @@ html[data-theme="dark"] {
   --tech-focus-ring: rgba(56, 189, 248, 0.35);
 
   --logo-primary: var(--color-accent);
+
+  --brillance-card: rgba(56, 189, 248, 0.06);
 }
 
 /* =============================
@@ -128,4 +130,6 @@ html[data-theme="light"] {
   --tech-focus-ring: rgba(37, 99, 235, 0.35);
 
   --logo-primary: var(--color-accent);
+
+  --brillance-card: rgba(45, 129, 220, 0.08)
 }

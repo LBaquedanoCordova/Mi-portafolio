@@ -42,6 +42,7 @@
 
     &-title {
       @extend %section-subtitle;
+      @extend %animation-title-gradient;
       @include font(clamp(45px, 8.5vw, 55px), 900);
       font-family: '"Merriweather", serif';
       text-align: center;

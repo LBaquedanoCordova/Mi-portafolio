@@ -108,6 +108,7 @@
 
     .technologies__title {
       @extend %section-subtitle;
+      @extend %animation-title-gradient;
     }
 
     .technologies__subtitle {

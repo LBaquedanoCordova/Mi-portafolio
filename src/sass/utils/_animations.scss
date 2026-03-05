@@ -1,8 +1,10 @@
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0) scale(1);
   }
+
   50% {
     transform: translateY(-5px) scale(1.1);
   }
@@ -19,18 +21,22 @@
     opacity: 0;
     transform: translateY(-20px) scale(0);
   }
+
   25% {
     opacity: 0.7;
     transform: translateY(-10px) scale(1);
   }
+
   50% {
     opacity: 1;
     transform: translateY(0) scale(2);
   }
+
   75% {
     opacity: 0.7;
     transform: translateY(10px) scale(2.5);
   }
+
   100% {
     opacity: 0;
     transform: translateY(20px) scale(3);
@@ -38,49 +44,41 @@
 }
 
 @keyframes scale-pop {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-
-@keyframes slideDownLarge {
-  0%   { transform: translateY(-300%); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideDownMedium {
-  0%   { transform: translateY(-180%); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideInLeft {
-  0%   { transform: translateX(-120%); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInRight {
-  0%   { transform: translateX(120%); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes dropInScroll {
   0% {
-    transform: translate(-50%, -150px);
-    opacity: 0;
+    transform: scale(1);
   }
+
+  50% {
+    transform: scale(1.08);
+  }
+
   100% {
-    transform: translate(-50%, 0);
-    opacity: 1;
+    transform: scale(1);
   }
 }
 
-@keyframes dropInNav {
-    0% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+@keyframes gradient-pan {
+  0% {
+    background-position: 0% 50%;
   }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float-subtle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}

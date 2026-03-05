@@ -21,6 +21,7 @@
 
     .experience__title {
       @extend %section-subtitle;
+      @extend %animation-title-gradient;
     }
 
     .experience__description {
@@ -163,17 +164,34 @@
 @media screen and (min-width: 480px) {
   .experience .timeline__entry {
     @include text-style(start, 0.05em, 0.05em);
+
+    .timeline__details {
+      padding: $spacing-sm $spacing-lg;
+    }
   }
 }
 
 @media screen and (min-width: $bp-xl) {
-  .experience .timeline__entry .timeline__year i {
-    margin-right: $spacing-md;
+  .experience .timeline__entry {
+    .timeline__details {
+      padding: $spacing-md 20px;
+    }
+
+    .timeline__year i {
+      margin-right: $spacing-md;
+    }
+
   }
 }
 
 @media screen and (min-width: $bp-xxl) {
-  .experience .timeline__entry .timeline__year i {
-    margin-right: $spacing-lg;
+  .experience .timeline__entry {
+    .timeline__details {
+      padding: 18px 26px;
+    }
+
+    .timeline__year i {
+      margin-right: $spacing-lg;
+    }
   }
 }

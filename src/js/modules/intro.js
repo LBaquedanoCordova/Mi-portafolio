@@ -9,8 +9,18 @@ function createElementWithClass(tag, classes, content = "") {
 }
 
 const textElement = document.querySelector(".intro__hero-text");
-const cursor = createElementWithClass("span", "intro__hero-cursor", "|");
-textElement.append(cursor);
+let cursor;
+
+// Permite preparar el DOM (vaciando el texto) antes de animar
+const prepareTypingText = () => {
+  if (textElement) {
+    textElement.innerHTML = ""; // Limpia el texto original
+    // Creamos un nodo de texto vacío explícito para poder editarlo después
+    textElement.appendChild(document.createTextNode(""));
+    cursor = createElementWithClass("span", "intro__hero-cursor", "|");
+    textElement.appendChild(cursor);
+  }
+};
 
 const typingConfig = {
   text: "¡Hola! mi nombre es ...",
@@ -35,7 +45,11 @@ const typingState = {
 };
 
 // Actualiza el contenido de texto del elemento con el texto parcial
-const updateText = (content) => (textElement.firstChild.nodeValue = content);
+const updateText = (content) => {
+  if (textElement && textElement.firstChild) {
+    textElement.firstChild.nodeValue = content;
+  }
+};
 
 // Controla la animación de escritura, borrado y espera del texto animado
 function animate(time) {
@@ -87,4 +101,4 @@ const initTypingText = () => {
   requestAnimationFrame(animate);
 };
 
-export { createElementWithClass, initTypingText };
+export { createElementWithClass, prepareTypingText, initTypingText };

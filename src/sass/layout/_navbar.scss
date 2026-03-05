@@ -8,12 +8,6 @@
   @extend %flex-center;
   @include layout-navbar();
 
-  &--animating-in {
-    transform: translateY(-100%);
-    opacity: 0;
-    animation: dropInNav 0.4s ease-out 3s forwards;
-  }
-
   &::before {
     @include before-overlay();
     border-radius: $border-radius;
@@ -148,7 +142,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 980px) {
   .nav {
     width: 100%;
     @include padding-margin($spacing-xs, 0px);

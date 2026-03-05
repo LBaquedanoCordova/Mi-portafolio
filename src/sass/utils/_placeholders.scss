@@ -2,6 +2,7 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 @use "./theme" as *;
+@use "./animations" as *;
 
 %flex-center {
   display: flex;
@@ -337,4 +338,41 @@
   box-shadow: 0 8px 32px 0 var(--color-accent);
   border-color: var(--color-accent);
   transform: translateY(-4px) scale(1.02);
+}
+
+%card-base {
+  border-radius: $border-radius;
+  padding: $spacing-xl;
+  background-color: rgba(var(--color-white), 0.04);
+  border: 2px solid var(--color-border);
+  box-shadow: 0 4px 24px 0 var(--color-shadow);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+%flex-column-gap {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxl;
+
+  @media screen and (min-width: 720px) {
+    gap: $spacing-xxxl;
+  }
+
+  @media screen and (min-width: 1020px) {
+    gap: $spacing-jumbo;
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    gap: 60px;
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    gap: 80px !important;
+  }
+}
+
+
+%animation-title-gradient {
+  background-size: 200% auto;
+  animation: gradient-pan 4s linear infinite;
 }

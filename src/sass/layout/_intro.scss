@@ -30,8 +30,6 @@
       white-space: nowrap;
       font-size: $fs-small;
       color: var(--color-text-primary);
-      opacity: 0;
-      animation: slideDownLarge 0.4s ease-out 0.2s forwards;
     }
 
     &-cursor {
@@ -46,18 +44,15 @@
     &-subtitle {
       margin: 0px;
       color: var(--color-accent);
-      opacity: 0;
     }
 
     &-title {
       @include font(clamp(40px, 12vw, 75px), 900);
       font-family: '"Merriweather", serif';
-      animation: slideDownMedium 0.4s ease-out 0.7s forwards;
     }
 
     &-subtitle {
       @include font(clamp(20px, 6vw, 35px), 900);
-      animation: slideInLeft 0.5s ease-out 1.2s forwards;
     }
   }
 
@@ -66,8 +61,6 @@
 
     &-list {
       @extend %list-container-flex;
-      opacity: 0;
-      animation: slideInRight 0.5s ease-out 1.8s forwards;
     }
 
     &-item {
@@ -85,8 +78,6 @@
     }
 
     &-availability-wrapper {
-      opacity: 0;
-      animation: slideInLeft 0.5s ease-out 2.4s forwards;
       margin: $spacing-sm 0px;
     }
 
@@ -149,9 +140,8 @@
     position: absolute;
     left: 50%;
     bottom: 90px;
-    transform: translate(-50%, -150px);
-    opacity: 0;
-    animation: dropInScroll 0.4s ease-out 3s forwards;
+    transform: translate(-50%, 0px);
+
 
     &-arrow {
       position: absolute;
