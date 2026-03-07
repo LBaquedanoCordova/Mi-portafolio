@@ -82,3 +82,25 @@
     transform: translateY(-8px);
   }
 }
+
+@keyframes bell-ring {
+  0% {
+    transform: scale(1.2) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.2) rotate(15deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+
+  75% {
+    transform: scale(1.2) rotate(-15deg);
+  }
+
+  100% {
+    transform: scale(1.2) rotate(0deg);
+  }
+}

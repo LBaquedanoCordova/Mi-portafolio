@@ -49,6 +49,7 @@
       @extend %section-subtitle-secondary;
 
       i {
+        display: inline-block;
         padding: $spacing-sm;
         color: var(--color-accent-alt);
         filter: drop-shadow(0 1px 2px var(--color-shadow));
@@ -56,32 +57,32 @@
     }
 
     .timeline__box {
-      border-left: 2px solid transparent;
       position: relative;
       padding-left: $spacing-lg;
-      margin-left: $spacing-lg;
-
-      &::before {
-        @extend %pseudo-abs;
-        left: -2px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(to bottom,
-            var(--color-accent) 0%,
-            var(--color-border) 100%);
-        transform: scaleY(var(--line-progress, 1));
-        transform-origin: top;
-        z-index: 0;
-      }
+      margin-left: 10px;
     }
 
     .timeline__entry__wrapper {
       position: relative;
+      display: flex;
+      flex-direction: column;
 
-      &::before {
-        @include timeline-marker(16px,
-          linear-gradient(135deg, var(--color-accent), var(--color-accent-alt)));
+      .timeline__marker {
+        @include timeline-marker(16px, linear-gradient(135deg, var(--color-accent), var(--color-accent-alt)));
+        transform-origin: center;
+        z-index: 2;
+      }
+
+      .timeline__connector {
+        position: absolute;
+        left: -8px;
+        top: 20px;
+        bottom: 20px;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--color-accent) 0%, var(--color-border) 100%);
+        transform: translate(-50%, 0) scaleY(var(--connector-progress, 0));
+        transform-origin: top;
+        z-index: 1;
       }
     }
 

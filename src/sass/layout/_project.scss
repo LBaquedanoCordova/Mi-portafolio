@@ -2,6 +2,7 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
 @use "../utils/theme" as *;
+@use "../utils/animations" as *;
 
 .projects {
   @extend %flex-center;
@@ -49,6 +50,11 @@
       &:focus-within {
         @extend %card-hover-effect;
         background-color: rgba(var(--color-white), 0.1);
+
+        .projects__description-title i,
+        .projects__tech-title i {
+          animation: bell-ring 0.5s ease-in-out infinite;
+        }
       }
     }
 
@@ -228,8 +234,8 @@
 
 @media screen and (min-width: 1020px) {
   .projects {
-      .projects__tech {
-        grid-column: auto;
-      }
+    .projects__tech {
+      grid-column: auto;
+    }
   }
 }
