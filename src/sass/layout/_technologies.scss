@@ -31,9 +31,9 @@
     .technologies__menu {
       @extend %flex-center;
       flex-wrap: nowrap;
-      gap: 15px;
+      gap: 12px;
       min-width: max-content;
-      @include padding-margin(6px 10px, 0);
+      @include padding-margin(10px 8px, 0);
       list-style: none;
 
       &-item {
@@ -44,8 +44,8 @@
         @extend %flex-center;
         display: inline-flex;
         position: relative;
-        width: 42px;
-        height: 42px;
+        width: 35px;
+        height: 35px;
         border: 1px solid transparent;
         color: var(--color-text-secondary);
         background-color: transparent;
@@ -90,7 +90,7 @@
       }
 
       &-btn i {
-        font-size: calc($icon-size + 1px);
+        font-size: 15px;
         line-height: 1;
         pointer-events: none;
       }

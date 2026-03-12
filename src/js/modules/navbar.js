@@ -92,11 +92,22 @@ function handlerNavbarLink() {
   toggleNavigationMenu(false);
 }
 
+// Maneja el clic en el logo para desplazarse suavemente a la parte superior
+function handlerLogoClick() {
+  event.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+  toggleNavigationMenu(false);
+}
+
 // Mapa de selectores de la barra de navegación y sus manejadores de eventos
 const navbarHandlers = new Map([
   [".nav__theme-toggle", handlerToggleTheme],
   [".nav__toggle", toggleNavigationMenu],
   [".nav__link", handlerNavbarLink],
+  [".nav__logo-link", handlerLogoClick],
 ]);
 
 // Mapea los enlaces de navegación a sus respectivas secciones del DOM

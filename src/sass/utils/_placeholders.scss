@@ -328,6 +328,24 @@
   }
 }
 
+%section-paragraph-light {
+  @include font($fs-miniSmall, 500);
+  text-align: justify;
+  color: var(--color-accent-alt);
+
+  @media screen and (min-width: 580px) {
+    font-size: clamp(15px, 2.5vw, 17px);
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    font-size: clamp(17px, 2.5vw, 23px);
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    font-size: clamp(25px, 3vw, 30px);
+  }
+}
+
 %section-paragraph-secondary {
   font-size: $fs-medium;
   color: var(--color-text-secondary);

@@ -15,6 +15,7 @@ const technologies = [
     img: "/assets/icons/github.svg",
     category: "version-control",
   },
+  { name: "Vitest", img: "/assets/icons/vitest.svg", category: "testing" },
   { name: "VS Code", img: "/assets/icons/vscode.svg", category: "tools" },
   { name: "Windows", img: "/assets/icons/windows.svg", category: "tools" },
   { name: "React", img: "/assets/icons/react.svg", category: "frameworks" },
