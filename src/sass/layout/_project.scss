@@ -38,7 +38,7 @@
     @extend %flex-column-gap;
 
     .projects__reveal-wrapper:nth-child(odd) {
-      .projects__link:nth-child(even) {
+      .projects__link {
         display: none;
       }
     }
