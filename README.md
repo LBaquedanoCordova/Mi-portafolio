@@ -1,20 +1,42 @@
 # Portfolio Web - Luis Baquedano
 
-Este repositorio contiene el código fuente de mi portfolio personal, desarrollado con HTML, CSS (SASS) y JavaScript Vanilla.
+Este repositorio contiene el código fuente de mi portfolio personal como desarrollador web.  
+El sitio fue desarrollado con tecnologías web modernas y se encuentra desplegado en GitHub Pages.
 
-## Descripción
-Este portfolio es parte de mi proceso de aprendizaje y desarrollo como desarrollador web. Actualmente estoy trabajando en mi primer proyecto real, por lo que la sección de proyectos aún no contiene trabajos publicados.
+## 🌐 Demo
+El proyecto puede visualizarse en línea en:
 
-El objetivo principal de este portfolio es practicar la creación de una interfaz moderna, responsiva y accesible, aplicando buenas prácticas de desarrollo web y organización de código.
+https://lbaquedanocordova.github.io/Mi-portafolio/
 
-## Proceso de desarrollo
-Este repositorio está siendo actualizado gradualmente, haciendo confirmaciones por bloques funcionales, secciones o componentes.  
+## 📌 Descripción
 
-## Tecnologías utilizadas
-- HTML5
-- SASS (CSS preprocesado)
-- JavaScript Vanilla
+Este portfolio fue creado para presentar mi perfil profesional, habilidades técnicas y proyectos dentro del desarrollo web.
 
-## Estado actual
-🔧 Proyecto en fase final de desarrollo, aplicando últimos detalles de optimización, limpieza de código y ajustes generales.
+El objetivo principal del proyecto es demostrar conocimientos en desarrollo frontend moderno, aplicando buenas prácticas de estructura de código, optimización de recursos y diseño responsivo.
 
+El sitio incluye:
+
+- Presentación personal
+- Sección de tecnologías
+- Portafolio de proyectos
+- Diseño responsive adaptable a distintos tamaños de pantalla
+- Animaciones e interacciones para mejorar la experiencia de usuario
+
+## 🛠️ Tecnologías utilizadas
+
+Las principales tecnologías utilizadas en este proyecto son:
+
+- **HTML5**
+- **SASS** para la organización y escalabilidad de estilos
+- **JavaScript Vanilla (ES6+)**
+- **Vite** como herramienta de build y desarrollo
+- **GSAP** para animaciones avanzadas
+- **Font Awesome** para iconografía
+
+## ⚙️ Herramientas y entorno
+
+- Node.js
+- npm
+- Git
+- GitHub
+- GitHub Actions para el despliegue automático
