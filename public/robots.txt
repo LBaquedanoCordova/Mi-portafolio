@@ -1,0 +1,6 @@
+# Permitir a todos los rastreadores
+user-agent: *
+disallow: /downloads/
+
+user-agent: magicsearchbot
+disallow: /uploads/
