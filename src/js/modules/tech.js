@@ -1,25 +1,27 @@
 import { createElementWithClass } from "./intro.js";
 import { observeElements } from "./observerManager.js";
 
+const basePath = import.meta.env.BASE_URL;
+
 const technologies = [
-  { name: "HTML", img: "/assets/icons/html.svg", category: "languages" },
-  { name: "CSS", img: "/assets/icons/css.svg", category: "languages" },
-  { name: "JavaScript", img: "/assets/icons/js.svg", category: "languages" },
-  { name: "TypeScript", img: "/assets/icons/ts.svg", category: "languages" },
-  { name: "Bootstrap", img: "/assets/icons/bootstrap.svg", category: "styles" },
-  { name: "Sass", img: "/assets/icons/sass.svg", category: "styles" },
-  { name: "Tailwind CSS", img: "/assets/icons/tailwindcss.svg", category: "styles" },
-  { name: "GIT", img: "/assets/icons/git.svg", category: "version-control" },
+  { name: "HTML", img: `${basePath}assets/icons/html.svg`, category: "languages" },
+  { name: "CSS", img: `${basePath}assets/icons/css.svg`, category: "languages" },
+  { name: "JavaScript", img: `${basePath}assets/icons/js.svg`, category: "languages" },
+  { name: "TypeScript", img: `${basePath}assets/icons/ts.svg`, category: "languages" },
+  { name: "Bootstrap", img: `${basePath}assets/icons/bootstrap.svg`, category: "styles" },
+  { name: "Sass", img: `${basePath}assets/icons/sass.svg`, category: "styles" },
+  { name: "Tailwind CSS", img: `${basePath}assets/icons/tailwindcss.svg`, category: "styles" },
+  { name: "GIT", img: `${basePath}assets/icons/git.svg`, category: "version-control" },
   {
     name: "GitHub",
-    img: "/assets/icons/github.svg",
+    img: `${basePath}assets/icons/github.svg`,
     category: "version-control",
   },
-  { name: "Vitest", img: "/assets/icons/vitest.svg", category: "testing" },
-  { name: "VS Code", img: "/assets/icons/vscode.svg", category: "tools" },
-  { name: "Windows", img: "/assets/icons/windows.svg", category: "tools" },
-  { name: "React", img: "/assets/icons/react.svg", category: "frameworks" },
-  { name: "Angular", img: "/assets/icons/angular.svg", category: "frameworks" },
+  { name: "Vitest", img: `${basePath}assets/icons/vitest.svg`, category: "testing" },
+  { name: "VS Code", img: `${basePath}assets/icons/vscode.svg`, category: "tools" },
+  { name: "Windows", img: `${basePath}assets/icons/windows.svg`, category: "tools" },
+  { name: "React", img: `${basePath}assets/icons/react.svg`, category: "frameworks" },
+  { name: "Angular", img: `${basePath}assets/icons/angular.svg`, category: "frameworks" },
 ];
 
 const techList = document.querySelector(".technologies__list");
