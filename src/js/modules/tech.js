@@ -17,7 +17,13 @@ const technologies = [
     img: `${basePath}assets/icons/github.svg`,
     category: "version-control",
   },
+    {
+    name: "GitLab",
+    img: `${basePath}assets/icons/gitlab.svg`,
+    category: "version-control",
+  },
   { name: "Vitest", img: `${basePath}assets/icons/vitest.svg`, category: "testing" },
+  { name: "Jasmine", img: `${basePath}assets/icons/jasmine.svg`, category: "testing" },
   { name: "VS Code", img: `${basePath}assets/icons/vscode.svg`, category: "tools" },
   { name: "Windows", img: `${basePath}assets/icons/windows.svg`, category: "tools" },
   { name: "React", img: `${basePath}assets/icons/react.svg`, category: "frameworks" },
