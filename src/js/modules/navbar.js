@@ -19,6 +19,8 @@ const observerOptions = {
   threshold: [0.25, 0.5, 0.75],
 };
 
+let isThemeTransitioning = false;
+
 // Alterna el menú de navegación abierto/cerrado y actualiza el icono correspondiente
 function toggleNavigationMenu(force) {
   const isOpen = nav.classList.contains("nav--open");
@@ -64,6 +66,27 @@ function handlerToggleTheme() {
   toggleNavigationMenu(false);
 }
 
+function handleThemeToggleClick() {
+  // Evita superposición si el usuario hace clics rápidos en Chrome
+  if (isThemeTransitioning) return;
+
+  // Verifica si es Chrome/Chromium
+  const isChrome = navigator.userAgent.includes("Chrome");
+
+  // Fallback: Si la API no existe o es un navegador diferente a Chrome
+  if (!document.startViewTransition || !isChrome) {
+    handlerToggleTheme();
+    return;
+  }
+
+  isThemeTransitioning = true;
+  const transition = document.startViewTransition(handlerToggleTheme);
+  
+  transition.finished.finally(() => {
+    isThemeTransitioning = false;
+  });
+}
+
 // Inicializa el theme visual al cargar la página, sin animaciones
 initTheme({ html, navThemeToggle, onThemeChange: setNavThemeIcon });
 
@@ -104,7 +127,7 @@ function handlerLogoClick() {
 
 // Mapa de selectores de la barra de navegación y sus manejadores de eventos
 const navbarHandlers = new Map([
-  [".nav__theme-toggle", handlerToggleTheme],
+  [".nav__theme-toggle", handleThemeToggleClick],
   [".nav__toggle", toggleNavigationMenu],
   [".nav__link", handlerNavbarLink],
   [".nav__logo-link", handlerLogoClick],
